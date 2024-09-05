@@ -13,27 +13,58 @@ remote_theme             : "mmistakes/minimal-mistakes@4.26.2"
 minimal_mistakes_skin    : "dirt" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # ============================= Site settings =============================
-locale                   : "en-GB"
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/#site-settings
+locale                   : "en-GB" 
 title                    : "David Cole"
 title_separator          : "|"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "David Cole"
 description              : "My personal website/blog."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "DC293/DC293.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+url                      : "https://DC293.github.io"
+repository               : "DC293/DC293.github.io"
+logo                     : # Logo to go in masthead
+masthead_title           : # if you want to overwrite website title with a different title
+
+# ============================= Author =============================
+author:
+  name     : "David Cole"
+  avatar   : "/assets/images/author-photo.jpg"
+  bio      : "My personal website/blog"
+  location : "London, UK"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/dc293"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/dcole123/"
+
+# ============================= Comments =============================
 
 
+
+
+# ============================= Defaults =============================
+words_per_minute         : 200
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      show_date: true
+      comments: true
+      share: true
+      related: true
+      enable_copy_code_button: true
+
+# ============================= Plugins =============================
 plugins:
   - jekyll-feed
   - jekyll-include-cache
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 
 # Exclude from processing.
 # The following items will not be processed, by default.
