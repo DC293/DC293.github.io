@@ -40,10 +40,22 @@ author:
       url: "https://www.linkedin.com/in/dcole123/"
 
 # ============================= Comments =============================
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/#comments
+#comments:
+ # provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+  #disqus:
+   # shortname            : "michaelcoleblog" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
 
-
-
-
+# ============================= Footer =============================
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/dc293"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/dcole123/"
+      
 # ============================= Defaults =============================
 words_per_minute         : 200
 defaults:
@@ -52,14 +64,15 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-      show_date: true
-      comments: true
-      share: true
-      related: true
-      enable_copy_code_button: true
+      layout                    : single
+      author_profile            : true
+      read_time                 : true
+      show_date                 : true
+      comments                  : true
+      share                     : true
+      related                   : true
+      enable_copy_code_button   : true
+
 
 # ============================= Plugins =============================
 plugins:
