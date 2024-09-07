@@ -6,3 +6,7 @@ collection: Advent_of_code_2023
 entries_layout: grid
 classes: wide
 ---
+
+My solutions for all of the puzzles in the [Advent of Code 2023](https://adventofcode.com/2023).
+
+[Day 1 ](../_posts/2023-12-01-aoc23-day1.md)
