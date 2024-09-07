@@ -9,4 +9,4 @@ classes: wide
 
 My solutions for all of the puzzles in the [Advent of Code 2023](https://adventofcode.com/2023).
 
-[Day 1 ](../_posts/2023-12-01-aoc23-day1.md)
+[Day 1 ](../_posts/2023-12-01-AOC_2023_Day_1.md)
