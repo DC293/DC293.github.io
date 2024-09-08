@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 
-I am a researcher and engineer specialising in sports technologies and equipment. In my current position 
+I am a researcher and engineer specialising in technologies and equipment in sport. In my current position 
 as Research and Insights Manager at the [International Tennis Federation](https://www.itftennis.com/en/about-us/tennis-tech/innovation/) I assist the development of test 
 programmes to protect the integrity of the game. Previously, I worked with FIFA to [develop standards](https://www.lboro.ac.uk/news-events/news/2022/june/loughborough-collaborates-with-fifa/) for football surfaces guided by player perceptions. 
 
