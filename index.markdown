@@ -1,15 +1,14 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
-entries_layout: grid
-author_profile: true
+layout: splash
+title: "Welcome to My Website"
+header:
+  overlay_image: "/assets/images/splash-background.jpg"
+  overlay_filter: 0.5
+  caption: "Photo by [Photographer](https://source.com)"
+  actions:
+    - label: "Learn More"
+      url: "/about/"
+    - label: "View Blog"
+      url: "/blog/"
+excerpt: "A short description of your site."
 ---
-
----
-permalink: /
-redirect_to:
-  - /home/
----
-
