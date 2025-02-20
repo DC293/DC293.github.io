@@ -2,7 +2,7 @@
 layout: splash
 title: "Welcome to My Website"
 header:
-  overlay_image: "/assets/images/splash-background.jpg"
+  overlay_image: "/assets/images/Tennis_ball_splash.jpg"
   overlay_filter: 0.5
   caption: "Photo by [Photographer](https://source.com)"
   actions:
