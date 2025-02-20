@@ -1,4 +1,4 @@
 ---
-  permalink: /
-  redirect_to: /home/
+permalink: /
+redirect_to: /home/
 ---
