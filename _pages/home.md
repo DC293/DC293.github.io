@@ -1,7 +1,7 @@
 ---
 layout: splash
 title: "Welcome to My Website"
-permalink: /home/
+permalink: /
 header:
   overlay_image: "/assets/images/Tennis_ball_splash.jpg"
   overlay_filter: 0.5
