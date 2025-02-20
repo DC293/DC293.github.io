@@ -6,3 +6,10 @@ layout: home
 entries_layout: grid
 author_profile: true
 ---
+
+---
+permalink: /
+redirect_to:
+  - /home/
+---
+
