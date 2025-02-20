@@ -74,26 +74,6 @@ defaults:
       enable_copy_code_button   : true
 
 
-  defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: splash
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      show_date: true
-      comments: true
-      share: true
-      related: true
-      enable_copy_code_button: true
-
-
 
 # ============================= Plugins =============================
 plugins:
