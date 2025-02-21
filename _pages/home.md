@@ -8,30 +8,24 @@ header:
   actions:
     - label: "About me"
       url: "/about/"
-excerpt: "Project portfolio and blog."
+excerpt: "Project portfolio and blog"
 
 
 intro: 
-  - excerpt: 'Nullam suscipit et nam, tellus velit pellentesque at malesuada, enim eaque. Quis nulla, netus tempor in diam gravida tincidunt, *proin faucibus* voluptate felis id sollicitudin. Centered with `type="center"`'
+  - excerpt: 'Click the links below to find out more'
 
 feature_row:
   - image_path: assets/images/Golf_ball_classification_thumbnail2.jpg
-    alt: "placeholder image 1"
-    title: "Placeholder 1"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    title: "Machine Learning"
+    excerpt: "Conceps of machine learning with practical examples"
   
   - image_path: /assets/images/Data_science.jpg
-    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
-    alt: "placeholder image 2"
-    title: "Placeholder 2"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
+    title: "Data Science"
+    excerpt: "Learn how data science is changing how we use sports data"
   
   - image_path: /assets/images/python_puzzles.jpg
-    title: "Placeholder 3"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    title: "Coding Puzzles"
+    excerpt: "Coding challenges to test your skills!"
 ---
 
 {% include feature_row id="intro" type="center" %}
