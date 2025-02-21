@@ -1,6 +1,6 @@
 ---
 layout: single
 title: "Data Science"
-permalink: /machine-learning/
+permalink: /data-science/
 ---
 Content for the Data Science page...
