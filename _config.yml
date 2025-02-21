@@ -28,7 +28,7 @@ masthead_title           : # if you want to overwrite website title with a diffe
 author:
   name     : "David Cole"
   avatar   : "/assets/images/author-photo.jpg"
-  bio      : "My personal website/blog"
+  bio      : "Project portfolio and blog"
   location : "London, UK"
   links:
     - label: "GitHub"
