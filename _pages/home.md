@@ -1,6 +1,6 @@
 ---
 layout: splash
-title: "David Cole"
+title: ""
 permalink: /
 header:
   overlay_image: "/assets/images/Tennis_ball_splash.jpg"
