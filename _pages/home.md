@@ -12,7 +12,7 @@ excerpt: "Project portfolio and blog"
 
 
 intro: 
-  - excerpt: 'Dive into a project area by following the links below `type="center"`'
+  - excerpt: 'Dive into a project area by following the links below'
 
 feature_row:
   - image_path: assets/images/Golf_ball_classification_thumbnail2.jpg
@@ -21,7 +21,7 @@ feature_row:
   
   - image_path: /assets/images/Data_science.jpg
     title: "Data Science"
-    excerpt: "Learn how data science is changing how we use sports data"
+    excerpt: "Learn how data science can provide in-depth sporting insights"
   
   - image_path: /assets/images/python_puzzles.jpg
     title: "Coding Puzzles"
