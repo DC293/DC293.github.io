@@ -2,5 +2,5 @@
 layout: single
 title: "Coding puzzles"
 permalink: /coding-puzzles/
-author_profile: true
+author_profile: false
 ---
