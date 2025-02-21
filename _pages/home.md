@@ -12,7 +12,7 @@ excerpt: "Project portfolio and blog"
 
 
 intro: 
-  - excerpt: 'Dive into a project area by following the links below'
+  - excerpt: 'Discover more by following the links below'
 
 feature_row:
   - image_path: assets/images/Golf_ball_classification_thumbnail2.jpg
