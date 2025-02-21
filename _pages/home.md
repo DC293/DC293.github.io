@@ -19,18 +19,24 @@ feature_row:
     excerpt: "Concepts of machine learning with practical examples"
     url: "/machine-learning/"
     link: "/machine-learning/"  # Makes image clickable
+    btn_label: "Read More"
+    btn_class: "btn--primary"
 
   - image_path: /assets/images/Data_science.jpg
     title: "Data Science"
     excerpt: "Learn how data science can provide in-depth sporting insights"
     url: "/data-science/"
     link: "/data-science/"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
 
   - image_path: /assets/images/python_puzzles.jpg
     title: "Coding Puzzles"
     excerpt: "Coding challenges to test your skills!"
     url: "/coding-puzzles/"
     link: "/coding-puzzles/"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
 ---
 
 {% include feature_row id="intro" type="center" %}
