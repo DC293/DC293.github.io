@@ -27,7 +27,7 @@ masthead_title           : # if you want to overwrite website title with a diffe
 collections:
   puzzles:
     output: true
-    permalink: /puzzles/:path/
+    permalink: _posts/puzzles/:path/
 
 # ============================= Author =============================
 author:
