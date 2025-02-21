@@ -5,5 +5,5 @@ permalink: /coding-puzzles/
 author_profile: false
 entries_layout: list
 taxonomy: category
-taxonomy_term: coding-puzzles
+taxonomy_term: puzzle
 ---
