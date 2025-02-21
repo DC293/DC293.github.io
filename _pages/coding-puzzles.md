@@ -1,8 +1,6 @@
 ---
-title: Portfolio
-layout: collection
+layout: single
+title: "Coding puzzles"
 permalink: /coding-puzzles/
-collection: coding-puzzles
-entries_layout: grid
-classes: wide
+author_profile: true
 ---
