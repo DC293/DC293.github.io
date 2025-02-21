@@ -1,10 +1,11 @@
 ---
 title: Coding Puzzles
-layout: collection
+layout: archive
 permalink: /coding-puzzles/
-collection: puzzles
 entries_layout: grid
 classes: wide
+taxonomy: category
+taxonomy_term: puzzles
 ---
 
 {% for puzzle in site.puzzles %}
