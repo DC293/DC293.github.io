@@ -24,6 +24,11 @@ repository               : "DC293/DC293.github.io"
 logo                     : "/assets/images/Headshot.png"
 masthead_title           : # if you want to overwrite website title with a different title
 
+collections:
+  puzzles:
+    output: true
+    permalink: /puzzles/:path/
+
 # ============================= Author =============================
 author:
   name     : "David Cole"
