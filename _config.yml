@@ -21,7 +21,7 @@ name                     : "David Cole"
 description              : "My personal website/blog."
 url                      : "https://DC293.github.io"
 repository               : "DC293/DC293.github.io"
-logo                     : "/assets/images/sports_icons.png"
+logo                     : "/assets/images/headshot_icon.png"
 masthead_title           : # if you want to overwrite website title with a different title
 
 # ============================= Author =============================
