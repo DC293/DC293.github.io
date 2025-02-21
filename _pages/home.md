@@ -17,19 +17,22 @@ feature_row:
   - image_path: /assets/images/Golf_ball_classification_thumbnail2.jpg
     title: "Machine Learning"
     excerpt: "Concepts of machine learning with practical examples"
-    url: "/machine-learning/"  # Image & title will be clickable
+    url: "/machine-learning/"
+    link: "/machine-learning/"  # Makes image clickable
 
   - image_path: /assets/images/Data_science.jpg
     title: "Data Science"
     excerpt: "Learn how data science can provide in-depth sporting insights"
     url: "/data-science/"
+    link: "/data-science/"
 
   - image_path: /assets/images/python_puzzles.jpg
     title: "Coding Puzzles"
     excerpt: "Coding challenges to test your skills!"
     url: "/coding-puzzles/"
+    link: "/coding-puzzles/"
 ---
 
 {% include feature_row id="intro" type="center" %}
 
-{% include feature_row %}
+{% include feature_row id="feature_row" type="center" %}
