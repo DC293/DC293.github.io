@@ -1,0 +1,36 @@
+<div class="feature__wrapper">
+  {% for feature in include.features %}
+  <div class="feature__item">
+    <a href="{{ feature.url }}">
+      <img src="{{ feature.image_path }}" alt="{{ feature.title }}" class="feature__image">
+    </a>
+    <h3><a href="{{ feature.url }}">{{ feature.title }}</a></h3>
+    <p>{{ feature.excerpt }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+<style>
+.feature__wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.feature__item {
+  max-width: 300px;
+}
+
+.feature__image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.feature__image:hover {
+  transform: scale(1.05);
+}
+</style>
