@@ -5,5 +5,6 @@ permalink: /coding-puzzles/
 collection: puzzles
 entries_layout: grid
 classes: wide
+order: reverse
 ---
 
