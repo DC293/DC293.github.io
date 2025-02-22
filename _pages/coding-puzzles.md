@@ -2,11 +2,10 @@
 title: Coding Puzzles
 layout: collection
 permalink: /coding-puzzles/
+collection: puzzles
 entries_layout: grid
 classes: wide
-collection: puzzles
 ---
-
 
 My solutions for all of the puzzles in the [Advent of Code 2023](https://adventofcode.com/2023).
 
