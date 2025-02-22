@@ -27,7 +27,7 @@ masthead_title           : # if you want to overwrite website title with a diffe
 # ============================= Author =============================
 author:
   name     : "David Cole"
-  avatar   : "/assets/images/Headshot_large.jpg"
+  avatar   : "/assets/images/Headshot_large.png"
   bio      : "Project portfolio and blog"
   location : "London, UK"
   links:
