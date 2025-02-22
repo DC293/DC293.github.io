@@ -3,3 +3,9 @@ main:
     url: /
   - title: "About"
     url: /about
+  - title: "Machine Learning"
+    url: /machine-learning
+  - title: "Data Science"
+    url: /data-science
+  - title: "Coding puzzles"
+    url: /coding-puzzles
