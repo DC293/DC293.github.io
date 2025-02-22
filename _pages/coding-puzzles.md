@@ -6,5 +6,6 @@ collection: puzzles
 entries_layout: grid
 classes: wide
 order: reverse
+author_profile: True
 ---
 
