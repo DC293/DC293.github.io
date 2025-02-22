@@ -2,7 +2,7 @@
 title: Machine Learning
 layout: collection
 permalink: /machine-learning/
-collection: puzzles
+collection: machine-learning
 entries_layout: grid
 classes: wide
 order: reverse
