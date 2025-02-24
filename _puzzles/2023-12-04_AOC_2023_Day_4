@@ -1,0 +1,22 @@
+
+---
+layout: single
+weight: 4
+title: "AoC 2023 - Day 4"
+excerpt: "Scratchcards"
+header:
+    overlay_image: assets/images/AOC_2023/AOC_2023_Day4.jpg
+    overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
+    # image: assets/images/AOC_2023/AOC_2023_Day4.jpg
+    teaser: assets/images/AOC_2023/AOC_2023_Day4.jpg
+toc: true
+published: true
+toc_label: "Contents:"
+classes: wide
+categories: puzzles
+tags: puzzle
+author_profile: True
+---
+
+## Intro
+The [Advent of Code](https://adventofcode.com/2023) is a yearly series of puzzles run during the month of December. The daily puzzles are the same for all players but puzzle inputs are randomly generated for each user account (to stop cheating!). The solutions outlined in this blog series are designed to intake any puzzle input and output the correct answer. 
