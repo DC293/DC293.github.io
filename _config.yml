@@ -164,12 +164,6 @@ collections:
     output: true
     permalink: /:collection/:path/
   collections:
-  machine-learning-tutorials:
-    output: true
-    permalink: /:collection/:title/
-  machine-learning-projects:
-    output: true
-    permalink: /:collection/:title/
 
 
 # Outputting
