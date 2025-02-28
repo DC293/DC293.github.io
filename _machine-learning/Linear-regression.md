@@ -16,6 +16,8 @@ tags: machine-learning
 author_profile: True
 ---
 
+{% include mathjax.html %}
+
 ## Measuring distance
 Machine learning is often used to predict numeric values. For example, sports teams may try to predict an athletes risk of injury based on their workload or the likelyhood of scoring a goal from a certain position. When building a model, its important to understand its accuracy. An common way of doing this is to measure the distance between the model's predictions and the true values. The smaller the difference, the more accrate the model.
 
@@ -23,6 +25,11 @@ But not all distance is the same. Depending on the model, we may want to assess 
 
 ### Euclidean distance
 Euclidean Distance: the most common distance formula, the length of a straight line between two points
+
+$$
+t_1 = \frac{\left(p^{(2)}_x - p^{(1)}_x\right)v^{(2)}_y - \left(p^{(2)}_y - p^{(1)}_y\right)v^{(2)}_x}
+{v^{(1)}_x v^{(2)}_y - v^{(1)}_y v^{(2)}_x},
+$$
 
 
 ### Manhattan distance
