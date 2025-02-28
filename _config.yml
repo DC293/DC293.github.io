@@ -157,10 +157,10 @@ collections:
   puzzles:
     output: true
     permalink: /:collection/:path/
-  data_science:
+  data-science:
     output: true
     permalink: /:collection/:path/
-  machine_learning:
+  machine-learning:
     output: true
     permalink: /:collection/:path/
   collections:
