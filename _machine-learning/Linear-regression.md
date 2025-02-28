@@ -26,14 +26,15 @@ But not all distance is the same. Depending on the model, we may want to assess 
 ### Euclidean distance
 The most common distance formula, the Euclidean distance calculates the length of a straight line between two points. A familiar example is Pythagoras theorm to find the length of the hypotenuse of a right angled triangle:
 
-    $$
-    d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
-    $$
+$$
+d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+$$
 
 But what if we wanted to find the distance between points in 3D, or 4D or nD space? We can calculate the distance the same way:
-    $$
-    d = \sqrt{\sum_{i=1}^{n} (p_i - q_i)^2}
-    $$
+
+$$
+d = \sqrt{\sum_{i=1}^{n} (p_i - q_i)^2}
+$$
 
 ### Manhattan distance
 Manhattan Distance: the “city block” distance, useful in urban planning models
