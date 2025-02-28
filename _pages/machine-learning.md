@@ -1,6 +1,6 @@
 ---
 title: Machine Learning
-layout: machine-learning-collection
+layout: collection
 permalink: /machine-learning/
 collection: machine-learning
 entries_layout: grid
