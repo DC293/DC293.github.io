@@ -24,13 +24,14 @@ Machine learning is often used to predict numeric values. For example, sports te
 But not all distance is the same. Depending on the model, we may want to assess distance in different ways. Below, we will explore three common distance measurements used to assess machine learning model accuracy.
 
 ### Euclidean distance
-Euclidean Distance: the most common distance formula, the length of a straight line between two points
-
+The most common distance formula, the Euclidean distance calculates the length of a straight line between two points. A familiar example is Pythagoras theorm to find the length of the hypotenuse of a right angled triangle:
 $$
-t_1 = \frac{\left(p^{(2)}_x - p^{(1)}_x\right)v^{(2)}_y - \left(p^{(2)}_y - p^{(1)}_y\right)v^{(2)}_x}
-{v^{(1)}_x v^{(2)}_y - v^{(1)}_y v^{(2)}_x},
+d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 $$
-
+But what if we wanted to find the distance between points in 3D, or 4D or nD space? We can calculate the distance the same way:
+$$
+d = \sqrt{\sum_{i=1}^{n} (p_i - q_i)^2}
+$$
 
 ### Manhattan distance
 Manhattan Distance: the “city block” distance, useful in urban planning models
