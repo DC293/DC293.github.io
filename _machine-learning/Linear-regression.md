@@ -141,22 +141,42 @@ To minimize loss, we take each parameter we are changing e.g. $m$ and $b$, and c
   <img src="/assets/images/gradient_descent.gif" alt="loss" width="500">
 </p>
 
-To find the gradient of loss as the intercept changes, we can use the formula:
+To find the gradient of loss as the intercept ($b$) changes, we can use the formula:
 
 $$
 \frac{-2}{N} \sum_{i=1}^N (y_i - (mx_i + b))
 $$
 
-To find the gradient of loss as the slope changes we can use:
+To find the gradient of loss as the slope ($m$) changes we can use:
 
 $$
 \frac{-2}{N} \sum_{i=1}^N x_i(y_i - (mx_i + b))
 $$
 
 Where for both equations:
-  - $N$ is the number of points you have in your dataset
+  - $N$ is the number of points in the dataset
   - $m$ is the current gradient guess
   - $b$ is the current intercept guess
 
+We can implement both of these equations by writing functions that intake our x and y values alongside our slope ($m$) and intercept ($b$) values. 
+```python
+def get_gradient_at_b(x, y, m, b):
+    diff = 0
+    N = len(x)
+    for i in range(N):
+      y_val = y[i]
+      x_val = x[i]
+      diff += (y_val - ((m * x_val) + b))
+    b_gradient = -2/N * diff
+    return b_gradient
 
-
+def get_gradient_at_m(x, y, m, b):
+  diff = 0
+  N = len(x)
+  for i in range(N):
+    y_val=y[i]
+    x_val=x[i]
+    diff += x_val*(y_val - (m*x_val+b))
+  m_gradient = -2/N*diff
+  return m_gradient
+```
