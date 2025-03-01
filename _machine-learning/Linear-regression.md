@@ -19,7 +19,9 @@ author_profile: True
 {% include mathjax.html %}
 
 ## Measuring distance
-Machine learning is often used to predict numeric values. For example, sports teams may try to predict an athletes risk of injury based on their workload or the likelyhood of scoring a goal from a certain position. When building a model, its important to understand its accuracy. An common way of doing this is to measure the distance between the model's predictions and the true values. The smaller the difference, the more accrate the model.
+Machine learning is often used to predict numeric values. For example, sports teams may try to predict an athletes risk of injury based on their workload or the likelyhood of scoring a goal from a certain position. When building a model, its important to understand its accuracy. 
+
+An common way of doing this is to measure the distance between the model's predictions and the true values. The smaller the difference, the more accrate the model.
 
 But not all distance is the same. Depending on the model, we may want to assess distance in different ways. Below, we will explore three common distance measurements used to assess machine learning model accuracy.
 
@@ -37,8 +39,33 @@ d = \sqrt{\sum_{i=1}^{n} (p_i - q_i)^2}
 $$
 
 ### Manhattan distance
-Manhattan Distance: the “city block” distance, useful in urban planning models
+Manhattan distance is similar to Euclidean distance. It's called the Manhattan distance because it can be viewed as the distance whilst navigating city blocks. Rather than summing the squared difference between each dimension, we instead sum the absolute value of the difference between each dimension.
 
+In 2D this looks like:
+
+$d = |x_2 - x_1| + |y_2 - y_1|$
+
+For the nth degree:
+
+$$
+d = \sum_{i=1}^{n} |p_i - q_i|
+$$
 
 ### Hamming distance
-Hamming distance: used to measure distance between words in natural language processing
+The Hamming distance is commonly used to compare words. For example, comparing the word “sport” and “spork” would give a distance of one as each letter represents a dimension.
+
+For two words $p$ and $q$, each of length $n$, the Hamming distance can be calculated as:
+
+$$
+d_H(p, q) = \sum_{i=1}^{n} \delta(p_i, q_i)
+$$
+
+where
+
+$$
+\delta(p_i, q_i) =
+\begin{cases} 
+1, & \text{if } p_i \neq q_i \\
+0, & \text{otherwise}
+\end{cases}
+$$
