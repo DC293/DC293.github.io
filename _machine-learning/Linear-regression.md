@@ -122,11 +122,13 @@ x = cars.enginesize
 
 y_predicted = [m*x_value + b for x_value in x]
 
-total_loss = 0
-for i in range(len(y_predicted)):
-  total_loss += (y[i] - y_predicted[i])**2
+def loss(y, y_predicted):
+    total_loss = 0
+    for i in range(len(y_predicted)):
+      total_loss += (y[i] - y_predicted[i])**2
+    return total_loss
 
-print(total_loss)
+print(loss(y, y_predicted))
 ```
 ```python
 111542
@@ -160,37 +162,36 @@ Where for both equations:
 
 We can implement both of these equations by writing functions that intake our x and y values alongside our slope ($m$) and intercept ($b$) values. 
 ```python
-def get_gradient_at_b(x, y, m, b):
-    diff = 0
-    N = len(x)
-    for i in range(N):
-      y_val = y[i]
-      x_val = x[i]
-      diff += (y_val - ((m * x_val) + b))
-    b_gradient = -2/N * diff
-    return b_gradient
-
-def get_gradient_at_m(x, y, m, b):
-  diff = 0
+def get_gradient_at_b(x, y, b, m):
   N = len(x)
+  diff = 0
   for i in range(N):
-    y_val=y[i]
-    x_val=x[i]
-    diff += x_val*(y_val - (m*x_val+b))
-  m_gradient = -2/N*diff
+    x_val = x[i]
+    y_val = y[i]
+    diff += (y_val - ((m * x_val) + b))
+  b_gradient = -(2/N) * diff  
+  return b_gradient
+
+def get_gradient_at_m(x, y, b, m):
+  N = len(x)
+  diff = 0
+  for i in range(N):
+      x_val = x[i]
+      y_val = y[i]
+      diff += x_val * (y_val - ((m * x_val) + b))
+  m_gradient = -(2/N) * diff  
   return m_gradient
 ```
 ### Learning rate and covergence
 We know how to calculate the gradient for a given $m$ and $b$, now we need to move down the loss gradient towards our optimal value. It's important to consider how big our step should be as too small and we may never reach the optimal but too big and we may overshoot. To make a step, we can multiply our gradient by a learning rate. 
 
 ```python
-def step_gradient(x, y, b_current, m_current):
-  b_gradient = get_gradient_at_b(x, y, b_current, m_current)
-  m_gradient = get_gradient_at_m(x, y, b_current, m_current)
-
-  b = b_current - (0.01 * b_gradient)
-  m = m_current - (0.01 * m_gradient)
-  return b, m
+def step_gradient(b_current, m_current, x, y, learning_rate):
+    b_gradient = get_gradient_at_b(x, y, b_current, m_current)
+    m_gradient = get_gradient_at_m(x, y, b_current, m_current)
+    b = b_current - (learning_rate * b_gradient)
+    m = m_current - (learning_rate * m_gradient)
+    return [b, m]
 ```
 We also need to consider how many steps to take. Too few and we may not reach our optimal, but too many we may time out. Together we can use our learning rate and number of iterations to work towards our optimal values. 
 
@@ -203,3 +204,29 @@ def gradient_descent(x, y, learning_rate, num_iterations):
 
   return b, m
 ```
+### Optimising line of best fit
+Using our newly created functions, lets try and optimise our line of best fit for our car engine size vs horse power relationship. 
+
+```python
+X = cars.enginesize
+y = cars.horsepower
+
+plt.plot(X, y, 'o')
+b, m = gradient_descent(X, y, num_iterations=1000, learning_rate=0.00005)
+print(b, m)
+y_optimised_predictions = [m*x + b for x in X]
+```python
+
+Now lets see if it has improved on our original guess. 
+<p align="center">
+  <img src="/assets/images/engine_vs_hp_optimised.png" alt="loss" width="500">
+</p>
+
+Using our loss function we can see an improvement:
+```python
+print(loss(cars.horsepower, y_optimised_predictions))
+```
+```python
+4366
+```
+### scipy library
