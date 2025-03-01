@@ -226,6 +226,24 @@ Using our loss function we can see an improvement:
 print(loss(cars.horsepower, y_optimised_predictions))
 ```
 ```python
-4366
+110653
 ```
 ### scipy library
+Fortunately, we don't have to define these functions ourselves, instead we can make use of the [scipy library](https://scipy.org/). 
+```python
+from sklearn.linear_model import LinearRegression
+
+line_fitter = LinearRegression()
+
+enginesize = cars[['enginesize']]
+horsepower = cars[['horsepower']]
+
+line_fitter.fit(enginesize, horsepower)
+
+horsepower_predict = line_fitter.predict(enginesize)
+```
+If we plot this line, we can see it provides a further improvement on our gradient decent function. This is further backed up when put through our loss function, giving a total loss of 109825. 
+
+<p align="center">
+  <img src="/assets/images/engine_vs_hp_scipy_optimised.png" alt="optimised line of best fit" width="500">
+</p>
