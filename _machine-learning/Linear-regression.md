@@ -59,8 +59,6 @@ def loss(y, y_predicted):
     return total_loss
 
 print(loss(y, y_predicted))
-```
-```python
 111542
 ```
 
@@ -154,8 +152,6 @@ Now lets see if it has improved on our original guess.
 Using our loss function we can see an improvement:
 ```python
 print(loss(cars.horsepower, y_optimised_predictions))
-```
-```python
 110653
 ```
 ## scipy library
@@ -171,8 +167,10 @@ horsepower = cars[['horsepower']]
 line_fitter.fit(enginesize, horsepower)
 
 horsepower_predict = line_fitter.predict(enginesize)
+print(loss(horsepower, horsepower_predict))
+109825
 ```
-If we plot this line, we can see it provides a further improvement on our gradient decent function. This is further backed up when put through our loss function, giving a total loss of 109825. 
+If we plot this line, we can see it provides a further improvement on our gradient decent function. This is further backed up when put through our loss function, giving us the lowest loss of all our predictions.
 
 <p align="center">
   <img src="/assets/images/engine_vs_hp_scipy_optimised.png" alt="optimised line of best fit" width="500">
