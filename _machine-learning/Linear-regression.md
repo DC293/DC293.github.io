@@ -8,6 +8,7 @@ header:
     overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
     teaser: assets/images/AOC_2023/AOC_2023_Day4.jpg
 toc: true
+toc_sticky: true 
 published: true
 toc_label: "Contents:"
 classes: wide
