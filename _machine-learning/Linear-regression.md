@@ -132,8 +132,10 @@ print(total_loss)
 111542
 ```
 
-## Gradient decent
+### Gradient decent
 Our line of best fit will be one that gives us the lowest loss. It would take us a while to do this manually, so instead we can use tools to help us. 
+
+To minimize loss, we take each parameter we are changing e.g. $m$ and $b$, and change it as long as we are decreasing loss. As long as loss is decreasing, we can carry on incrementing until we reach the optimal value upon which we see no further decreases in loss. This is known as gradient decent and can be visualised as:
 
 <p align="center">
   <img src="/assets/images/gradient_descent.gif" alt="loss" width="500">
