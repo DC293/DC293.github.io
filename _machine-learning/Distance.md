@@ -13,7 +13,7 @@ toc_label: "Contents:"
 #classes: wide
 categories: machine-learning
 tags: machine-learning
-author_profile: False
+author_profile: True
 ---
 
 {% include mathjax.html %}
