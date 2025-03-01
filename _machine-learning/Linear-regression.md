@@ -100,5 +100,9 @@ $m$ is the slope of the line
 $x$ is a point on the x-axis
 $b$ is the intercept of the line
 
+To demonstrate this in action, we're going to use a [free dataset](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction) containing car information. Below is a plot of engine size against horse power. I've attempted to fit a line to the data using $m = 0.85$ and $b = 0$. 
 
+| ![Longest test path, part 1](/assets/images/engine_vs_hp.png) |
+|:--:|
+| The longest path through the example maze, respecting the directional tiles | 
 
