@@ -43,7 +43,9 @@ Manhattan distance is similar to Euclidean distance. It's called the Manhattan d
 
 In 2D this looks like:
 
-$d = |x_2 - x_1| + |y_2 - y_1|$
+$$
+d = |x_2 - x_1| + |y_2 - y_1|
+$$
 
 For the nth degree:
 
@@ -52,7 +54,7 @@ d = \sum_{i=1}^{n} |p_i - q_i|
 $$
 
 ### Hamming distance
-The Hamming distance is commonly used to compare words. For example, comparing the word “sport” and “spork” would give a distance of one as each letter represents a dimension.
+The Hamming distance is commonly used to compare words. For example, comparing the words “sport” and “spork” would give a distance of one as each letter represents a dimension.
 
 For two words $p$ and $q$, each of length $n$, the Hamming distance can be calculated as:
 
