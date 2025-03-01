@@ -215,10 +215,8 @@ plt.plot(X, y, 'o')
 b, m = gradient_descent(X, y, num_iterations=1000, learning_rate=0.00005)
 print(b, m)
 y_optimised_predictions = [m*x + b for x in X]
-```python
-
+```
 Now lets see if it has improved on our original guess. 
-
 <p align="center">
   <img src="/assets/images/engine_vs_hp_optimised.png" alt="optimised line of best fit" width="500">
 </p>
