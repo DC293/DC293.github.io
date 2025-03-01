@@ -113,4 +113,21 @@ The line we've fitted generally fits the data, but how can we measure how well i
   <img src="/assets/images/loss.png" alt="loss" width="500">
 </p>
 
+Lets see how well our line fits to our engine size v horse power plot. We can loop through all of our predicted y values comparing them against the plotted y values. The sum of all these differences gives us our total loss. 
 
+```python
+m = 0.8
+b = 0
+x = cars.enginesize
+
+y_predicted = [m*x_value + b for x_value in x]
+
+total_loss = 0
+for i in range(len(y_predicted)):
+  total_loss += (y[i] - y_predicted[i])**2
+
+print(total_loss)
+```
+```python
+111542
+```
