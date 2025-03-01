@@ -144,13 +144,13 @@ To minimize loss, we take each parameter we are changing e.g. $m$ and $b$, and c
 To find the gradient of loss as the intercept changes, we can use the formula:
 
 $$
-frac{-2}{N} \sum_{i=1}^N (y_i - (mx_i + b))
+/frac{-2}{N} \sum_{i=1}^N (y_i - (mx_i + b))
 $$
 
 To find the gradient of loss as the slope changes we can use:
 
 $$
-frac{-2}{N} \sum_{i=1}^N x_i(y_i - (mx_i + b))
+/frac{-2}{N} \sum_{i=1}^N x_i(y_i - (mx_i + b))
 $$
 
 Where for both equations:
