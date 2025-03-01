@@ -89,11 +89,16 @@ print(distance.hamming([5,4,9],[3,7,9]))
 ```
 
 ## Linear regression
-Now we have learnt about how we can measure distance between points, lets see how we can use that in practice to determine the accuracy of a model. One of the simplest models we can use is a line. Many will be familiar with linear regression in the form of a line of best fit between two variables. 
-
+Now we have learnt about how we can measure distance between points, lets see how we can use that in practice to determine the accuracy of a model. One of the simplest models we can use is a line. Many will be familiar with linear regression in the form of a line of best fit between two variables. A line can be determined by its slope and its intercept. We can represent this as:
 
 $$
 y = mx + b
 $$
+where:
+$y$ is a given point on the y-axis
+$m$ is the slope of the line
+$x$ is a point on the x-axis
+$b$ is the intercept of the line
+
 
 
