@@ -154,9 +154,9 @@ frac{-2}{N} \sum_{i=1}^N x_i(y_i - (mx_i + b))
 $$
 
 Where for both equations:
-$N$ is the number of points you have in your dataset
-$m$ is the current gradient guess
-$b$ is the current intercept guess
+  - $N$ is the number of points you have in your dataset
+  - $m$ is the current gradient guess
+  - $b$ is the current intercept guess
 
 
 
