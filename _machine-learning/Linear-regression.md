@@ -131,3 +131,13 @@ print(total_loss)
 ```python
 111542
 ```
+
+## Gradient decent
+Our line of best fit will be one that gives us the lowest loss. It would take us a while to do this manually, so instead we can use tools to help us. 
+
+<p align="center">
+  <img src="/assets/images/gradient_descent.gif" alt="loss" width="500">
+</p>
+
+
+
