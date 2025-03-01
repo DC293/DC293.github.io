@@ -92,8 +92,8 @@ print(distance.hamming([5,4,9],[3,7,9]))
 Now we have learnt about how we can measure distance between points, lets see how we can use that in practice to determine the accuracy of a model. One of the simplest models we can use is a line. Many will be familiar with linear regression in the form of a line of best fit between two variables. 
 
 
-\[
+$$
 y = mx + b
-\]
+$$
 
 
