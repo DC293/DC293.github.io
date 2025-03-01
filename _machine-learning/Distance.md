@@ -4,9 +4,9 @@ weight: 1
 title: "Measuring distance"
 excerpt: "Measuring distance between points"
 header:
-    overlay_image: assets/images/AOC_2023/AOC_2023_Day4.jpg
+    overlay_image: assets/images/20 by 20 orthogonal maze.png
     overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
-    teaser: assets/images/AOC_2023/AOC_2023_Day4.jpg
+    teaser: assets/images/20 by 20 orthogonal maze.png
 toc: true
 published: true
 toc_label: "Contents:"
