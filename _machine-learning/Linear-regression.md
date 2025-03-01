@@ -56,7 +56,7 @@ $$
 ### Hamming distance
 The Hamming distance is commonly used to compare words. For example, comparing the words “sport” and “spork” would give a distance of one as each letter represents a dimension.
 
-For two words \( p \) and \( q \), each of length \( n \), the Hamming distance can be calculated as:
+For two words `$p$` and `$q$`, each of length `$n$`, the Hamming distance can be calculated as:
 
 $$
 d_H(p, q) = \sum_{i=1}^{n} \delta(p_i, q_i)
