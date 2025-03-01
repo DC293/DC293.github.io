@@ -103,8 +103,8 @@ $b$ is the intercept of the line
 To demonstrate this in action, we're going to use a [free dataset](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction) containing car information. Below is a plot of engine size against horse power. I've attempted to fit a line to the data using $m = 0.85$ and $b = 0$. 
 
 <p align="center">
-  <img src="/assets/images/engine_vs_hp.png" alt="Engine Size vs Horse Power" width="300">
+  <img src="/assets/images/engine_vs_hp.png" alt="Engine Size vs Horse Power" width="500">
 </p>
 
-**The longest path through the example maze, respecting the directional tiles.**
+|The longest path through the example maze, respecting the directional tiles|
 
