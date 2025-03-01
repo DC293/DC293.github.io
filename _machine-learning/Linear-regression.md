@@ -4,9 +4,9 @@ weight: 1
 title: "Linear regression"
 excerpt: "Fundamentals of linear regression"
 header:
-    overlay_image: assets/images/gradient_descent.gif
+    overlay_image: assets/images/engine_vs_hp.png
     overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
-    teaser: assets/images/gradient_descent.gif
+    teaser: assets/images/engine_vs_hp.png
 toc: true
 toc_sticky: true 
 published: true
