@@ -62,7 +62,7 @@ $$
 d_H(p, q) = \sum_{i=1}^{n} \delta(p_i, q_i)
 $$
 
-where
+where:
 
 $$
 \delta(p_i, q_i) =
@@ -71,3 +71,20 @@ $$
 0, & \text{otherwise}
 \end{cases}
 $$
+
+### scipy library
+Instead of writing these equations out manually, we can use the [scipy](https://scipy.org/) library. There are a couple of key differences to be aware of, firstly, Manhattan distance is called by the .cityblock() method. Secondly, the scipy calculation of Hamming distance will always return a number between 0 an 1 by summing the number of differences and dividing by the number of dimentions. 
+
+```python
+from scipy.spatial import distance
+
+print(distance.euclidean([1, 2], [4, 0]))
+print(distance.cityblock([1, 2], [4, 0]))
+print(distance.hamming([5,4,9],[3,7,9]))
+```
+```python
+3.605551275463989
+5
+0.6666666666666666
+```
+
