@@ -169,10 +169,14 @@ horsepower = cars[['horsepower']]
 line_fitter.fit(enginesize, horsepower)
 
 horsepower_predict = line_fitter.predict(enginesize)
+
+print(line_fitter.coef_, line_fitter.intercept_)
+[[0.76896147]] [6.53023611]
+
 print(loss(horsepower, horsepower_predict))
 109825
 ```
-If we plot this line, we can see it provides a further improvement on our gradient decent function. This is further backed up when put through our loss function, giving us the lowest loss of all our predictions.
+If we plot this line, we can see it provides a further improvement on our gradient decent function. This is further backed up when put through our loss function, giving us the lowest loss of all our predictions. If we want to know the slope and intercept values, we can use the .coef_() and .intercept() methods on our fitted model. 
 
 <p align="center">
   <img src="/assets/images/engine_vs_hp_scipy_optimised.png" alt="optimised line of best fit" width="500">
