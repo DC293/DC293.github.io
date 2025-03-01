@@ -15,8 +15,6 @@ classes: wide
 categories: machine-learning
 tags: machine-learning
 author_profile: True
-sidebar:
-  nav: "table_of_contents"
 ---
 
 {% include mathjax.html %}
