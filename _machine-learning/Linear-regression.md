@@ -180,3 +180,26 @@ def get_gradient_at_m(x, y, m, b):
   m_gradient = -2/N*diff
   return m_gradient
 ```
+### Learning rate and covergence
+We know how to calculate the gradient for a given $m$ and $b$, now we need to move down the loss gradient towards our optimal value. It's important to consider how big our step should be as too small and we may never reach the optimal but too big and we may overshoot. To make a step, we can multiply our gradient by a learning rate. 
+
+```python
+def step_gradient(x, y, b_current, m_current):
+  b_gradient = get_gradient_at_b(x, y, b_current, m_current)
+  m_gradient = get_gradient_at_m(x, y, b_current, m_current)
+
+  b = b_current - (0.01 * b_gradient)
+  m = m_current - (0.01 * m_gradient)
+  return b, m
+```
+We also need to consider how many steps to take. Too few and we may not reach our optimal, but too many we may time out. Together we can use our learning rate and number of iterations to work towards our optimal values. 
+
+```python
+def gradient_descent(x, y, learning_rate, num_iterations):
+  b = 0
+  m = 0
+  for i in range(num_iterations):
+    b, m = step_gradient(b, m, x, y, learning_rate)
+
+  return b, m
+```
