@@ -109,5 +109,8 @@ To demonstrate this in action, we're going to use a [free dataset](https://www.k
 ### Loss
 The line we've fitted generally fits the data, but how can we measure how well it fits? To do this, we can calculate the loss, a number that measures how good the model’s fit is. We can think of loss as the squared distance from the point to the line. 
 
+<p align="center">
+  <img src="/assets/images/loss.png" alt="loss" width="500">
+</p>
 
 
