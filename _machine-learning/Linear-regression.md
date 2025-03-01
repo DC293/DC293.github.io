@@ -123,7 +123,7 @@ def step_gradient(b_current, m_current, x, y, learning_rate):
     m = m_current - (learning_rate * m_gradient)
     return [b, m]
 ```
-We also need to consider how many steps to take. Too few and we may not reach our optimal, but too many we may time out. Together we can use our learning rate and number of iterations to work towards our optimal values. 
+We also need to consider how many steps to take. Too few and we may not reach our optimal, but too many and we may time out. Together we can use our learning rate and number of iterations to work towards convergence. 
 
 ```python
 def gradient_descent(x, y, learning_rate, num_iterations):
@@ -134,7 +134,7 @@ def gradient_descent(x, y, learning_rate, num_iterations):
 
   return b, m
 ```
-### Optimising line of best fit
+## Optimising line of best fit
 Using our newly created functions, lets try and optimise our line of best fit for our car engine size vs horse power relationship. 
 
 ```python
