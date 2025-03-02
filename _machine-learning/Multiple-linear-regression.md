@@ -48,7 +48,7 @@ x = cars[['fueltype', 'aspiration', 'doornumber', 'carbody',
             'horsepower' 'citympg', 'highwaympg']]
 y = cars[['price']]
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.8, test_size=0.2, random_state=10)
+x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.8, test_size=0.2, random_state=1)
 
 print(len(cars))
 205
@@ -93,10 +93,10 @@ Lets see how well our model has estimated the price based on the variables we ha
 
 Database values for Audi 100 LS.
 
-Feeding these values into our model produces a price of $11,746, slightly lower than the true value. 
+Feeding these values into our model produces a price of $11293.54, slightly lower than the true value. 
 ```python
 print(m_lr.predict([[1, 0, 0, 3, 1, 0, 2, 109, 3.4, 10.0, 102, 24, 30]]))
-11746.66581913
+11293.54941256
 ```
 
 By plotting our test set against our model predictions, we can get an idea of how the model is fitting. With the exception of some noticiable outliers, the data tends to cluster around the y=x line. 
@@ -105,13 +105,13 @@ By plotting our test set against our model predictions, we can get an idea of ho
   <img src="/assets/images/test_set_v_model_prediction.png" alt="Engine Size vs Horse Power" width="500">
 </p>
 
-As with linear regression, we can view our coefficient and intercept, however, because weve used multiple independant variables, we will have multiple coefficients. What can we take from these coefficients? Coefficients that are larger imply they have a greater influence on the dependant variable.  
+As with linear regression, we can view our coefficient and intercept, however, because weve used multiple independant variables, we will have multiple coefficients. What can we take from these coefficients? Coefficients that are larger imply they have a greater impact on the model fit. Though, just because they have a large impact doesnt mean they are good for the model fitting. Below, we have plotted the correlations for each of the variables against the price. 
 
 <p align="center">
   <img src="/assets/images/assessing_relationships.png" alt="Engine Size vs Horse Power" width="500">
 </p>
 
-Evaluating our graphs, it appears engine size, horse power, city mpg and highway mpg have the biggest influence on our price. Engine location also carries some weight, however the data for cars with rear engines is limited. 
+fueltype and enginelocation have the largest coefficients however, evaluating our graphs, it appears engine size, horse power, city mpg and highway mpg have the best correlation. 
 
 ## Residual analysis
 To assess our model accuracy, we need a method to measure the distance of our prediction from our true values. One technique we can use is residual analysis. We can think of residual analysis as:
@@ -136,19 +136,24 @@ $$
 \sum_{i=1}^{N} (y_i - \hat{y}_i)^2
 $$
 
-and $v$ is the total sum of squares:
+and $v$ is the total sum of squares (TSS):
 
 $$
 \sum_{i=1}^{N} (y_i - \bar{y})^2
 $$
+ 
+The TSS explains how much variation there is in the y variable whilst R² is the percentage variation in y explained by all the x.
 
-R² is the percentage variation in y explained by all the x 
-Preview: Docs Loading link description
-variables
- together.
+Lets calculate the current score of our model:
+```python
+print(m_lr.score(x_test, y_test))
+0.7246568833817395
+```
 
-For example, say we are trying to predict rent based on the size_sqft and the bedrooms in the apartment and the R² for our model is 0.72 — that means that all the x variables (square feet and number of bedrooms) together explain 72% variation in y (rent).
+Now if we only use enginesize, horsepower, citympg and highwaympg:
+```python
+print(m_lr2.score(x_test2, y_test2))
+0.7485144912093225
+```
 
-Now let’s say we add another x variable, building’s age, to our model. By adding this third relevant x variable, the R² is expected to go up. Let say the new R² is 0.95. This means that square feet, number of bedrooms and age of the building together explain 95% of the variation in the rent.
-
-The best possible R² is 1.00 (and it can be negative because the model can be arbitrarily worse). Usually, a R² of 0.70 is considered good.
+The R² indicates the amount the x variables contribute to the variation in y. In our example, the model with all of the indipendent variables explains 72% of the variation in price. Though, when we reduce the number of x variables down to just those which we saw had a strong correlation, the R² value increases to 75%.
