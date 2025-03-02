@@ -156,4 +156,4 @@ print(m_lr2.score(x_test2, y_test2))
 0.7485144912093225
 ```
 
-The R² indicates the amount the x variables contribute to the variation in y. In our example, the model with all of the indipendent variables explains 72% of the variation in price. Though, when we reduce the number of x variables down to just those which we saw had a strong correlation, the R² value increases to 75%.
+The R² indicates the amount the x variables contribute to the variation in y. In our example, the model with all of the indipendent variables explains 72% of the variation in price. Though, when we reduce the number of x variables down to just those which we saw had a strong correlation, the R² value increases to 75%. This suggests engine size, horse power, city mpg and highway mpg equate to 75% of the variation in the price of the car. 
