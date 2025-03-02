@@ -74,6 +74,7 @@ y_predict = m_lr.predict(x_test)
 ```
 Lets see how well our model has estimated the price based on the variables we have given. The table below shows information for an audi 100 ls which has a price of $13,950.
 
+<div align="center">
 |    Variable    | Original | Encoded |
 |--------------: |:--------:|:-------:|
 |fueltype        |gas       | 1       |
@@ -89,9 +90,9 @@ Lets see how well our model has estimated the price based on the variables we ha
 |horsepower      |102       | 102     |
 |citympg         |24        | 24      |
 |highwaympg      |30        | 30      |
-
 Table: Database values for Audi 100 LS.
 {: .table-caption }
+</div>
 
 Feeding these values into our model produces a price of $11,746, slightly lower than the true value. 
 ```python
