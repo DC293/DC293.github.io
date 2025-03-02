@@ -112,3 +112,9 @@ As with linear regression, we can view our coefficient and intercept, however, b
 </p>
 
 Evaluating our graphs, it appears engine size, horse power, city mpg and highway mpg have the biggest influence on our price. Engine location also carries some weight, however the data for cars with rear engines is limited. 
+
+## Residual analysis
+To assess our model accuracy, we need a method to measure the distance of our prediction from our true values. One technique we can use is residual analysis. We can think of residual analysis as:
+$$
+e = y - \hat{y}
+$$
