@@ -119,3 +119,11 @@ To assess our model accuracy, we need a method to measure the distance of our pr
 $$
 e = y - \hat{y}
 $$
+
+In the car price dataset, $y$ is the actual price and $\hat{y}$ is the predicted price.
+
+To help us calculate the residual, we can use scikit's linear regression method .score(). The score returns the coefficient of determination (R²) of the model prediction.
+
+ that returns the coefficient of determination R² of the prediction.
+
+The coefficient R² is defined as:
