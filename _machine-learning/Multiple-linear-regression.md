@@ -115,6 +115,7 @@ Evaluating our graphs, it appears engine size, horse power, city mpg and highway
 
 ## Residual analysis
 To assess our model accuracy, we need a method to measure the distance of our prediction from our true values. One technique we can use is residual analysis. We can think of residual analysis as:
+
 $$
 e = y - \hat{y}
 $$
