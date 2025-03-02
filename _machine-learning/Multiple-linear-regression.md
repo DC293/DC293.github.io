@@ -129,3 +129,15 @@ The coefficient R² is defined as:
 $$
 1 - \frac{u}{v}
 $$
+
+Where $u$ is the residual sum of squares:
+
+$$
+\sum_{i=1}^{N} (y_i - \hat{y}_i)^2
+$$
+
+and $v$ is the total sum of squares:
+
+$$
+\sum_{i=1}^{N} (y_i - \bar{y})^2
+$$
