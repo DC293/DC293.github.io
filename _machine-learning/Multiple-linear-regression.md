@@ -75,21 +75,21 @@ y_predict = m_lr.predict(x_test)
 Lets see how well our model has estimated the price based on the variables we have given. The table below shows information for an audi 100 ls which has a price of $13,950.
 
 {:.text-center}    
-|    Variable    | Original | Encoded | Model coefficient |
-|--------------: |:--------:|:-------:|:-----------------:|
-|fueltype        |gas       | 1       |7969               |
-|aspriation      |std       | 0       |-54                |
-|doornumber      |four      | 0       |-897               |
-|carbody         |sedan     | 3       |-203               |
-|drivewheel      |fwd       | 1       |255                |
-|enginelocation  |front     | 0       |4468               |
-|cylindernumber  |four      | 2       |58                 |
-|enginesize      |109       | 109     |127                |
-|stroke          |3.40      | 3.4     |-2263              |
-|compressionratio|10.0      | 10.0    |846                |
-|horsepower      |102       | 102     |59                 |
-|citympg         |24        | 24      |-98                |
-|highwaympg      |30        | 30      |-22                |
+|    Variable    | Original | Encoded | 
+|--------------: |:--------:|:-------:|
+|fueltype        |gas       | 1       |
+|aspriation      |std       | 0       |
+|doornumber      |four      | 0       |
+|carbody         |sedan     | 3       |
+|drivewheel      |fwd       | 1       |
+|enginelocation  |front     | 0       |
+|cylindernumber  |four      | 2       |
+|enginesize      |109       | 109     |
+|stroke          |3.40      | 3.4     |
+|compressionratio|10.0      | 10.0    |
+|horsepower      |102       | 102     |
+|citympg         |24        | 24      |
+|highwaympg      |30        | 30      |
 
 Database values for Audi 100 LS.
 
