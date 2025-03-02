@@ -90,6 +90,7 @@ Lets see how well our model has estimated the price based on the variables we ha
 |horsepower      |102       | 102     |
 |citympg         |24        | 24      |
 |highwaympg      |30        | 30      |
+
 |:---:|
 |Database values for Audi 100 LS.|
 
