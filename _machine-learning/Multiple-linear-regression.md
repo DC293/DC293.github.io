@@ -98,7 +98,9 @@ Feeding these values into our model produces a price of $11,746, slightly lower 
 print(m_lr.predict([[1, 0, 0, 3, 1, 0, 2, 109, 3.4, 10.0, 102, 24, 30]]))
 11746.66581913
 ```
-
+<p align="center">
+  <img src="/assets/images/test_set_v_model_prediction.png" alt="Engine Size vs Horse Power" width="500">
+</p>
 
 
 
