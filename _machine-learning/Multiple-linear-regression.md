@@ -43,9 +43,9 @@ from sklearn.model_selection import train_test_split
 cars = pd.read_csv('car_prices.csv')
 
 x = cars[['fueltype', 'aspiration', 'doornumber', 'carbody',
-            'drivewheel', 'enginelocation', 'enginetype', 'cylindernumber',
-                'enginesize', 'fuelsystem', 'boreratio', 'stroke',
-                   'compressionratio', 'horsepower', 'peakrpm', 'citympg', 'highwaympg']]
+            'drivewheel', 'enginelocation', 'cylindernumber',
+            'enginesize', 'stroke', 'compressionratio',
+            'horsepower' 'citympg', 'highwaympg']]
 y = cars[['price']]
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.8, test_size=0.2, random_state=10)
@@ -60,15 +60,42 @@ print(len(x_test))
 41
 ```
 
+## Model fitting
+One we have defined our training and test sets, we can build our model. 
 
+The steps for multiple linear regression using scipy are identical to the steps for simple linear regression, we must first import and define our model before we fit the data.
+```python
+from sklearn.linear_model import LinearRegression
 
+m_lr = LinearRegression()
 
+m_lr.fit(x_train, y_train)
+y_predict = m_lr.predict(x_test)
+```
+Lets see how well our model has estimated the price based on the variables we have given. The table below shows information for an audi 100 ls which has a price of $13,950.
 
+|    Variable    | Original | Encoded |
+|--------------: |:--------:|:-------:|
+|fueltype        |gas       | 1       |
+|aspriation      |std       | 0       |
+|doornumber      |four      | 0       |
+|carbody         |sedan     | 3       |
+|drivewheel      |fwd       | 1       |
+|enginelocation  |front     | 0       |
+|cylindernumber  |four      | 2       |
+|enginesize      |109       | 109     |
+|stroke          |3.40      | 3.4     |
+|compressionratio|10.0      | 10.0    |
+|horsepower      |102       | 102     |
+|citympg         |24        | 24      |
+|highwaympg      |30        | 30      |
+:Multi linear regression model values for audi 100 ls
 
-
-
-
-
+Feeding these values into our model produces a price of $11,746, slightly lower than the true value. 
+```python
+print(m_lr.predict([[1, 0, 0, 3, 1, 0, 2, 109, 3.4, 10.0, 102, 24, 30]]))
+11746.66581913
+```
 
 
 
