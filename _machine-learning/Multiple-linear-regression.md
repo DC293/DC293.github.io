@@ -75,21 +75,21 @@ y_predict = m_lr.predict(x_test)
 Lets see how well our model has estimated the price based on the variables we have given. The table below shows information for an Alfa-Romero Stelvio which has a price of $16,500.
 
 {:.text-center}    
-|    Variable    | Original | Encoded | 
-|--------------: |:--------:|:-------:|
-|fueltype        |gas       | 1       |
-|aspriation      |std       | 0       |
-|doornumber      |four      | 1       |
-|carbody         |sedan     | 0       |
-|drivewheel      |fwd       | 2       |
-|enginelocation  |front     | 0       |
-|cylindernumber  |four      | 2       |
-|enginesize      |109       | 130     |
-|stroke          |3.40      | 2.68    |
-|compressionratio|10.0      | 9.0     |
-|horsepower      |102       | 111     |
-|citympg         |24        | 21      |
-|highwaympg      |30        | 27      |
+|     Variable    | Original | Encoded | 
+|---------------: |:--------:|:-------:|
+|fuel type        |gas       | 1       |
+|aspriation       |std       | 0       |
+|door number      |four      | 1       |
+|car body         |sedan     | 0       |
+|drive wheel      |fwd       | 2       |
+|engine location  |front     | 0       |
+|cylinder number  |four      | 2       |
+|engine size      |109       | 130     |
+|stroke           |3.40      | 2.68    |
+|compression ratio|10.0      | 9.0     |
+|horse power      |102       | 111     |
+|city mpg         |24        | 21      |
+|highway mpg      |30        | 27      |
 
 Database values for Alfa-Romero Stelvio.
 
@@ -99,7 +99,7 @@ print(m_lr.predict([[1, 0, 1, 0, 2, 0, 2, 130, 2.68, 9.0, 111, 21, 27]]))
 6477.11792538
 ```
 
-By plotting our test set against our model predictions, we can get an idea of how the model is fitting. With the exception of some noticiable outliers, the data tends to cluster around the y=x line. 
+By plotting our test set against our model predictions, we can get an idea of how the model is fitting. With the exception of some minor outliers, the data tends to cluster around the y=x line. 
 
 <p align="center">
   <img src="/assets/images/test_set_v_model_prediction.png" alt="Engine Size vs Horse Power" width="500">
@@ -111,7 +111,7 @@ As with linear regression, we can view our coefficient and intercept, however, b
   <img src="/assets/images/assessing_relationships.png" alt="Engine Size vs Horse Power" width="500">
 </p>
 
-fueltype and enginelocation have the largest coefficients however, evaluating our graphs, it appears engine size, horse power, city mpg and highway mpg have the best correlation. 
+fueltype and enginelocation have the largest coefficients, however, evaluating our graphs, it appears engine size, horse power, city mpg and highway mpg have the best correlation. 
 
 ## Residual analysis
 To assess our model accuracy, we need a method to measure the distance of our prediction from our true values. One technique we can use is residual analysis. We can think of residual analysis as:
@@ -150,7 +150,7 @@ print(m_lr.score(x_test, y_test))
 0.7246568833817395
 ```
 
-Now if we only use enginesize, horsepower, citympg and highwaympg:
+Now if we only use engine size, horse power, city mpg and highway mpg:
 ```python
 print(m_lr2.score(x_test2, y_test2))
 0.7485144912093225
