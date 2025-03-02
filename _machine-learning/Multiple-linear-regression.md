@@ -91,8 +91,7 @@ Lets see how well our model has estimated the price based on the variables we ha
 |citympg         |24        | 24      |
 |highwaympg      |30        | 30      |
 
-|:---:|
-|Database values for Audi 100 LS.|
+Database values for Audi 100 LS.
 
 Feeding these values into our model produces a price of $11,746, slightly lower than the true value. 
 ```python
