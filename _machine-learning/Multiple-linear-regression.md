@@ -90,7 +90,8 @@ Lets see how well our model has estimated the price based on the variables we ha
 |citympg         |24        | 24      |
 |highwaympg      |30        | 30      |
 
-Multi linear regression model values for audi 100 ls
+Table: Database values for Audi 100 LS.
+{: .table-caption }
 
 Feeding these values into our model produces a price of $11,746, slightly lower than the true value. 
 ```python
