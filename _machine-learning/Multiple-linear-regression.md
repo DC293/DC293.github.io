@@ -90,18 +90,23 @@ Lets see how well our model has estimated the price based on the variables we ha
 |horsepower      |102       | 102     |
 |citympg         |24        | 24      |
 |highwaympg      |30        | 30      |
-Table: Database values for Audi 100 LS.
-{: .table-caption }
+|:---:|
+|Database values for Audi 100 LS.|
 
 Feeding these values into our model produces a price of $11,746, slightly lower than the true value. 
 ```python
 print(m_lr.predict([[1, 0, 0, 3, 1, 0, 2, 109, 3.4, 10.0, 102, 24, 30]]))
 11746.66581913
 ```
+
+By plotting our test set against our model predictions, we can get an idea of how the model is fitting. With the exception of some noticiable outliers, the data tends to cluster around the y=x line. 
+
 <p align="center">
   <img src="/assets/images/test_set_v_model_prediction.png" alt="Engine Size vs Horse Power" width="500">
 </p>
 
+As with linear regression, we can view our coefficient and intercept, however, because weve used multiple independant variables, we will have multiple coefficients. What can we take from these coefficients? Coefficients that are larger imply they have a greater influence on the dependant variable.  
 
-
-
+<p align="center">
+  <img src="/assets/images/assessing_relationships.png" alt="Engine Size vs Horse Power" width="500">
+</p>
