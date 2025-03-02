@@ -127,5 +127,5 @@ To help us calculate the residual, we can use scikit's linear regression method 
 The coefficient R² is defined as:
 
 $$
-1 - /frac{u/v}
+1 - \frac{u}{v}
 $$
