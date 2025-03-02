@@ -72,31 +72,31 @@ m_lr = LinearRegression()
 m_lr.fit(x_train, y_train)
 y_predict = m_lr.predict(x_test)
 ```
-Lets see how well our model has estimated the price based on the variables we have given. The table below shows information for an audi 100 ls which has a price of $13,950.
+Lets see how well our model has estimated the price based on the variables we have given. The table below shows information for an Alfa-Romero Stelvio which has a price of $16,500.
 
 {:.text-center}    
 |    Variable    | Original | Encoded | 
 |--------------: |:--------:|:-------:|
 |fueltype        |gas       | 1       |
 |aspriation      |std       | 0       |
-|doornumber      |four      | 0       |
-|carbody         |sedan     | 3       |
-|drivewheel      |fwd       | 1       |
+|doornumber      |four      | 1       |
+|carbody         |sedan     | 0       |
+|drivewheel      |fwd       | 2       |
 |enginelocation  |front     | 0       |
 |cylindernumber  |four      | 2       |
-|enginesize      |109       | 109     |
-|stroke          |3.40      | 3.4     |
-|compressionratio|10.0      | 10.0    |
-|horsepower      |102       | 102     |
-|citympg         |24        | 24      |
-|highwaympg      |30        | 30      |
+|enginesize      |109       | 130     |
+|stroke          |3.40      | 2.68    |
+|compressionratio|10.0      | 9.0     |
+|horsepower      |102       | 111     |
+|citympg         |24        | 21      |
+|highwaympg      |30        | 27      |
 
-Database values for Audi 100 LS.
+Database values for Alfa-Romero Stelvio.
 
-Feeding these values into our model produces a price of $11293.54, slightly lower than the true value. 
+Feeding these values into our model produces a price of $16,477.11, not too far away from our true value. 
 ```python
-print(m_lr.predict([[1, 0, 0, 3, 1, 0, 2, 109, 3.4, 10.0, 102, 24, 30]]))
-11293.54941256
+print(m_lr.predict([[1, 0, 1, 0, 2, 0, 2, 130, 2.68, 9.0, 111, 21, 27]]))
+6477.11792538
 ```
 
 By plotting our test set against our model predictions, we can get an idea of how the model is fitting. With the exception of some noticiable outliers, the data tends to cluster around the y=x line. 
