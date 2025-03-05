@@ -4,9 +4,9 @@ weight: 1
 title: "Multiple linear regression"
 excerpt: "Fundamentals of multiple linear regression"
 header:
-    overlay_image: assets/images/engine_vs_hp_header.png
+    overlay_image: assets/images/assessing_relationships_cover.png
     overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
-    teaser: assets/images/engine_vs_hp_header.png
+    teaser: assets/images/assessing_relationships_cover.png
 toc: true
 toc_sticky: true 
 published: true
