@@ -27,7 +27,7 @@ The figure below provides a simple example. Lets assume the red marker is an unk
 This is the core concept of the K-Nearest Neighbour algorithm. Given a dataset where each point's class is known, you can classify a new point by identifying its nearest neighbours and assigning it the most common class among them.
 
 <p align="center">
-  <img src="/assets/images/K-nearest-neighbours_example.png" alt="Engine Size vs Horse Power" width="500">
+  <img src="/assets/images/K-nearest-neighbours_example.png" alt="K-nearest neighbours example" width="500">
 </p>
 
 ```python
