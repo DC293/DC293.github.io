@@ -1,7 +1,7 @@
 ---
 layout: single
 weight: 4
-title: "K-Nearest neighbors"
+title: "K-Nearest neighbours"
 excerpt: "Classifying unknown data points"
 header:
     overlay_image: assets/images/K-nearest-neighbours_cover.png
