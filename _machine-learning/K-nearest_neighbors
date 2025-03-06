@@ -1,6 +1,6 @@
 ---
 layout: single
-weight: 1
+weight: 4
 title: "K-Nearest neighbors"
 excerpt: "Classifying unknown data points"
 header:
