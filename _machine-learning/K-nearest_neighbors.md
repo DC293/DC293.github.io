@@ -30,5 +30,14 @@ This is the core concept of the K-Nearest Neighbour algorithm. Given a dataset w
   <img src="/assets/images/K-nearest-neighbours_example.png" alt="K-nearest neighbours example" width="500">
 </p>
 
+Consider our dataset of car prices. Let’s take some continuous variables of the cars we can plot, for example:
+
+  - The size of the engine
+  - The horsepower of the car
+
+Each of the datapoints could also contain some boolean information about the car, for example, whether it is a 2-door or 4-door. 
+
+Now, let’s consider how we might classify the price of the cards. For the purpose of this exercise , we’ll classify the cars as affordable or expensive. In our dataset, we’ve classified a car as affordable if it is $15,000 or lower. Every “affordable” car will have a class of 1, while every expensive car will have a class of 0.
+
 ```python
 ```
