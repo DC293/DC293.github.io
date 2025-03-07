@@ -39,5 +39,7 @@ Each of the datapoints could also contain some boolean information about the car
 
 Now, let’s consider how we might classify the price of the cards. For the purpose of this exercise , we’ll classify the cars as affordable or expensive. In our dataset, we’ve classified a car as affordable if it is $15,000 or lower. Every “affordable” car will have a class of 1, while every expensive car will have a class of 0.
 
+## Distance between points
+
 ```python
 ```
