@@ -40,6 +40,6 @@ Each of the datapoints could also contain some boolean information about the car
 Now, let’s consider how we might classify the price of the cars. For the purpose of this exercise , we’ll classify the cars as affordable or expensive. In our dataset, we’ve classified a car as affordable if it is $15,000 or lower. Every “affordable” car will have a class of 1, while every expensive car will have a class of 0.
 
 ## Distance between points
-In order to classify our unknown datapoint we need to determine the datapoints closest to it. To do this, we need to calculate the [distance between the points](_machine-learning/Distance.md). 
+In order to classify our unknown datapoint we need to determine the datapoints closest to it. To do this, we need to calculate the [distance between the points](/Distance.md). 
 ```python
 ```
