@@ -41,7 +41,7 @@ Now, let’s consider how we might classify the price of the cars. For the purpo
 
 Take a moment to look at the plot below. How easy do you think it would be to classify the price of a car based on the engine size and horsepower?
 <p align="center">
-  <img src="/assets/images/K-nearest-neighbours_enginesize_v_horsepower" alt="Car price - engine size v horsepower" width="500">
+  <img src="/assets/images/K-nearest-neighbours_enginesize_v_horsepower.png" alt="Car price - engine size v horsepower" width="500">
 </p>
 
 ## Normalising data
