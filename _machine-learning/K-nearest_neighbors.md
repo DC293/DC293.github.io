@@ -45,12 +45,22 @@ Take a moment to look at the plot below. How easy do you think it would be to cl
 </p>
 
 ## Normalising data
-Befor we begin classifying our data, we need to normalise it. Normalisation is an important step to ensure all dimentions are treated equally. Imagine we added the peak rpm to our dataset to classify a car price. The difference in the peak rpm has a range of a few thousand, whilst the range in engine size and horsepower is barely larger than 100. If we did not normalise the data, the peak rpm would dominate the calculation. 
+Before we begin classifying our data, we need to normalise it. Normalisation is an important step to ensure all dimentions are treated equally. Imagine we added the peak rpm to our dataset to classify a car price. The difference in the peak rpm has a range of a few thousand, whilst the range in engine size and horsepower is barely larger than 100. If we did not normalise the data, the peak rpm would dominate the calculation. 
 
 To resolve this, we'll normalise the data in each dimension so they are all values between 0 and 1. There are a couple of ways we can do this depending on our data.
 
 ### Min-max normalisation
+Min-max normalisation finds the minimum and maximum of the variable and 
 
+$$
+x' = \frac{x - \min(x)}{\max(x) - \min(x)}
+$$
+
+Where:  
+- \( x' \) = normalized value  
+- \( x \) = original value  
+- \( \min(x) \) = minimum value in the dataset  
+- \( \max(x) \) = maximum value in the dataset  
 
 ## Distance between points
 In order to classify our unknown datapoint we need to determine the datapoints closest to it. To do this, we calculate the [distance between the points](/machine-learning/Distance/). We will use the Eculidean distance, which calculates the shortest distance. This method also allows us to use as many dimensions as we want, so we can add further variables to our model. 
