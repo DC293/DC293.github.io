@@ -57,10 +57,10 @@ x' = \frac{x - \min(x)}{\max(x) - \min(x)}
 $$
 
 Where:  
-- \( x' \) = normalized value  
-- \( x \) = original value  
-- \( \min(x) \) = minimum value in the dataset  
-- \( \max(x) \) = maximum value in the dataset  
+- $x'$ = normalized value  
+- $x$ = original value  
+- $min(x)$ = minimum value in the dataset  
+- $max(x)$ = maximum value in the dataset  
 
 ## Distance between points
 In order to classify our unknown datapoint we need to determine the datapoints closest to it. To do this, we calculate the [distance between the points](/machine-learning/Distance/). We will use the Eculidean distance, which calculates the shortest distance. This method also allows us to use as many dimensions as we want, so we can add further variables to our model. 
