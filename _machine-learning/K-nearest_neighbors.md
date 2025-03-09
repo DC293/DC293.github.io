@@ -37,9 +37,14 @@ Consider our dataset of car prices. Let’s take some continuous variables of th
 
 Each of the datapoints could also contain some boolean information about the car, for example, whether it is a 2-door or 4-door. 
 
-Now, let’s consider how we might classify the price of the cars. For the purpose of this exercise , we’ll classify the cars as affordable or expensive. In our dataset, we’ve classified a car as affordable if it is $15,000 or lower. Every “affordable” car will have a class of 1, while every expensive car will have a class of 0.
+Now, let’s consider how we might classify the price of the cars. For the purpose of this exercise we’ll classify the cars as affordable or expensive. In our dataset, we’ve classified a car as affordable if it is $10,000 or lower. Every “affordable” car will have a class of 1, while every expensive car will have a class of 0.
+
+Take a moment to look at the plot below. How easy do you think it would be to classify the price of a car based on the engine size and horsepower?
+<p align="center">
+  <img src="/assets/images/Images/K-nearest-neighbours_enginesize_v_horsepower.png" alt="Car price - engine size v horsepower" width="500">
+</p>
 
 ## Distance between points
-In order to classify our unknown datapoint we need to determine the datapoints closest to it. To do this, we need to calculate the [distance between the points](/machine-learning/Distance/). 
+In order to classify our unknown datapoint we need to determine the datapoints closest to it. To do this, we calculate the [distance between the points](/machine-learning/Distance/). We will use the Eculidean distance, 
 ```python
 ```
