@@ -50,7 +50,7 @@ Before we begin classifying our data, we need to normalise it. Normalisation is 
 To resolve this, we'll normalise the data in each dimension so they are all values between 0 and 1. There are a couple of ways we can do this depending on our data.
 
 ### Min-max normalisation
-Min-max normalisation finds the minimum and maximum of the variable and 
+Min-max normalisation first finds the minimum and maximum of the data. The formula then subtracts the minimum value from each data point, effectively shifting the minimum value to zero. Finally, the resulting value is divided by the range to produce a value between 0 and 1. 
 
 $$
 x' = \frac{x - \min(x)}{\max(x) - \min(x)}
@@ -60,9 +60,42 @@ Where:
 - $x'$ = normalized value  
 - $x$ = original value  
 - $min(x)$ = minimum value in the dataset  
-- $max(x)$ = maximum value in the dataset  
+- $max(x)$ = maximum value in the dataset
 
-## Distance between points
-In order to classify our unknown datapoint we need to determine the datapoints closest to it. To do this, we calculate the [distance between the points](/machine-learning/Distance/). We will use the Eculidean distance, which calculates the shortest distance. This method also allows us to use as many dimensions as we want, so we can add further variables to our model. 
+To do this with our cars dataset, we can use the MinMaxScaler class from the sclearn library. We have selected 3 variables from our cars database to normalise: engine size, horsepower and peak rpm. After normalising the data, we can combine it back with our car names so we can identify the car in each row. 
 ```python
+from sklearn.preprocessing import MinMaxScaler
+
+data_2_norm = cars_df[['enginesize', 'horsepower', 'peakrpm']]
+scaler = MinMaxScaler()
+normalised_data = pd.DataFrame(scaler.fit_transform(data_2_norm), columns=data_2_norm.columns)
+
+cars_df_norm = pd.concat([cars[['CarName']], normalised_data], axis=1)
+
+cars_df_norm
+```
+
+## Finding nearest neighbours
+In order to classify our unknown datapoint we need to determine the datapoints closest to it. To do this, we calculate the [distance between the points](/machine-learning/Distance/). We will use the Eculidean distance, which calculates the shortest distance. This method also allows us to use as many dimensions as we want, so we can add further variables to our model. 
+
+```python
+from scipy.spatial import distance
+
+def classify(unknown, dataset, k):
+  distances = []
+  for title in dataset:
+    distance_to_point = distance(unknown, dataset[title])
+    distances.append([distance_to_point, title])
+  distances.sort()
+  neighbors = distances[:k]
+  return neighbors
+
+```
+If we make a fictional datapoint and feed it to our function along with our normalised cars dataframe, we should get the k-nearest cars along with the respective distances to each point. 
+```python
+print(classify([.4, .3, .7], cars_dataframe, 'CarName', 3))
+
+[[0.16158692555731724, 'volvo 244dl'],
+ [0.18714799485945904, 'porsche macan'],
+ [0.18870444539085077, 'peugeot 604sl']]
 ```
