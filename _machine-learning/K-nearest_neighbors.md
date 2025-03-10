@@ -135,4 +135,5 @@ print(classify([.4, .3, .7], cars_dataframe, 'CarName', labels, 3))
 ```
 It is best practice to use odd numbers of classifiers to avoid a tie, however, if an even number is required, and there is a tie between classes, we need a way to select which class to pick. One method is to take the class of the nearerst data point. 
 
+## Training and validation sets
 
