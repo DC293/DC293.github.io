@@ -99,3 +99,40 @@ print(classify([.4, .3, .7], cars_dataframe, 'CarName', 3))
  [0.18714799485945904, 'porsche macan'],
  [0.18870444539085077, 'peugeot 604sl']]
 ```
+## Determining neighbour class
+Now we have identified our nearest neighbours we need to determine whether the car are affordable or not. If more of the neighbors are affordable, then the algorithm
+will classify the unknown point as affordable. Otherwise, it will classify it as non-affordable.
+
+To do this, we will modify our function slightly to provide the classification labels for the cars database. If there are more afordable cars (1) than non-affordable (0) in the nearest data points we will return a 1, otherwise, we'll return 0. 
+
+```python
+labels = dict(zip(cars.CarName, cars.affordable))
+
+def classify(unknown, dataset, colname, labels, k):
+    distances = []
+    num_affordable = 0
+    num_non_affordable = 0
+    for row in range(len(dataset)):
+        distance_to_point = distance.euclidean(unknown, list(dataset.iloc[row, 1:]))
+        distances.append([distance_to_point, dataset[colname].iloc[row]])
+        distances.sort()
+        neighbors = distances[:k]
+    
+    for i, name in neighbors:
+        if labels[name] == 0:
+            num_affordable += 1
+        else:
+            num_non_affordable += 1
+    
+    if num_affordable > num_non_affordable:
+        return 1
+    else:
+        return 0
+```
+```python
+print(classify([.4, .3, .7], cars_dataframe, 'CarName', labels, 3))
+1
+```
+It is best practice to use odd numbers of classifiers to avoid a tie, however, if an even number is required, and there is a tie between classes, we need a way to select which class to pick. One method is to take the class of the nearerst data point. 
+
+
