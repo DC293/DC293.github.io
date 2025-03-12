@@ -66,13 +66,11 @@ To do this with our cars dataset, we can use the MinMaxScaler class from the scl
 ```python
 from sklearn.preprocessing import MinMaxScaler
 
-data_2_norm = cars_df[['enginesize', 'horsepower', 'peakrpm']]
+data_2_norm = cars[['enginesize', 'horsepower', 'peakrpm']]
 scaler = MinMaxScaler()
 normalised_data = pd.DataFrame(scaler.fit_transform(data_2_norm), columns=data_2_norm.columns)
 
-cars_df_norm = pd.concat([cars[['CarName']], normalised_data], axis=1)
-
-cars_df_norm
+cars_dataframe_norm = dict(zip(cars['CarName'], normalised_data.values.tolist()))
 ```
 
 ## Finding nearest neighbours
@@ -83,21 +81,20 @@ from scipy.spatial import distance
 
 def classify(unknown, dataset, k):
   distances = []
-  for title in dataset:
-    distance_to_point = distance(unknown, dataset[title])
-    distances.append([distance_to_point, title])
+  for car_name in dataset:
+    distance_to_point = distance.euclidean(unknown, dataset[car_name])
+    distances.append([distance_to_point, car_name])
   distances.sort()
   neighbors = distances[:k]
   return neighbors
-
 ```
 If we make a fictional datapoint and feed it to our function along with our normalised cars dataframe, we should get the k-nearest cars along with the respective distances to each point. 
 ```python
-print(classify([.4, .3, .7], cars_dataframe, 'CarName', 3))
+print(classify([.4, .3, .7], cars_dataframe_norm, 3))
 
-[[0.16158692555731724, 'volvo 244dl'],
- [0.18714799485945904, 'porsche macan'],
- [0.18870444539085077, 'peugeot 604sl']]
+[[0.1896976281655098, 'audi 5000'],
+ [0.1896976281655098, 'audi fox'],
+ [0.1896976281655098, 'volkswagen rabbit']]
 ```
 ## Determining neighbour class
 Now we have identified our nearest neighbours we need to determine whether the car are affordable or not. If more of the neighbors are affordable, then the algorithm
@@ -108,13 +105,13 @@ To do this, we will modify our function slightly to provide the classification l
 ```python
 labels = dict(zip(cars.CarName, cars.affordable))
 
-def classify(unknown, dataset, colname, labels, k):
+def classify(unknown, dataset, labels, k):
     distances = []
     num_affordable = 0
     num_non_affordable = 0
-    for row in range(len(dataset)):
-        distance_to_point = distance.euclidean(unknown, list(dataset.iloc[row, 1:]))
-        distances.append([distance_to_point, dataset[colname].iloc[row]])
+    for car_name in dataset:
+        distance_to_point = distance.euclidean(unknown, dataset[car_name])
+        distances.append([distance_to_point, car_name])
         distances.sort()
         neighbors = distances[:k]
     
@@ -128,12 +125,18 @@ def classify(unknown, dataset, colname, labels, k):
         return 1
     else:
         return 0
+
+classify([.4, .3, .7], cars_dataframe_norm, labels, 3)
 ```
 ```python
-print(classify([.4, .3, .7], cars_dataframe, 'CarName', labels, 3))
+print(classify([.4, .3, .7], cars_dataframe_norm, labels, 3))
 1
 ```
 It is best practice to use odd numbers of classifiers to avoid a tie, however, if an even number is required, and there is a tie between classes, we need a way to select which class to pick. One method is to take the class of the nearerst data point. 
 
 ## Training and validation sets
+Once these sets are created, we will want to use every point in the validation set as input to the K Nearest Neighbor algorithm. We will take a movie from the validation set, compare it to all the movies in the training set, find the K Nearest Neighbors, and make a prediction. After making that prediction, we can then peek at the real answer (found in the validation labels) to see if our classifier got the answer correct.
 
+If we do this for every movie in the validation set, we can count the number of times the classifier got the answer right and the number of times it got it wrong. Using those two numbers, we can compute the validation accuracy.
+
+Validation accuracy will change depending on what K we use. In the next exercise, we’ll use the validation accuracy to pick the best possible K for our classifier.
