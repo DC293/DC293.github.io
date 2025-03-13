@@ -135,7 +135,7 @@ print(classify([.4, .3, .7], cars_dataframe_norm, labels, 3))
 It is best practice to use odd numbers of classifiers to avoid a tie, however, if an even number is required, and there is a tie between classes, we need a way to select which class to pick. One method is to take the class of the nearerst data point. 
 
 ## Selecting K
-Now we have created our function for finding the nearest neighbours and classifying our unknown point, but how do we select how many points we should use in our classification? A key concept for machine learning is training and validation of models. Below we have created some training and validation sets for our cars data. To do this we'll use sklearn's train_test_split function which takes a dataframe or series as an input. We'll then change these dataframes back into dictionaries to use in teh functions we have defined above. 
+Now we have created our function for finding the nearest neighbours and classifying our unknown point, but how do we select how many points we should use in our classification? A key concept for machine learning is training and validation of models. Below we have created some training and validation sets for our cars data. To do this we'll use sklearn's train_test_split function which takes a dataframe or series as an input. We'll then change these dataframes back into dictionaries to use in the functions we have defined above. 
 
 ```python
 from sklearn.model_selection import train_test_split
@@ -165,7 +165,11 @@ def find_validation_accuracy(training_set, training_labels, validation_set, vali
 print(find_validation_accuracy(training_set, training_labels, validation_set, validation_labels, 5))
 0.7666666666666667
 ```
-With K set to 5, we can see our validation accuracy was 77%, not bad! Now, we could type in each K value to see which one gives us as optimised solution, however, it is easier to see when visualised. 
+if k is very large, our classifier will suffer from underfitting. Underfitting occurs when your classifier doesn’t pay enough attention to the small quirks in the training set. Imagine you have 100 points in your training set and you set k = 100. Every single unknown point will be classified in the same exact way. The distances between the points don’t matter at all! This is an extreme example, however, it demonstrates how the classifier can lose understanding of the training data if k is too big. 
+
+With K set to 5, we can see our validation accuracy was 77%, not bad! Lets take a moment to consider the implications of choosing a very small or very large k value. If we choose a small value such as k = 1, we will classify our point based on the single nearest neighbour. We call this overfitting, as the model assumes our unknown point will always perform as the training data. On the flip side, if we have a large k, we risk underfitting as our model will be taking so many points into consideration we miss the nuances in our data. 
+
+To find our optimal K-value we can run our function multiple times and visualise the results. 
 
 <p align="center">
   <img src="/assets/images/K-nearest-neighbours_validation_accuracy.png" alt="Car price - engine size v horsepower" width="500">
