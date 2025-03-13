@@ -116,7 +116,7 @@ def classify(unknown, dataset, labels, k):
         neighbors = distances[:k]
     
     for i, name in neighbors:
-        if labels[name] == 0:
+        if labels[name] == 1:
             num_affordable += 1
         else:
             num_non_affordable += 1
@@ -134,9 +134,41 @@ print(classify([.4, .3, .7], cars_dataframe_norm, labels, 3))
 ```
 It is best practice to use odd numbers of classifiers to avoid a tie, however, if an even number is required, and there is a tie between classes, we need a way to select which class to pick. One method is to take the class of the nearerst data point. 
 
-## Training and validation sets
-Once these sets are created, we will want to use every point in the validation set as input to the K Nearest Neighbor algorithm. We will take a movie from the validation set, compare it to all the movies in the training set, find the K Nearest Neighbors, and make a prediction. After making that prediction, we can then peek at the real answer (found in the validation labels) to see if our classifier got the answer correct.
+## Selecting K
+Now we have created our function for finding the nearest neighbours and classifying our unknown point, but how do we select how many points we should use in our classification? A key concept for machine learning is training and validation of models. Below we have created some training and validation sets for our cars data. To do this we'll use sklearn's train_test_split function which takes a dataframe or series as an input. We'll then change these dataframes back into dictionaries to use in teh functions we have defined above. 
 
-If we do this for every movie in the validation set, we can count the number of times the classifier got the answer right and the number of times it got it wrong. Using those two numbers, we can compute the validation accuracy.
+```python
+from sklearn.model_selection import train_test_split
 
-Validation accuracy will change depending on what K we use. In the next exercise, we’ll use the validation accuracy to pick the best possible K for our classifier.
+x = pd.concat([cars[['CarName']], normalised_data], axis=1)
+y = pd.concat([cars[['CarName']], cars.affordable], axis=1)
+
+training_set, validation_set, training_labels, validation_labels = train_test_split(x, y, train_size=0.8, test_size=0.2, random_state=2)
+
+training_set = dict(zip(training_set['CarName'], training_set.iloc[:, 1:].values.tolist()))
+validation_set = dict(zip(validation_set['CarName'], validation_set.iloc[:, 1:].values.tolist()))
+training_labels = dict(zip(training_labels['CarName'], training_labels.affordable))
+validation_labels = dict(zip(validation_labels['CarName'], validation_labels.affordable))
+```
+If we take the points in our validation set as inputs to our K-nearest neighbour function and compare them to the data in our training set and classifications we can make a prediction of classification for these points. We can then look in our validation labels to see if it got the prediction correct. If we can count the number of times the classifier got the answer right and the number of times it got it wrong we can compute the validation accuracy.
+
+```python
+def find_validation_accuracy(training_set, training_labels, validation_set, validation_labels, k):
+  num_correct = 0.0
+  for car in validation_set:
+    guess = classify(validation_set[car], training_set, training_labels, k)
+    if guess == validation_labels[car]:
+      num_correct += 1
+  validation_error = num_correct/len(validation_set)
+  return validation_error
+
+print(find_validation_accuracy(training_set, training_labels, validation_set, validation_labels, 5))
+0.7666666666666667
+```
+With K set to 5, we can see our validation accuracy was 77%, not bad! Now, we could type in each K value to see which one gives us as optimised solution, however, it is easier to see when visualised. 
+
+<p align="center">
+  <img src="/assets/images/K-nearest-neighbours_validation_accuracy.png" alt="Car price - engine size v horsepower" width="500">
+</p>
+
+Based on the plot, it appears a k value between 10 and 15 would give us an optimal prediction. It should be noted, however, that this can fluctuate slightly depending on our training-validation test split. 
