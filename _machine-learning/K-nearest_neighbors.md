@@ -178,3 +178,21 @@ To find our optimal K-value we can run our function multiple times and visualise
 Based on the plot, it appears a k value between 10 and 15 would give us an optimal prediction. It should be noted, however, that this can fluctuate slightly depending on our training-validation test split. 
 
 ## sklearn
+We've learnt how K-Nearest Neighbours algorithm works, to save us from having to define the above functions, we can utilise sklearn's [KNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html). The object takes one argument, the K-vlaue. We then need to train the model using our dataset. 
+
+```python
+from sklearn.neighbors import KNeighborsClassifier
+
+max_k = 30
+accuracies = []
+for k in range(1, max_k):
+  classifier = KNeighborsClassifier(n_neighbors=k)
+  classifier.fit(training_set, training_labels)
+  accuracies.append(classifier.score(validation_set, validation_labels))
+```python
+
+<p align="center">
+  <img src="/assets/images/KNN_validation_accuracy_sklearn.png" alt="Car price - engine size v horsepower" width="500">
+</p>
+
+Plotting our validation graph from our model fit shows it has good aggreement with our functions with approximately 15 points providing the best results. 
