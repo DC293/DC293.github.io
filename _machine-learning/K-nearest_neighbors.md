@@ -189,7 +189,7 @@ for k in range(1, max_k):
   classifier = KNeighborsClassifier(n_neighbors=k)
   classifier.fit(training_set, training_labels)
   accuracies.append(classifier.score(validation_set, validation_labels))
-```python
+```
 
 <p align="center">
   <img src="/assets/images/KNN_validation_accuracy_sklearn.png" alt="Car price - engine size v horsepower" width="500">
