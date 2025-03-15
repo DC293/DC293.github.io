@@ -52,6 +52,10 @@ To resolve this, we'll normalise the data in each dimension so they are all valu
 ### Min-max normalisation
 Min-max normalisation first finds the minimum and maximum of the data. The formula then subtracts the minimum value from each data point, effectively shifting the minimum value to zero. Finally, the resulting value is divided by the range to produce a value between 0 and 1. 
 
+Min-max normalization is one of the most common ways to normalise data. For every variable, the minimum value gets transformed into a 0, the maximum value gets transformed into a 1, and every other value gets transformed into a decimal between 0 and 1. For example, if the variable had a range of 30-50, 30 would be 0 and 50 would be 1. Values falling between these would be scaled appropriately e.g. 40 would turn to 0.5.
+
+Min-max normalisation has one major drawback: it struggles dealing with outliers. For instance, if you have 99 values ranging from 0 to 30, but a single value is 100, those 99 values will be scaled between 0 and 0.3. This means the data remains just as compressed as before.
+
 $$
 x' = \frac{x - \min(x)}{\max(x) - \min(x)}
 $$
@@ -62,7 +66,8 @@ Where:
 - $min(x)$ = minimum value in the dataset  
 - $max(x)$ = maximum value in the dataset
 
-To do this with our cars dataset, we can use the MinMaxScaler class from the sclearn library. We have selected 3 variables from our cars database to normalise: engine size, horsepower and peak rpm. After normalising the data, we can combine it back with our car names so we can identify the car in each row. 
+To experiment with the KNN classifier, we have selected 3 variables from our cars dataset: engine size, horsepower and peak rpm. These variablesrelatively well distributed so we should have no problems using min-max normalisation. To simplify this, we can use the MinMaxScaler class from the sclearn library. After normalising the data, we can combine it back with our car names so we can identify the car in each row. 
+
 ```python
 from sklearn.preprocessing import MinMaxScaler
 
