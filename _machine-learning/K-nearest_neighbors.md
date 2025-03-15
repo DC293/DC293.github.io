@@ -231,7 +231,7 @@ $$
 $$
 
 Where:
-$\hat{y} is the weighted prediction
-$y_i is the rating of the $i-th neighbour
-$d_i is the distance of the $i-th neighbour
-$k is the number of neighbours
+$\hat{y}$ is the weighted prediction
+$y_i$ is the rating of the $i-th neighbour
+$d_i$ is the distance of the $i-th neighbour
+$k$ is the number of neighbours
