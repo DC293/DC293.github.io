@@ -1,7 +1,7 @@
 ---
 layout: single
 weight: 4
-title: "K-Nearest neighbours"
+title: "K-Nearest neighbours (KNN)"
 excerpt: "Classifying and predicting unknown data points"
 header:
     overlay_image: assets/images/K-nearest-neighbours_cover.png
@@ -19,7 +19,7 @@ author_profile: True
 
 {% include mathjax.html %}
 
-# K-Nearest Neighbours (KNN) Classification
+# KNN Classification
 The K-nearest neighbours is a classification algorithm that works on the concept that data points with similar attributes tend to fall into similar categories.
 
 The figure below provides a simple example. Lets assume the red marker is an unknown point of x-y that we want to classify. To gain more information about our point, we look to the nearest points surrounding it. If we expand our circle around our unknown point to encapsule the nearest 3 points (n = 3), we can see there are two orange triangles and one green square. In this case, we would classify our unknown point as a orange triangle. But what if we expanded our cicle to encapsule 6 points (n = 6). This adds an additional 2 green squares and a blue circle shifting the dominant category to the green squares, thus changing the classification of our point to a green square. 
@@ -213,7 +213,7 @@ for k in range(1, max_k):
 
 Plotting our validation graph from our model fit shows it has good aggreement with our functions with approximately 15 points providing the best results. 
 
-# KNN regressor
+# KNN Regression
 We now know how we can classify whether our car is affordable, but what if we wanted to predict the actual price? For this, we can use the KNN regressor. The process is almost identical to classification, except instead of counting the number of affordable and non-affordable neighbors, the regressor averages their prices.
 
 Below we have adjusted our classification algorithm to provide the average price of our nearest neighbours instead of the affordability classification. When we test our new function, we can see it outputs a price of $14,792.
