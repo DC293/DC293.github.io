@@ -78,17 +78,16 @@ normalised_data = pd.DataFrame(scaler.fit_transform(data_2_norm), columns=data_2
 cars_dataframe_norm = dict(zip(cars['CarName'], normalised_data.values.tolist()))
 ```
 ### Z-score normalisation
-Z-score normalisation provides an alternative to deal with data containing outliers. 
+Z-score normalisation provides an alternative to deal with data containing outliers. Instead of using the minimum and maximum of the dataset, we use the mean and standard deviation of the variable. If a value is equal to the mean it will be normalised to 0. If it is below the mean, it will be a negative number, and if it is above the mean it will be a positive number. How large those positive and negative numbers depends on the standard deviation. If the original data had a large standard deviation, the normalised values will be grouped closer to 0.
 
 $$
 Z = \frac{X - \mu}{\sigma}
 $$
 
 Where:
-$X$ is the original value
-$\mu$ is the mean of the dataset
-$\sigma$ is the standard deviation of the dataset
-
+  - $X$ is the original value
+  - $\mu$ is the mean of the dataset
+  - $\sigma$ is the standard deviation of the dataset
 
 ## Finding nearest neighbours
 In order to classify our unknown datapoint we need to determine the datapoints closest to it. To do this, we calculate the [distance between the points](/machine-learning/Distance/). We will use the Eculidean distance, which calculates the shortest distance. This method also allows us to use as many dimensions as we want, so we can add further variables to our model. 
@@ -182,7 +181,7 @@ def find_validation_accuracy(training_set, training_labels, validation_set, vali
 print(find_validation_accuracy(training_set, training_labels, validation_set, validation_labels, 5))
 0.7666666666666667
 ```
-if k is very large, our classifier will suffer from underfitting. Underfitting occurs when your classifier doesn’t pay enough attention to the small quirks in the training set. Imagine you have 100 points in your training set and you set k = 100. Every single unknown point will be classified in the same exact way. The distances between the points don’t matter at all! This is an extreme example, however, it demonstrates how the classifier can lose understanding of the training data if k is too big. 
+If k is very large, our classifier will suffer from underfitting. Underfitting occurs when your classifier doesn’t pay enough attention to the small quirks in the training set. Imagine you have 100 points in your training set and you set k = 100. Every single unknown point will be classified in the same exact way. The distances between the points don’t matter at all! This is an extreme example, however, it demonstrates how the classifier can lose understanding of the training data if k is too big. 
 
 With K set to 5, we can see our validation accuracy was 77%, not bad! Lets take a moment to consider the implications of choosing a very small or very large k value. If we choose a small value such as k = 1, we will classify our point based on the single nearest neighbour. We call this overfitting, as the model assumes our unknown point will always perform as the training data. On the flip side, if we have a large k, we risk underfitting as our model will be taking so many points into consideration we miss the nuances in our data. 
 
