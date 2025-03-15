@@ -225,6 +225,7 @@ predict([.4, .3, .7], cars_dataframe_norm, dict(zip(cars.CarName, cars.price)), 
 We've managed to estimate the car price using the average of our nearest neighbours, but what if we can be even smarter with our calculation. Instead of calculating an average, we can apply weighting to our points so the nearest points influence our result to greater degree.
 
 Let’s say we’re trying to predict the rating of movie X and we’ve found its three nearest neighbors. Consider the following table:
+
 $$
 \hat{y} = \frac{\sum\limits_{i=1}^{k} \frac{y_i}{d_i}}{\sum\limits_{i=1}^{k} \frac{1}{d_i}}
 $$
