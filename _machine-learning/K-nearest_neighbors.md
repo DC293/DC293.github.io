@@ -224,7 +224,7 @@ predict([.4, .3, .7], cars_dataframe_norm, dict(zip(cars.CarName, cars.price)), 
 ## Weighted regression
 We've managed to estimate the car price using the average of our nearest neighbours, but what if we can be even smarter with our calculation. Instead of calculating an average, we can apply weighting to our points so the nearest points influence our result to greater degree.
 
-Let’s say we’re trying to predict the rating of movie X and we’ve found its three nearest neighbors. Consider the following table:
+We can use the equation below to create the weighting. The numerator is the sum of every price divided by their respective distances. The denominator is the sum of one over every distance. Even though the prices are the same as before, the weighted average has now gone up to $15,000.
 
 $$
 \hat{y} = \frac{\sum\limits_{i=1}^{k} \frac{y_i}{d_i}}{\sum\limits_{i=1}^{k} \frac{1}{d_i}}
@@ -235,3 +235,17 @@ Where:
   - $y_i$ is the rating of the $i-th neighbour
   - $d_i$ is the distance of the $i-th neighbour
   - $k$ is the number of neighbours
+
+Replacing the sum of ratings loop in our predict() function gives us the weighted average:
+```python
+  numerator = 0
+  denominator = 0
+  for dist, car in neighbors:
+    numerator += car_prices[car]/dist
+    denominator += 1/dist
+
+  return numerator/denominator
+
+predict([.4, .3, .7], cars_dataframe_norm, dict(zip(cars.CarName, cars.price)), 15)
+15000.968322654364
+```
