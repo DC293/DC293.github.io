@@ -229,3 +229,9 @@ Let’s say we’re trying to predict the rating of movie X and we’ve found it
 $$
 \hat{y} = \frac{\sum\limits_{i=1}^{k} \frac{y_i}{d_i}}{\sum\limits_{i=1}^{k} \frac{1}{d_i}}
 $$
+
+Where:
+$\hat{y} is the weighted prediction
+$y_i is the rating of the $i-th neighbour
+$d_i is the distance of the $i-th neighbour
+$k is the number of neighbours
