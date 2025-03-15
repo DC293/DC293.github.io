@@ -2,7 +2,7 @@
 layout: single
 weight: 4
 title: "K-Nearest neighbours"
-excerpt: "Classifying unknown data points"
+excerpt: "Classifying and predicting unknown data points"
 header:
     overlay_image: assets/images/K-nearest-neighbours_cover.png
     overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
@@ -78,6 +78,16 @@ normalised_data = pd.DataFrame(scaler.fit_transform(data_2_norm), columns=data_2
 cars_dataframe_norm = dict(zip(cars['CarName'], normalised_data.values.tolist()))
 ```
 ### Z-score normalisation
+Z-score normalisation provides an alternative to deal with data containing outliers. 
+
+$$
+Z = \frac{X - \mu}{\sigma}
+$$
+
+Where:
+$X$ is the original value
+$\mu$ is the mean of the dataset
+$\sigma$ is the standard deviation of the dataset
 
 
 ## Finding nearest neighbours
