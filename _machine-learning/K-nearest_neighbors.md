@@ -72,6 +72,8 @@ normalised_data = pd.DataFrame(scaler.fit_transform(data_2_norm), columns=data_2
 
 cars_dataframe_norm = dict(zip(cars['CarName'], normalised_data.values.tolist()))
 ```
+### Z-score normalisation
+
 
 ## Finding nearest neighbours
 In order to classify our unknown datapoint we need to determine the datapoints closest to it. To do this, we calculate the [distance between the points](/machine-learning/Distance/). We will use the Eculidean distance, which calculates the shortest distance. This method also allows us to use as many dimensions as we want, so we can add further variables to our model. 
@@ -177,7 +179,7 @@ To find our optimal K-value we can run our function multiple times and visualise
 
 Based on the plot, it appears a k value between 10 and 15 would give us an optimal prediction. It should be noted, however, that this can fluctuate slightly depending on our training-validation test split. 
 
-## sklearn
+## sklearn Classification
 We've learnt how K-Nearest Neighbours algorithm works, to save us from having to define the above functions, we can utilise sklearn's [KNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html). The object takes one argument, the K-vlaue. We then need to train the model using our dataset. 
 
 ```python
@@ -238,6 +240,15 @@ Where:
 
 Replacing the sum of ratings loop in our predict() function gives us the weighted average:
 ```python
+def predict(unknown, dataset, car_prices, k):
+  distances = []
+  for car_name in dataset:
+    car = dataset[car_name]
+    distance_to_point = distance.euclidean(unknown, dataset[car_name])
+    distances.append([distance_to_point, car_name])
+  distances.sort()
+  neighbors = distances[0:k]
+
   numerator = 0
   denominator = 0
   for dist, car in neighbors:
@@ -249,3 +260,25 @@ Replacing the sum of ratings loop in our predict() function gives us the weighte
 predict([.4, .3, .7], cars_dataframe_norm, dict(zip(cars.CarName, cars.price)), 15)
 15000.968322654364
 ```
+## sklearn Regression
+Using the sklearn K-Neighbours Regressor is very similar to the K-Neighbours classifier, we first must import and create the regressor. When defining the regressor we can also choose whether or not to use a weighted average using the parameter weights. We can either set the keyword to "uniform" for equal weighting or "distance" for a weighted average. 
+
+We have fitted the model using our data once again, and we find a good match to our user defined wighted function. 
+
+```python
+from sklearn.neighbors import KNeighborsRegressor
+
+regressor = KNeighborsRegressor(n_neighbors = 15, weights = "distance")
+regressor.fit(normalised_data, cars.price)
+
+print(regressor.predict([[.4, .3, .7]]))
+15000.96832265
+```
+
+
+
+
+
+
+
+
