@@ -27,4 +27,9 @@ For example, we could use a logistic regression model to predict the probability
 ## Linear regression approach
 Lets look at an example where we are looking to predict the chance of a person making a purchased based on the amount of time they're spent browsing on the site. The chance of making a purchase is a binary variable with 0 indicating no and 1 indicating yes. Using a linear regression model we can see 
 
+<p align="center">
+  <img src="/assets/images/Logistic regression - linear.png" alt="Linear regression example" width="500">
+</p>
+
+
 
