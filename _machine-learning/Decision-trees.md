@@ -4,9 +4,9 @@ weight: 6
 title: "Decision trees"
 excerpt: "split data recursively to make predictions"
 header:
-    overlay_image: assets/images/KNN_example_equal_axis.png
+    overlay_image: assets/images/Decision tree.png
     overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
-    teaser: assets/images/KNN_example_equal_axis.png
+    teaser: assets/images/Decision tree.png
 toc: true
 toc_sticky: true 
 published: true
@@ -29,3 +29,9 @@ Next, we split the data based on a feature, such as credit score. People with go
 
 This process of splitting continues recursively, using different features at each step. Eventually, we reach a point where further splitting is unnecessary, and we arrive at a leaf node. At this point, we count the majority label in the leaf, and any new, unlabeled data point reaching that leaf is classified according to the majority label.
 
+<p align="center">
+  <img src="/assets/images/Decision tree.png" alt="loss" width="500">
+</p>
+
+```python
+```
