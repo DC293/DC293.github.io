@@ -37,3 +37,9 @@ To provide a better fit to our data we can use logistic regression. To help unde
 $$
 y = b_0 + b_1x_1 + b_2x_2 + b_nx_n
 $$
+
+To turn this into a logistic regression model, we apply a logic link function to the left hand side of the equation:
+
+$$
+ln(\frac{y}{1-y}) = b_0 + b_1x_1 + b_2x_2 + b_nx_n
+$$
