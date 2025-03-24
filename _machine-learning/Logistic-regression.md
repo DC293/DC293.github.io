@@ -50,30 +50,54 @@ The impact of this change means we can now fit a line that stays between 0 and 1
   <img src="/assets/images/Logistic regression - logit.png" alt="Linear regression example" width="500">
 </p>
 
-## Log-odds
-Instead of viewing the classification as binary, we can interpret the y-value as a probability. Replacing y with probability p, gives us an equation for log-odds.
+### Log-odds
+In logistic regression, instead of treating classification as strictly binary (0 or 1), we model the probability $p$ that an event occurs. The log-odds transformation allows us to express this probability in a way that can be modeled linearly.
 
-Lets run through how this works. The odds of an event occurring is:
+The odds of an event occurring is defined as:
 
 $$
 Odds = \frac{p}{1-p} = \frac{P(event occuring)}{P(event not occuring)}
 $$
 
-For example, suppose that the probability a person makes a purchase is 0.7. That means the probability of not making a purchase is 1 - 0.7 = 0.3. We can therefore say the odds of making a purchase is: 
+For example, suppose the probability of a person making a purchase is 0.7. The probability of not making a purchase is 1 - 0.7 = 0.3. Thus, the odds of making a purchase are:
 
 $$
 Odds of purchase = \frac{0.7}{0.3} = 2.33
 $$
 
-This means that people are 2.33 times more likely to make a purchase than not. 
+This means a person is 2.33 times more likely to make a purchase than not.
 
-Given odds can only be a positive number, the log odds function provides us with a method to transform our probability to a number between negative and positive infinity. This is more useful for modelling. This number can be interpreted to give us the likelyhood of an event happening, if it is negative, there is less than 50% chance of occuring, whilst if positive there is greater than 50% chance of the event occuring. 
+Since odds are always positive, taking the logarithm of the odds allows us to transform probabilities into a scale that ranges from negative to positive infinity:
 
-## Sigmoid function
-If we want to find the probability of an event happening, we can apply the reverse log to our log-odds. This is also known as the sigmoid function. 
+$$
+Log-odds = log\(frac{p}{1-p})
+$$
+
+A negative log-odds value means the probability is below 50%, while a positive log-odds value means the probability is above 50%. If the log-odds is 0, the probability is exactly 50%.
+
+### Sigmoid function
+To convert log-odds back into a probability, we apply the sigmoid function, which is the inverse of the log-odds transformation:
+
+$$
+P(y = 1) = \frac{e^log-odds}{1+e^log-odds}
+$$
+
+This function ensures that any real-valued number is mapped to a probability between 0 and 1.
+
+```python
+import numpy as np
+from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression(C=1e5)
+model.fit(x, y)
 
 min_on_site = [0, 2, 1.5, 4, 2.5, 5.25]
+log_odds = model.intercept_ + model.coef_ * min_on_site 
 
+print(np.exp(log_odds)/(1+ np.exp(log_odds)))
+[0.000, 0.045, 0.002, 0.99, 0.506, 0.999]
+```python
 
+This shows how the sigmoid function converts log-odds into probabilities, which can then be used for classification decisions.
 
-
+## Next
