@@ -41,7 +41,7 @@ The top tree creates some uncertainty as the training data has labels from both 
 To measure the level of uncertainty we can calculate the Gini impurity. To calculate the Gini impurity of a set of data points, start at 1, then subtract the sum of the squared percentages of each class in the set. For example, if a dataset contains three items from class A and one item from class B, the Gini impurity would be:
 
 $$
-1-(\frac{3}{4})^2-(\frac{1}{4})^2=0.375
+1 - \left(\frac{3}{4}\right)^2 - \left(\frac{1}{4}\right)^2 = 0.375
 $$
 
 Values with low impurity are most desirable, which is indicated by a value close to 0. If a data set has only one class, like our bottom tree example, you’d end up with a Gini impurity of 0. 
