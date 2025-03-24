@@ -174,3 +174,48 @@ This tells us:
 Ideally, we want the numbers along the main diagonal (true positives and true negatives) to be as high as possible, indicating fewer classification errors.
 
 ### Accuracy, Recall, Precision, F1 Score
+Once we have a confusion matrix, we can compute several key metrics to evaluate our model’s performance. Using the number of true positive (TP), true negative (TN), false positive (FP) and false negative (FN) we can calculate the following:
+
+  - Accuracy: The proportion of correctly classified instances.
+
+$$
+\frac{(TP + TN)}{TP + FP + TN + FN}
+$$
+
+  - Precision: The proportion of predicted positives that are actually positive.
+
+$$
+\frac{TP}{TP + FP}
+$$
+  
+  - Recall (Sensitivity): The proportion of actual positives that are correctly identified.
+
+$$
+\frac{TP}{TP + FN}
+$$
+
+ - F1 score: The weighted mean of precision and recall.
+
+In sklearn, we can calculate these as follows:
+
+```python
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+
+# Accuracy
+print("Accuracy:", accuracy_score(y_test, cc_lr.predict(X_test)))
+
+# Precision
+print("Precision:", precision_score(y_test, cc_lr.predict(X_test)))
+
+# Recall
+print("Recall:", recall_score(y_test, cc_lr.predict(X_test)))
+
+# F1 Score
+print("F1 Score:", f1_score(y_test, cc_lr.predict(X_test)))
+```
+```python
+Accuracy: 0.88  
+Precision: 0.93  
+Recall: 0.87  
+F1 Score: 0.90
+``` 
