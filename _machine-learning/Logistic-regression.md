@@ -62,7 +62,7 @@ $$
 For example, suppose the probability of a person making a purchase is 0.7. The probability of not making a purchase is 1 - 0.7 = 0.3. Thus, the odds of making a purchase are:
 
 $$
-Odds of purchase = \frac{0.7}{0.3} = 2.33
+Odds  of  purchase = \frac{0.7}{0.3} = 2.33
 $$
 
 This means a person is 2.33 times more likely to make a purchase than not.
