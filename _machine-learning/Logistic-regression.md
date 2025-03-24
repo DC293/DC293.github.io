@@ -51,4 +51,29 @@ The impact of this change means we can now fit a line that stays between 0 and 1
 </p>
 
 ## Log-odds
-Instead of viewing the classification as binary, we can now interpret the y-value as a probability.
+Instead of viewing the classification as binary, we can interpret the y-value as a probability. Replacing y with probability p, gives us an equation for log-odds.
+
+Lets run through how this works. The odds of an event occurring is:
+
+$$
+Odds = \frac{p}{1-p} = \frac{P(event occuring)}{P(event not occuring)}
+$$
+
+For example, suppose that the probability a person makes a purchase is 0.7. That means the probability of not making a purchase is 1 - 0.7 = 0.3. We can therefore say the odds of making a purchase is: 
+
+$$
+Odds of purchase = \frac{0.7}{0.3} = 2.33
+$$
+
+This means that people are 2.33 times more likely to make a purchase than not. 
+
+Given odds can only be a positive number, the log odds function provides us with a method to transform our probability to a number between negative and positive infinity. This is more useful for modelling. This number can be interpreted to give us the likelyhood of an event happening, if it is negative, there is less than 50% chance of occuring, whilst if positive there is greater than 50% chance of the event occuring. 
+
+## Sigmoid function
+If we want to find the probability of an event happening, we can apply the reverse log to our log-odds. This is also known as the sigmoid function. 
+
+min_on_site = [0, 2, 1.5, 4, 2.5, 5.25]
+
+
+
+
