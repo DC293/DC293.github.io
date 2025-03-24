@@ -1,7 +1,7 @@
 ---
 layout: single
 weight: 5
-title: "Logistic Regression"
+title: "Logistic regression"
 excerpt: "Predicting binary outcomes using a sigmoid function"
 header:
     overlay_image: assets/images/Logistic regression - cover.png
