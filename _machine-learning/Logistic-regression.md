@@ -179,7 +179,7 @@ Once we have a confusion matrix, we can compute several key metrics to evaluate 
   - Accuracy: The proportion of correctly classified instances.
 
 $$
-\frac{(TP + TN)}{TP + FP + TN + FN}
+\frac{TP + TN}{TP + FP + TN + FN}
 $$
 
   - Precision: The proportion of predicted positives that are actually positive.
@@ -195,6 +195,7 @@ $$
 $$
 
  - F1 score: The weighted mean of precision and recall.
+
 
 In sklearn, we can calculate these as follows:
 
