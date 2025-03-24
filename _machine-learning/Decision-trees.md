@@ -4,9 +4,9 @@ weight: 6
 title: "Decision trees"
 excerpt: "split data recursively to make predictions"
 header:
-    overlay_image: assets/images/Decision tree.png
+    overlay_image: assets/images/Decision tree cover.png
     overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
-    teaser: assets/images/Decision tree.png
+    teaser: assets/images/Decision tree cover.png
 toc: true
 toc_sticky: true 
 published: true
