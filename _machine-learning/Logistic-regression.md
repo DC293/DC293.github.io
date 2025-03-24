@@ -70,7 +70,7 @@ This means a person is 2.33 times more likely to make a purchase than not.
 Since odds are always positive, taking the logarithm of the odds allows us to transform probabilities into a scale that ranges from negative to positive infinity:
 
 $$
-Log-odds = log\(frac{p}{1-p})
+Log-odds = log(\frac{p}{1-p})
 $$
 
 A negative log-odds value means the probability is below 50%, while a positive log-odds value means the probability is above 50%. If the log-odds is 0, the probability is exactly 50%.
@@ -79,7 +79,7 @@ A negative log-odds value means the probability is below 50%, while a positive l
 To convert log-odds back into a probability, we apply the sigmoid function, which is the inverse of the log-odds transformation:
 
 $$
-P(y = 1) = \frac{e^log-odds}{1+e^log-odds}
+P(y = 1) = \frac{e^{log-odds}}{1+e^{log-odds}}
 $$
 
 This function ensures that any real-valued number is mapped to a probability between 0 and 1.
@@ -96,7 +96,7 @@ log_odds = model.intercept_ + model.coef_ * min_on_site
 
 print(np.exp(log_odds)/(1+ np.exp(log_odds)))
 [0.000, 0.045, 0.002, 0.99, 0.506, 0.999]
-```python
+```
 
 This shows how the sigmoid function converts log-odds into probabilities, which can then be used for classification decisions.
 
