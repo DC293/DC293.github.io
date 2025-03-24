@@ -134,3 +134,16 @@ print(cc_lr.predict_proba(X_test))
 By default, sklearn classifies a sample as 1 if its predicted probability for class 1 is greater than 0.5. This process is called thresholding. In the example above, the first and fifth datapoints have probabilities above 0.5 for class 0, so .predict() classifies them as 0s.
 
 If needed, we can adjust this threshold to make the model more or less sensitive to positive classifications.
+
+### Thresholding
+By default, sklearn uses a threshold of 0.5. This means that if a sample has a predicted probability of 0.5 or higher, it is classified as 1; otherwise, it is classified as 0. This threshold, however, isn't fixed. We can adjust it based on the specific needs of our model.
+
+Consider a logistic regression model that predicts whether an individual tests positive for Covid based on symptoms and other health indicators. If we stick to the default 0.5 threshold, we might miss some true positive cases, leading to undiagnosed infections and further spread.
+
+To minimize the risk of false negatives (people who have COVID but are classified as negative), we could lower the threshold to 0.3 or 0.4. This makes the model more sensitive, meaning it will classify more people as positive, reducing the chance of missing actual cases.
+
+The tradeoff? A lower threshold may also increase false positives, meaning some healthy individuals might be incorrectly classified as positive. However, in this case, it’s better to err on the side of caution—false positives can be confirmed with further testing, but false negatives could contribute to wider outbreaks.
+
+Adjusting the threshold is a key decision in classification tasks, and the optimal value depends on the specific consequences of false positives versus false negatives in a given scenario.
+
+## Confusion matrix
