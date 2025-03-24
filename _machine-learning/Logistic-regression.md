@@ -1,6 +1,6 @@
 ---
 layout: single
-weight: 5
+weight: 4
 title: "Logistic regression"
 excerpt: "Predicting binary outcomes using a sigmoid function"
 header:
