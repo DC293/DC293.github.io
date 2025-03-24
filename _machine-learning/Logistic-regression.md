@@ -100,4 +100,37 @@ print(np.exp(log_odds)/(1+ np.exp(log_odds)))
 
 This shows how the sigmoid function converts log-odds into probabilities, which can then be used for classification decisions.
 
-## Next
+## sklearn predictions
+Once we’ve trained a logistic regression model, we can use it to classify new data points. The .predict() method returns binary labels (0 or 1), indicating whether each sample belongs to the positive class.
+
+```python
+from sklearn.model_selection import train_test_split
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state = 0)
+
+# Create and fit the logistic regression model
+from sklearn.linear_model import LogisticRegression
+cc_lr = LogisticRegression()
+cc_lr.fit(X_train,y_train)
+
+# Print out the predicted outcomes
+print(cc_lr.predict(X_test))
+
+[0. 1. 1. 1. 0.]
+```
+If we need more than just class labels, we can use .predict_proba(), which returns the predicted probabilities for both classes (0 and 1). This method helps in understanding the model's confidence in its predictions.
+ 
+```python
+print(cc_lr.predict_proba(X_test))
+
+[[0.5717 0.4283] # 57.17% chance of class 0, 42.83% chance of class 1
+ [0.0168 0.9832]
+ [0.045  0.955 ]
+ [0.2348 0.7652]
+ [0.8186 0.1814]]
+```
+
+By default, sklearn classifies a sample as 1 if its predicted probability for class 1 is greater than 0.5. This process is called thresholding. In the example above, the first and fifth datapoints have probabilities above 0.5 for class 0, so .predict() classifies them as 0s.
+
+If needed, we can adjust this threshold to make the model more or less sensitive to positive classifications.
