@@ -30,21 +30,22 @@ Next, we split the data based on a feature, such as credit score. People with go
 This process of splitting continues recursively, using different features at each step. Eventually, we reach a point where further splitting is unnecessary, and we arrive at a leaf node. At this point, we count the majority label in the leaf, and any new, unlabeled data point reaching that leaf is classified according to the majority label.
 
 ## Gini impurity
-Consider the two trees below. Which tree would be more useful as a model that tries to predict whether someone would get an A in a class?
+Consider the two decision trees below. Which tree would be more useful for predicting whether someone would get a mortgage offer?
 
 <p align="center">
   <img src="/assets/images/Decision tree.png" alt="loss" width="500">
 </p>
 
-Let’s say you use the top tree. You’ll end up at a leaf node where the label is up for debate. The training data has labels from both classes! If you use the bottom tree, you’ll end up at a leaf where there’s only one type of label. There’s no debate at all! We’d be much more confident about our classification if we used the bottom tree.
+The top tree creates some uncertainty as the training data has labels from both classes. The bottom tree splits the data much more evenly and ends up with a leaf with only one class label. We’d be much more confident about our prediction using the bottom tree.
 
-This idea can be quantified by calculating the Gini impurity of a set of data points. To find the Gini impurity, start at 1 and subtract the squared percentage of each label in the set. For example, if a data set had three items of class A and one item of class B, the Gini impurity of the set would be
+To measure the level of uncertainty we can calculate the Gini impurity. To calculate the Gini impurity of a set of data points, start at 1, then subtract the sum of the squared percentages of each class in the set. For example, if a dataset contains three items from class A and one item from class B, the Gini impurity would be:
 
 $$
-1-(\frac{3}{4})^2\-(\frac{1}{4})^2\=0.35
+1-(\frac{3}{4})^2\-(\frac{1}{4})^2\=0.375
 $$
 
-If a data set has only one class, you’d end up with a Gini impurity of 0. The lower the impurity, the better the decision tree!
+Values with low impurity are most desirable, which is indicated by a value close to 0. If a data set has only one class, like our bottom tree example, you’d end up with a Gini impurity of 0. 
 
+## 
 ```python
 ```
