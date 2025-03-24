@@ -147,3 +147,30 @@ The tradeoff? A lower threshold may also increase false positives, meaning some 
 Adjusting the threshold is a key decision in classification tasks, and the optimal value depends on the specific consequences of false positives versus false negatives in a given scenario.
 
 ## Confusion matrix
+When evaluating our regression model, we need a way to validate its performance. For our logistic regression model we can use a confusion matrix to assess the performance. 
+
+The matrix helps summarise the model’s performance by displaying the number of:
+
+  - True Positives (TP) – Correctly predicted positive cases
+  - False Positives (FP) – Incorrectly predicted positive cases
+  - True Negatives (TN) – Correctly predicted negative cases
+  - False Negatives (FN) – Incorrectly predicted negative cases
+
+We can generate a confusion matrix in sklearn like this:
+
+```python
+from sklearn.metrics import confusion_matrix
+print(confusion_matrix(y_test, cc_lr.predict(X_test)))
+[[ 9  1]
+ [ 2 13]]
+```
+This tells us:
+
+  - 9 True Negatives (TN) – Correctly predicted as negative
+  - 1 False Positive (FP) – Incorrectly predicted as positive
+  - 2 False Negatives (FN) – Incorrectly predicted as negative
+  - 13 True Positives (TP) – Correctly predicted as positive
+
+Ideally, we want the numbers along the main diagonal (true positives and true negatives) to be as high as possible, indicating fewer classification errors.
+
+### Accuracy, Recall, Precision, F1 Score
