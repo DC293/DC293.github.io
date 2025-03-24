@@ -56,13 +56,13 @@ In logistic regression, instead of treating classification as strictly binary (0
 The odds of an event occurring is defined as:
 
 $$
-Odds = \frac{p}{1-p} = \frac{P(event occuring)}{P(event not occuring)}
+Odds = \frac{p}{1-p} = \frac{P(\text{event occuring})}{P(\text{event not occuring})}
 $$
 
 For example, suppose the probability of a person making a purchase is 0.7. The probability of not making a purchase is 1 - 0.7 = 0.3. Thus, the odds of making a purchase are:
 
 $$
-Odds  of  purchase = \frac{0.7}{0.3} = 2.33
+\text{Odds of purchase} = \frac{0.7}{0.3} = 2.33
 $$
 
 This means a person is 2.33 times more likely to make a purchase than not.
@@ -70,7 +70,7 @@ This means a person is 2.33 times more likely to make a purchase than not.
 Since odds are always positive, taking the logarithm of the odds allows us to transform probabilities into a scale that ranges from negative to positive infinity:
 
 $$
-Log-odds = log(\frac{p}{1-p})
+\text{Log-odds} = log(\frac{p}{1-p})
 $$
 
 A negative log-odds value means the probability is below 50%, while a positive log-odds value means the probability is above 50%. If the log-odds is 0, the probability is exactly 50%.
@@ -79,7 +79,7 @@ A negative log-odds value means the probability is below 50%, while a positive l
 To convert log-odds back into a probability, we apply the sigmoid function, which is the inverse of the log-odds transformation:
 
 $$
-P(y = 1) = \frac{e^{log-odds}}{1+e^{log-odds}}
+P(y = 1) = \frac{e^{\text{log-odds}}}{1+e^{\text{log-odds}}}
 $$
 
 This function ensures that any real-valued number is mapped to a probability between 0 and 1.
