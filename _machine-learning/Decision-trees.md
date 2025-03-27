@@ -33,7 +33,7 @@ This process of splitting continues recursively, using different features at eac
 Consider the two decision trees below. Which tree would be more useful for predicting whether someone would get a mortgage offer?
 
 <p align="center">
-  <img src="/assets/images/Decision tree.png" alt="loss" width="500">
+  <img src="/assets/images/Decision tree.png" alt="Decision tree" width="500">
 </p>
 
 The top tree creates some uncertainty as the training data has labels from both classes. The bottom tree splits the data much more evenly and ends up with a leaf with only one class label. We’d be much more confident about our prediction using the bottom tree.
@@ -52,13 +52,13 @@ We want our decision tree to split data in a way that reduces impurity as much a
 For example, say we start with a dataset with an initial impurity of 0.5. We split the dataset based on a feature (e.g. credit score) and end up with three subsets with impurities 0, 0.375, and 0.
 
 <p align="center">
-  <img src="/assets/images/Decision tree inpurity.png" alt="loss" width="500">
+  <img src="/assets/images/Decision tree impurity.png" alt="Decision tree impurity" width="500">
 </p>
 
 Splitting the data helps reveal patterns by creating purer subsets. The higher the information gain, the better the split. If it's 0, the split didnt provide any further information.
 
 $$
-information gain = 0.5-(0.0+0.375+0.0)=0.125
+\text{information gain} = 0.5-(0.0+0.375+0.0)=0.125
 $$
 
 ```python
