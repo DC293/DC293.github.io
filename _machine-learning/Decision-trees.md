@@ -46,6 +46,25 @@ $$
 
 Values with low impurity are most desirable, which is indicated by a value close to 0. If a data set has only one class, like our bottom tree example, you’d end up with a Gini impurity of 0. 
 
-## 
+## Information gain
+We want our decision tree to split data in a way that reduces impurity as much as possible. But how do we decide which feature to split on? To answer this, we calculate the information gain, which measures the reduction in impurity after a split.
+
+For example, say we start with a dataset with an initial impurity of 0.5. We split the dataset based on a feature (e.g., credit score) and end up with three subsets with impurities 0, 0.375, and 0.
+
+<p align="center">
+  <img src="/assets/images/Decision tree.png" alt="loss" width="500">
+</p>
+
+Not bad! By splitting the data in that way, we’ve gained some information about how the data is structured — the datasets after the split are purer than they were before the split. The higher the information gain the better — if information gain is 0, then splitting the data on that feature was useless! Unfortunately, right now it’s possible for information gain to be negative. In the next exercise, we’ll calculate weighted information gain to fix that problem.
+
 ```python
+from collections import Counter
+
+def gini(dataset):
+  impurity = 1
+  label_counts = Counter(dataset)
+  for label in label_counts:
+    prob_of_label = label_counts[label] / len(dataset)
+    impurity -= prob_of_label ** 2
+  return impurity
 ```
