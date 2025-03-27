@@ -49,13 +49,17 @@ Values with low impurity are most desirable, which is indicated by a value close
 ## Information gain
 We want our decision tree to split data in a way that reduces impurity as much as possible. But how do we decide which feature to split on? To answer this, we calculate the information gain, which measures the reduction in impurity after a split.
 
-For example, say we start with a dataset with an initial impurity of 0.5. We split the dataset based on a feature (e.g., credit score) and end up with three subsets with impurities 0, 0.375, and 0.
+For example, say we start with a dataset with an initial impurity of 0.5. We split the dataset based on a feature (e.g. credit score) and end up with three subsets with impurities 0, 0.375, and 0.
 
 <p align="center">
-  <img src="/assets/images/Decision tree.png" alt="loss" width="500">
+  <img src="/assets/images/Decision tree inpurity.png" alt="loss" width="500">
 </p>
 
-Not bad! By splitting the data in that way, we’ve gained some information about how the data is structured — the datasets after the split are purer than they were before the split. The higher the information gain the better — if information gain is 0, then splitting the data on that feature was useless! Unfortunately, right now it’s possible for information gain to be negative. In the next exercise, we’ll calculate weighted information gain to fix that problem.
+Splitting the data helps reveal patterns by creating purer subsets. The higher the information gain, the better the split. If it's 0, the split didnt provide any further information.
+
+$$
+information gain = 0.5-(0.0+0.375+0.0)=0.125
+$$
 
 ```python
 from collections import Counter
