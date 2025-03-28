@@ -132,10 +132,10 @@ def classify(datapoint, tree):
 ```
 
 ## scikit-learn
+Rather than defining the functions ourselves, we can make use of the scikit-learn tree module. As with all the machine
 
 
-
-
+## Limitations
 
 
 
