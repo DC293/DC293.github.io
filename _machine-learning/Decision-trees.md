@@ -90,6 +90,55 @@ $$
 \text{weighted information gain} = 0.5-(0.0\frac{4}{10}+0.375\frac{4}{10}+0.0\frac{2}{10})=0.35
 $$
 
-## Recurive tree building
+## Recursive tree building
+Now that we can identify the best feature for splitting, we recursively repeat the process to build the full tree. Starting with the entire dataset, we split on the best feature and continue within each subset. The recursion stops when no split improves purity. Each leaf stores the class distribution of its training data.
+
+```python
+def find_best_split(dataset, labels):
+    best_gain = 0
+    best_feature = 0
+    for feature in range(len(dataset[0])):
+        data_subsets, label_subsets = split(dataset, labels, feature)
+        gain = information_gain(labels, label_subsets)
+        if gain > best_gain:
+            best_gain, best_feature = gain, feature
+    return best_feature, best_gain
+
+def build_tree(data, labels):
+  (best_feature, best_gain) = find_best_split(data, labels)
+  if best_gain == 0:
+    return Counter(labels)
+  (data_subsets, label_subsets) = split(data, labels, best_feature)
+  branches = []
+  for i in range(len(data_subsets)):
+    branches.append(build_tree(data_subsets[i], label_subsets[i]))
+  return branches
+```
+
+## Classifying new data
+Now, we can use our tree for classification. Starting at the root, we follow the tree’s path based on feature values until reaching a leaf. The class distribution at the leaf determines the prediction.
+
+We've modified our build_tree() function to return either a Leaf or an Internal_Node object instead of raw lists or counters. Using the classify() function we can loop through all the branches in the tree until we find the one that matches our datapoint. We can then use this branch to classify our datapoint. 
+
+```python
+def classify(datapoint, tree):
+  if isinstance(tree, Leaf):
+    return max(tree.labels.items(), key=operator.itemgetter(1))[0]
+  
+  value = datapoint[tree.feature]
+  for branch in tree.branches:
+    if value == branch.value:
+      return classify(datapoint, branch)
+```
+
+## scikit-learn
+
+
+
+
+
+
+
+
 
 
