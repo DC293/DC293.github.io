@@ -46,7 +46,19 @@ $$
 
 Values with low impurity are most desirable, which is indicated by a value close to 0. If a data set has only one class, like our bottom tree example, you’d end up with a Gini impurity of 0. 
 
-## Information gain
+```python
+from collections import Counter
+
+def gini(dataset):
+  impurity = 1
+  label_counts = Counter(dataset)
+  for label in label_counts:
+    prob_of_label = label_counts[label] / len(dataset)
+    impurity -= prob_of_label ** 2
+  return impurity
+```
+
+### Information gain
 We want our decision tree to split data in a way that reduces impurity as much as possible. But how do we decide which feature to split on? To answer this, we calculate the information gain, which measures the reduction in impurity after a split.
 
 For example, say we start with a dataset with an initial impurity of 0.5. We split the dataset based on a feature (e.g. credit score) and end up with three subsets with impurities 0, 0.375, and 0.
@@ -61,14 +73,23 @@ $$
 \text{information gain} = 0.5-(0.0+0.375+0.0)=0.125
 $$
 
-```python
-from collections import Counter
+### Weighted information gain
+What we havent yet considered is the size of the groups after splitting. For example, the groups below have the same impurity however the groups with more items are much more useful. 
 
-def gini(dataset):
-  impurity = 1
-  label_counts = Counter(dataset)
-  for label in label_counts:
-    prob_of_label = label_counts[label] / len(dataset)
-    impurity -= prob_of_label ** 2
-  return impurity
-```
+<p align="center">
+  <img src="/assets/images/Weighted impurity.png" alt="Decision tree impurity group size" width="500">
+</p>
+
+To account for this, we can caluclate the weighted information gain. If the group before the split contained 10 items and one of the splits contained 2 items, then the weighted impurity of that group would be 2/10 multiplied by the impurity. By doing this, the influence of groups with fewer items are reduced. 
+
+<p align="center">
+  <img src="/assets/images/Decision tree impurity.png" alt="Decision tree impurity weighted" width="500">
+</p>
+
+$$
+\text{weighted information gain} = 0.5-(0.0x\frac{4}{10}+0.375x\frac{4}{10}+0.0x\frac{2}{10})=0.35
+$$
+
+
+
+
