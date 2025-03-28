@@ -136,7 +136,9 @@ Rather than defining the functions ourselves, we can make use of the scikit-lear
 
 
 ## Limitations
+Decision trees have some limitations. One key issue is that they are not always optimal. Although we use information gain to find the best feature to split on at each step, our approach is greedy—we only optimise for the current split without considering long-term effects. A globally optimal tree might require making suboptimal splits early on to achieve better results later, but finding such a tree is computationally difficult.
 
+Another limitation is overfitting. Large trees can become too tailored to the training data, losing their ability to generalize to new data. To address this, we can use pruning, a technique that reduces tree size to improve generalization. While scikit-learn doesn’t prune trees by default, we can modify the model to apply pruning strategies.
 
 
 
