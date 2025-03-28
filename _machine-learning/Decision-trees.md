@@ -83,13 +83,13 @@ What we havent yet considered is the size of the groups after splitting. For exa
 To account for this, we can caluclate the weighted information gain. If the group before the split contained 10 items and one of the splits contained 2 items, then the weighted impurity of that group would be 2/10 multiplied by the impurity. By doing this, the influence of groups with fewer items are reduced. 
 
 <p align="center">
-  <img src="/assets/images/Decision tree impurity.png" alt="Decision tree impurity weighted" width="500">
+  <img src="/assets/images/Decision tree impurity weighted.png" alt="Decision tree impurity weighted" width="500">
 </p>
 
 $$
-\text{weighted information gain} = 0.5-(0.0x\frac{4}{10}+0.375x\frac{4}{10}+0.0x\frac{2}{10})=0.35
+\text{weighted information gain} = 0.5-(0.0\frac{4}{10}+0.375\frac{4}{10}+0.0\frac{2}{10})=0.35
 $$
 
-
+## Recurive tree building
 
 
