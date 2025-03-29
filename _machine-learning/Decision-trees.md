@@ -188,9 +188,30 @@ print(prediction)
 ## Limitations
 Decision trees have some limitations. One key issue is that they are not always optimal. Although we use information gain to find the best feature to split on at each step, our approach is greedy—we only optimise for the current split without considering long-term effects. A globally optimal tree might require making suboptimal splits early on to achieve better results later, but finding such a tree is computationally difficult.
 
-Another limitation is overfitting. Large trees can become too tailored to the training data, losing their ability to generalize to new data. To address this, we can use pruning, a technique that reduces tree size to improve generalization. While scikit-learn doesn’t prune trees by default, we can modify the model to apply pruning strategies.
+Another limitation is overfitting. Large trees can become too tailored to the training data, losing their ability to generalise to new data. To address this, we can use pruning, a technique that reduces tree size to improve generalisation. While scikit-learn doesn’t prune trees by default, we can modify the model to apply pruning ourselves.
 
+Below we have taken our cars database and pruned the tree by limiting the depth when defining our classifier. We have changed the random state of our datasplit to demonstrate this more clearly. With no limitation on tree depth, we end up with a depth of 8 and a model score of 0.6. By limiting the depth to 6, we can see the model score increases to 0.7. 
 
+```python
+training_set, validation_set, training_labels, validation_labels = train_test_split(car_data, car_labels, train_size=0.8, test_size=0.2, random_state=68)
+
+classifier = DecisionTreeClassifier()
+classifier.fit(training_set, training_labels)
+print('Model score: ', classifier.score(validation_set, validation_labels))
+print('Tree depth: ', classifier.tree_.max_depth)
+
+pruned_classifier = DecisionTreeClassifier(max_depth=6)
+pruned_classifier.fit(training_set, training_labels)
+print('Model score: ', pruned_classifier.score(validation_set, validation_labels))
+print('Tree depth: ', pruned_classifier.tree_.max_depth)
+```
+```python
+Model score:  0.6
+Tree depth:  8
+
+Model score:  0.7
+Tree depth:  6
+```
 
 
 
