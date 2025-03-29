@@ -132,8 +132,58 @@ def classify(datapoint, tree):
 ```
 
 ## scikit-learn
-Rather than defining the functions ourselves, we can make use of the scikit-learn tree module. As with all the machine
+Rather than defining the functions ourselves, we can make use of the scikit-learn tree module. In the example below we have taken our cars dataset and selected 5 items to split the data. The objective of the tree is to determine the type of car based off these inputs. The tree requires the data to be in numerical format so we have utilised the LabelEncoder to covert the category strings for each item into numerical categories. Once we have our dataset appropriately formatted, we can split it into training and test sets. After fitting to our data, we can see our model score is 0.7, not too bad! 
 
+```python
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+
+cars = pd.read_csv('Datasets/car_price.csv').drop_duplicates(subset=['CarName']).reset_index()
+car_data = cars[['fueltype', 'aspiration', 'doornumber', 'drivewheel', 'fuelsystem']].copy()
+car_labels = cars[['carbody']]
+
+# Encode training data and store the encoders
+encoders = {}  
+
+for col in ['fueltype', 'aspiration', 'doornumber', 'drivewheel', 'fuelsystem']:
+    le = LabelEncoder()
+    car_data[col] = le.fit_transform(cars[col])
+    encoders[col] = le  # Store the fitted encoder
+
+# Train the decision tree
+training_set, validation_set, training_labels, validation_labels = train_test_split(car_data, car_labels, train_size=0.8, test_size=0.2, random_state=7)
+
+classifier = DecisionTreeClassifier()
+classifier.fit(training_set, training_labels)
+print('Model score: ', classifier.score(validation_set, validation_labels))
+
+```python
+Model score: 0.7
+```
+
+Now lets see if we can make a classification using our model. We have defined a car in a new dataframe befre using our encoder from before to covert into the correct numerical categories. Our tree predicts the car will be a hatchback. 
+
+```python
+# **Step 2: Encode new input data for prediction using stored encoders**
+new_input = pd.DataFrame([{
+    'fueltype': 'gas',
+    'aspiration': 'turbo',
+    'doornumber': 'two',
+    'drivewheel': 'rwd',
+    'fuelsystem': 'idi'}])
+
+# Convert input data using stored encoders
+for col in new_input.columns:
+    if col in encoders:  # Ensure we only transform known categorical columns
+        new_input[col] = encoders[col].transform(new_input[col])
+
+# **Step 3: Make prediction**
+prediction = classifier.predict(new_input)
+print(prediction)
+```
+```python
+['hatchback']
+```
 
 ## Limitations
 Decision trees have some limitations. One key issue is that they are not always optimal. Although we use information gain to find the best feature to split on at each step, our approach is greedy—we only optimise for the current split without considering long-term effects. A globally optimal tree might require making suboptimal splits early on to achieve better results later, but finding such a tree is computationally difficult.
