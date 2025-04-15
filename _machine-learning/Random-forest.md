@@ -29,7 +29,16 @@ When creating a decision tree, we learnt it is deterministic, thus, with the sam
 
 In order to circumvent this random forests can utlise a process called bagging. This process splits the training set into multiple subsets by which different decision trees can be created. For example, if we had 1000 rows of training data, we can make decision trees using 100 rows selected at random. Each time a random subset is created, a random row is selected from the full training set. This means we can end up with the same row multiple times across subsets and even in the same subset. Even if the subset size was large, its likely each subset would still be unique.
 
+```python
+import random
 
+# Create array of random indexes, with replacement, up to the length of the training set
+indices = random.choices(range(len(car_data)), k=len(car_data))
+
+# Use indices to create training sets
+data_subset = car_data.iloc[indices].reset_index(drop=True)
+labels_subset = car_labels.iloc[indices].reset_index(drop=True)
+```
 
 
 
