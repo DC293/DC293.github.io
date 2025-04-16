@@ -59,8 +59,37 @@ For example, when deciding on a feature to split the data on first, we can rando
 
 One thing to consider is how to choose the number of features to randomly select. A general rule of thumb is to randomly select the square root of the total number of features. Our car dataset is relatively small therefore limiting the impact of feature bagging. If there we're more features e.g. 16, this would provide a greater diversity in our decision trees as there are many more combinations for bagging. 
 
+To demonstrate this, we've altered our find_best_split() function to randomly select two features to limit the split. 
 
+```python
+def find_best_split(dataset, labels):
+    best_gain = 0
+    best_feature = None
+    
+    # Choose random column names instead of indices
+    features = np.random.choice(dataset.columns, 2, replace=False)
+    
+    for feature in features:
+        data_subsets, label_subsets = split(dataset, labels, feature)
+        gain = information_gain(labels, label_subsets)
+        if gain > best_gain:
+            best_gain, best_feature = gain, feature
+            
+    return best_gain, best_feature
+indices = random.choices(range(len(car_data)), k=len(car_data))
 
+# Use indices to create training sets
+data_subset = car_data.iloc[indices].reset_index(drop=True)
+labels_subset = car_labels.iloc[indices].reset_index(drop=True)
 
+(best_gain, best_feature) = find_best_split(data_subset, labels_subset)
 
+print(best_gain, best_feature)
+```
 
+Running this three times gives us different answers as we randomly select which features to split on. 
+```python
+0.0024260608618576485 drivewheel
+0.0002386232706932112 aspiration
+0.013303063384313751 fuelsystem
+```
