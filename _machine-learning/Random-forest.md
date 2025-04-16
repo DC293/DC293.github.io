@@ -59,7 +59,7 @@ For example, when deciding on a feature to split the data on first, we can rando
 
 One thing to consider is how to choose the number of features to randomly select. A general rule of thumb is to randomly select the square root of the total number of features. Our car dataset is relatively small therefore limiting the impact of feature bagging. If there we're more features e.g. 16, this would provide a greater diversity in our decision trees as there are many more combinations for bagging. 
 
-To demonstrate this, we've altered our find_best_split() function to randomly select two features to limit the split. 
+To demonstrate this, we've altered our find_best_split() function to randomly select two features instead of using all of the available features. The function then proceeds as before, deciding how to split based on which feature provides the best information gain. 
 
 ```python
 def find_best_split(dataset, labels):
