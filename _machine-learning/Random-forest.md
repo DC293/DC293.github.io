@@ -88,8 +88,11 @@ print(best_gain, best_feature)
 ```
 
 Running this three times gives us different answers as we randomly select which features to split on. 
+
 ```python
 0.0024260608618576485 drivewheel
 0.0002386232706932112 aspiration
 0.013303063384313751 fuelsystem
 ```
+
+## Classification
