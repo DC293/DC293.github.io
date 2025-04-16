@@ -73,6 +73,14 @@ $$
 \text{information gain} = 0.5-(0.0+0.375+0.0)=0.125
 $$
 
+```python
+def information_gain(starting_labels, split_labels):
+  info_gain = gini(starting_labels)
+  for subset in split_labels:
+    info_gain -= gini(subset) * len(subset)/len(starting_labels)
+  return info_gain  
+```
+
 ### Weighted information gain
 What we havent yet considered is the size of the groups after splitting. For example, the groups below have the same impurity however the groups with more items are much more useful. 
 
