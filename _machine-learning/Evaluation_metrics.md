@@ -37,7 +37,7 @@ To understand this better, we can visualise this as a confusion matrix. In the m
   <img src="/assets/images/Confusion matrix.png" alt="Confusion matrix" width="500">
 </p>
 
-Lets see how we can do this in reality:
+Lets see this in action:
 
 ```python
 actual =    [1, 0, 0, 1, 1, 1, 0, 1, 1, 1]
