@@ -31,5 +31,7 @@ False Negative (FN): The algorithm predicted fail and it was pass
 
 To understand this better, we can visualise this as a confusion matrix. In teh matrix, predicted classes are represented as columns and the actual classess are represented as rows. 
 
-
+<p align="center">
+  <img src="/assets/images/Evaluation metrics cover.png" alt="Confusion matrix" width="500">
+</p>
 
