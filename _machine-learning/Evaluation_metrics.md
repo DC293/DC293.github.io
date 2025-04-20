@@ -71,13 +71,19 @@ print(conf_matrix)
  [4 3]]
 ```
 ## Accuracy
-Once we have a confusion matrix, we can compute several key metrics to evaluate our model’s performance. Using the number of true positive (TP), true negative (TN), false positive (FP) and false negative (FN) we can calculate the following:
-
-  - Accuracy: The proportion of correctly classified instances.
+The first metric we can use is the accuracy score. Accuracy is calculated by taking the total number of correctly classified predictions (true positives and true negatives) and dividing by the total number of predictions.
 
 $$
 \frac{TP + TN}{TP + FP + TN + FN}
 $$
+
+```python
+accuracy = (true_positives+true_negatives)/(true_positives+true_negatives+false_positives+false_negatives)
+print('Accuracy:', accuracy)
+```
+```python
+Accuracy: 0.3
+```
 
 ## Precision
 
@@ -86,6 +92,8 @@ $$
 $$
 \frac{TP}{TP + FP}
 $$
+
+
 
 ## Recall
   - Recall (Sensitivity): The proportion of actual positives that are correctly identified.
