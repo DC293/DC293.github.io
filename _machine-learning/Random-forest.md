@@ -96,3 +96,15 @@ Running this three times gives us different answers as we randomly select which 
 ```
 
 ## Classification
+Now we have learnt how we can bag and feature bag. We can put this together to create trees for our random forest. To do this, we can use scikit-learn RandomForestClassifier. When creating a RandomForestClassifier, we can define the number of trees by using the n_estimators variable. 
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+
+classifier = RandomForestClassifier(n_estimators = 100, random_state=0)
+
+classifier.fit(training_set, training_labels)
+
+print(classifier.score(validation_set, validation_labels))
+0.7
+```
