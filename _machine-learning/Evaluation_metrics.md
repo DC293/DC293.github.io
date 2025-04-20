@@ -86,7 +86,9 @@ Accuracy: 0.3
 ```
 
 ## Recall
-  - Recall (Sensitivity): The proportion of actual positives that are correctly identified.
+Accuracy can be a misleading statistic depending on our data and the problem we are trying to solve. Consider a model tasked with predicting spam in the email inboxes of top secret government employees who never use their work email addresses for online shopping or logging onto their favorite gaming apps. We can write a pretty simple and accurate classifier that always predicts False, the email is not spam. This classifier will be incredibly accurate since there are hardly ever any spam emails sent to those top secret emails, but this classifier will never be able to find the information we are actually interested in, when there is spam.
+
+In this situation, a helpful statistic to consider is recall. In our example, recall measures the ratio of correct spam predictions that our classifier found to the total number of spam emails.
 
 $$
 \frac{TP}{TP + FN}
