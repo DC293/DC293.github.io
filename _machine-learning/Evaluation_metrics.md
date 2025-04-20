@@ -85,21 +85,19 @@ print('Accuracy:', accuracy)
 Accuracy: 0.3
 ```
 
+## Recall
+  - Recall (Sensitivity): The proportion of actual positives that are correctly identified.
+
+$$
+\frac{TP}{TP + FN}
+$$
+
 ## Precision
 
   - Precision: The proportion of predicted positives that are actually positive.
 
 $$
 \frac{TP}{TP + FP}
-$$
-
-
-
-## Recall
-  - Recall (Sensitivity): The proportion of actual positives that are correctly identified.
-
-$$
-\frac{TP}{TP + FN}
 $$
 
 ## F1 score
