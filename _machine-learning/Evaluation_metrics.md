@@ -111,6 +111,14 @@ $$
 \frac{TP}{TP + FP}
 $$
 
+```python
+precision = true_positives/(true_positives+false_positives)
+print('Precsion:', precision)
+```
+```python
+Precsion: 0.5
+```
+
 ## F1 score
  - F1 score: The weighted mean of precision and recall.
 
