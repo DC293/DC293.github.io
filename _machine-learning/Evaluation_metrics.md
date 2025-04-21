@@ -103,8 +103,9 @@ Recall: 0.43
 ```
 
 ## Precision
+Unfortunately, recall isn’t a perfect statistic either. Suppose we created a model that predicts many students as likely to fail — just to make sure we don’t miss any. While this might give us a high recall (we catch most of the failing students), we might also be incorrectly labeling many students who would actually pass.
 
-  - Precision: The proportion of predicted positives that are actually positive.
+This is where precision becomes useful. Precision tells us, of all the students we predicted would fail, how many actually did fail. It helps us understand how trustworthy our "fail" predictions are.
 
 $$
 \frac{TP}{TP + FP}
