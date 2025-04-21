@@ -123,15 +123,9 @@ Precsion: 0.5
 Instead of relying on a single measure, we can combine both precision and recall in a single measure. The F1-score uses the harmonic mean of both measures to better describe the model's efffectiveness. 
 
 F1-score is defined as:
-​
 
 $$
-Accuracy = \frac{TP + TN}{TP + FP + TN + FN}
-$$
-
-
-$$
-F1 score = \frac{2 x Recall x Precision}{Recall + Precision}
+F1-score = \frac{2 x Recall x Precision}{Recall + Precision}
 $$
  
 We use the harmonic mean rather than the traditional arithmetic mean because we want the F1-score to have a low value when either precision or recall is 0.
