@@ -125,6 +125,9 @@ Instead of relying on a single measure, we can combine both precision and recall
 F1-score is defined as:
 ​
 $$
+Accuracy = \frac{TP + TN}{TP + FP + TN + FN}
+$$
+$$
 F1 score = \frac{2 x Recall x Precision}{Recall + Precision}
 $$
  
