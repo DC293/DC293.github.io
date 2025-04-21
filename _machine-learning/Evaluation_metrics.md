@@ -108,7 +108,7 @@ Unfortunately, recall isn’t a perfect statistic either. Suppose we created a m
 This is where precision becomes useful. Precision tells us, of all the students we predicted would fail, how many actually did fail. It helps us understand how trustworthy our "fail" predictions are.
 
 $$
-Precision = \frac{TP}{TP + FP}
+\text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
 $$
 
 ```python
