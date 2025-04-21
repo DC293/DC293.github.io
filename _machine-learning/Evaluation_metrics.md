@@ -94,6 +94,14 @@ $$
 \frac{TP}{TP + FN}
 $$
 
+```python
+recall = true_positives/(true_positives+false_negatives)
+print('Recall:', recall)
+```
+```python
+Recall: 0.43
+```
+
 ## Precision
 
   - Precision: The proportion of predicted positives that are actually positive.
