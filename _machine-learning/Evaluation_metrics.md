@@ -127,15 +127,30 @@ F1-score is defined as:
 $$
 F_1 = \frac{2 \cdot \text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
 $$
- 
+
+```python
+f_1 = (2*(precision*recall))/(precision+recall)
+print('f1-score:', f_1)
+```
+```python
+f1-score: 0.46
+```
+
 We use the harmonic mean rather than the traditional arithmetic mean because we want the F1-score to have a low value when either precision or recall is 0.
 
 For example, consider a classifier where recall = 1 and precision = 0.02. Despite our classifier having an extremely high recall score, there is most likely a problem with this model since the precision is so low. Ideally the F1-score would reflect that.
 
 If we took the arithmetic mean of precision and recall, we get:
 
+$$
+\frac{1 + 0.02}{2} = 0.51
+$$
+
 That performance statistic is misleadingly high for a classifier that has such dismal precision. If we instead calculate the harmonic mean, we get:
 
+$$
+\frac{2 \cdot 1 \cdot 0.02}{1 + 0.02} = 0.039
+$$
 
 
  
