@@ -136,21 +136,27 @@ print('f1-score:', f_1)
 f1-score: 0.46
 ```
 
-We use the harmonic mean rather than the traditional arithmetic mean because we want the F1-score to have a low value when either precision or recall is 0.
+### Harmonic mean
+We use the harmonic mean rather than the arithmetic mean because we want the F1-score to be low when either precision or recall is low. This makes it a more balanced indicator of overall model performance.
 
-For example, consider a classifier where recall = 1 and precision = 0.02. Despite our classifier having an extremely high recall score, there is most likely a problem with this model since the precision is so low. Ideally the F1-score would reflect that.
+Suppose we have a classifier with:
 
-If we took the arithmetic mean of precision and recall, we get:
+  - Recall = 1.00 (very high)
+  - Precision = 0.02 (very low)
+
+Despite the perfect recall, this classifier is likely problematic because it makes many incorrect positive predictions.
+
+If we calculate the arithmetic mean:
 
 $$
 \frac{1 + 0.02}{2} = 0.51
 $$
 
-That performance statistic is misleadingly high for a classifier that has such dismal precision. If we instead calculate the harmonic mean, we get:
+That’s misleadingly high — it doesn’t reflect how poor the precision is. Now compare that to the harmonic mean (F1-score):
 
 $$
 \frac{2 \cdot 1 \cdot 0.02}{1 + 0.02} = 0.039
 $$
 
-
+The F1-score appropriately reflects the weakness of the model — it's only as good as its weakest link (precision in this case).
  
