@@ -160,3 +160,33 @@ $$
 
 The F1-score appropriately reflects the weakness of the model — it's only as good as its weakest link (precision in this case).
  
+## sklearn
+Now that we have an understanding of accuracy, precision, recall, and F1-score, we can assess which metric best reflects our model’s effectiveness.
+
+In this case, we want to ensure that students who are at risk of failing are identified, so we can give them additional support. It's okay if some students are incorrectly flagged as at-risk (i.e., false positives), but we don't want to miss those who truly need help.
+
+This means that recall is especially important in our context — we want to minimise false negatives.
+
+As long as we have an understanding of the context, we should be able to determine which statistic is most relevant.
+
+To make this easier going forward, we can utilise the sklearn metrics library. 
+
+```python
+from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score
+
+actual = [1, 0, 0, 1, 1, 1, 0, 1, 1, 1]
+predicted = [0, 1, 1, 1, 1, 0, 1, 0, 1, 0]
+
+print('Accuracy:', accuracy_score(actual, predicted))
+print('Recall:', recall_score(actual, predicted))
+print('Precision:', precision_score(actual, predicted))
+print('F1-score:', f1_score(actual, predicted))
+```
+```python
+Accuracy: 0.3
+Recall: 0.43
+Precision: 0.5
+F1-score: 0.46
+```
+
+
