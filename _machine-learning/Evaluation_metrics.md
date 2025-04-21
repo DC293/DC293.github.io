@@ -74,7 +74,7 @@ print(conf_matrix)
 The first metric we can use is the accuracy score. Accuracy is calculated by taking the total number of correctly classified predictions (true positives and true negatives) and dividing by the total number of predictions.
 
 $$
-\frac{TP + TN}{TP + FP + TN + FN}
+Accuracy = \frac{TP + TN}{TP + FP + TN + FN}
 $$
 
 ```python
@@ -125,7 +125,7 @@ Instead of relying on a single measure, we can combine both precision and recall
 F1-score is defined as:
 ​
 $$
-F1-score = \frac{2 x Recall x Precision}{Recall + Precision}
+F1 score = \frac{2 x Recall x Precision}{Recall + Precision}
 $$
  
 We use the harmonic mean rather than the traditional arithmetic mean because we want the F1-score to have a low value when either precision or recall is 0.
