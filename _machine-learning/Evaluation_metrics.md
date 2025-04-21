@@ -91,7 +91,7 @@ Accuracy can sometimes be a misleading measure depending on the context of our d
 In this situation, a helpful statistic to consider is recall. Specifically, if we care about catching failing students, recall measures the proportion of actual failing students that our model correctly identifies. This gives us a better sense of how well we're detecting the minority class.
 
 $$
-\frac{TP}{TP + FN}
+Recall = \frac{TP}{TP + FN}
 $$
 
 ```python
@@ -108,7 +108,7 @@ Unfortunately, recall isn’t a perfect statistic either. Suppose we created a m
 This is where precision becomes useful. Precision tells us, of all the students we predicted would fail, how many actually did fail. It helps us understand how trustworthy our "fail" predictions are.
 
 $$
-\frac{TP}{TP + FP}
+Precision = \frac{TP}{TP + FP}
 $$
 
 ```python
@@ -120,7 +120,21 @@ Precsion: 0.5
 ```
 
 ## F1 score
- - F1 score: The weighted mean of precision and recall.
+Instead of relying on a single measure, we can combine both precision and recall in a single measure. The F1-score uses the harmonic mean of both measures to better describe the model's efffectiveness. 
+
+F1-score is defined as:
+​
+$$
+F1-score = \frac{2 x Recall x Precision}{Recall + Precision}
+$$
+ 
+We use the harmonic mean rather than the traditional arithmetic mean because we want the F1-score to have a low value when either precision or recall is 0.
+
+For example, consider a classifier where recall = 1 and precision = 0.02. Despite our classifier having an extremely high recall score, there is most likely a problem with this model since the precision is so low. Ideally the F1-score would reflect that.
+
+If we took the arithmetic mean of precision and recall, we get:
+
+That performance statistic is misleadingly high for a classifier that has such dismal precision. If we instead calculate the harmonic mean, we get:
 
 
 
