@@ -125,7 +125,7 @@ Instead of relying on a single measure, we can combine both precision and recall
 F1-score is defined as:
 
 $$
-F1-score = \frac{2 x Recall x Precision}{Recall + Precision}
+F_1 = \frac{2 \cdot \text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
 $$
  
 We use the harmonic mean rather than the traditional arithmetic mean because we want the F1-score to have a low value when either precision or recall is 0.
