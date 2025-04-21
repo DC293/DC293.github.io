@@ -86,9 +86,9 @@ Accuracy: 0.3
 ```
 
 ## Recall
-Accuracy can be a misleading statistic depending on our data and the problem we are trying to solve. Consider a model tasked with predicting spam in the email inboxes of top secret government employees who never use their work email addresses for online shopping or logging onto their favorite gaming apps. We can write a pretty simple and accurate classifier that always predicts False, the email is not spam. This classifier will be incredibly accurate since there are hardly ever any spam emails sent to those top secret emails, but this classifier will never be able to find the information we are actually interested in, when there is spam.
+Accuracy can sometimes be a misleading measure depending on the context of our data. Take our student test pass/fail example. If we created a model to predict whether students in a high-performing class would pass or fail, we’d expect most to pass. A model that always predicts “pass” would be highly accurate, but it would fail to identify the students at risk of failing — those who may need extra support.
 
-In this situation, a helpful statistic to consider is recall. In our example, recall measures the ratio of correct spam predictions that our classifier found to the total number of spam emails.
+In this situation, a helpful statistic to consider is recall. Specifically, if we care about catching failing students, recall measures the proportion of actual failing students that our model correctly identifies. This gives us a better sense of how well we're detecting the minority class.
 
 $$
 \frac{TP}{TP + FN}
