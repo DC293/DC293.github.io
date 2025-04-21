@@ -74,7 +74,7 @@ print(conf_matrix)
 The first metric we can use is the accuracy score. Accuracy is calculated by taking the total number of correctly classified predictions (true positives and true negatives) and dividing by the total number of predictions.
 
 $$
-Accuracy = \frac{TP + TN}{TP + FP + TN + FN}
+\text{Accuracy} = \frac{\text{TP} + \text{TN}}{\text{TP} + \text{FP} + \text{TN} + \text{FN}}
 $$
 
 ```python
@@ -91,7 +91,7 @@ Accuracy can sometimes be a misleading measure depending on the context of our d
 In this situation, a helpful statistic to consider is recall. Specifically, if we care about catching failing students, recall measures the proportion of actual failing students that our model correctly identifies. This gives us a better sense of how well we're detecting the minority class.
 
 $$
-Recall = \frac{TP}{TP + FN}
+\text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
 $$
 
 ```python
