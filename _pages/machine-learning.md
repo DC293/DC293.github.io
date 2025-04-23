@@ -6,7 +6,7 @@ author_profile: true
 classes: wide
 ---
 
-{% assign grouped = site.machine-learning | group_by: "type" %}
+{% assign grouped = site['machine-learning'] | group_by: "type" %}
 
 {% for category in grouped %}
   {% if category.name %}
@@ -18,4 +18,3 @@ classes: wide
     </div>
   {% endif %}
 {% endfor %}
-
