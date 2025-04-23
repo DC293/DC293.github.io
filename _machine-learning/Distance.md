@@ -11,7 +11,7 @@ toc: true
 published: true
 toc_label: "Contents:"
 #classes: wide
-categories: machine-learning
+categories: [Supervied models] #machine-learning
 tags: machine-learning
 author_profile: True
 ---
