@@ -5,35 +5,16 @@ title: "Measuring distance"
 excerpt: "Measuring distance between points"
 header:
     overlay_image: assets/images/20 by 20 orthogonal maze.png
-    overlay_filter: 0.5
+    overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
     teaser: assets/images/20 by 20 orthogonal maze.png
 toc: true
 published: true
 toc_label: "Contents:"
 #classes: wide
-collection: machine-learning
-categories: [Supervised models]
+categories: machine-learning
 tags: machine-learning
 author_profile: True
 ---
-
-#---
-#layout: single
-#weight: 1
-#title: "Measuring distance"
-#excerpt: "Measuring distance between points"
-#header:
-    #overlay_image: assets/images/20 by 20 orthogonal maze.png
-    #overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
-    #teaser: assets/images/20 by 20 orthogonal maze.png
-#toc: true
-#published: true
-#toc_label: "Contents:"
-#classes: wide
-#categories: machine-learning
-#tags: machine-learning
-#author_profile: True
-#---
 
 {% include mathjax.html %}
 
