@@ -11,10 +11,8 @@ toc: true
 published: true
 toc_label: "Contents:"
 #classes: wide
-#categories: [Supervied models] #machine-learning
-collection: machine-learning
-type: Supervised models  # <--- custom single string
-#tags: machine-learning
+categories: machine-learning
+tags: machine-learning
 author_profile: True
 ---
 
