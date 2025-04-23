@@ -1,20 +1,11 @@
 ---
 title: Machine Learning
-layout: single
+layout: collection
 permalink: /machine-learning/
-author_profile: true
+collection: machine-learning
+entries_layout: grid
 classes: wide
+sort_by: weight
+order: reverse
+author_profile: True
 ---
-
-{% assign grouped = site['machine-learning'] | group_by: "type" %}
-
-{% for category in grouped %}
-  {% if category.name %}
-    <h2>{{ category.name }}</h2>
-    <div class="entries-grid">
-      {% for post in category.items %}
-        {% include archive-single.html type="grid" %}
-      {% endfor %}
-    </div>
-  {% endif %}
-{% endfor %}
