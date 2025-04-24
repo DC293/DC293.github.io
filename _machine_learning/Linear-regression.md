@@ -1,6 +1,6 @@
 ---
 layout: single
-weight: 1
+weight: 2
 title: "Linear regression"
 excerpt: "Fundamentals of linear regression"
 header:
