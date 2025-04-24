@@ -1,26 +1,19 @@
-/* _sass/_custom.scss */
-.section-title {
-  margin-top: 3rem;  /* Space above the section title */
-  margin-bottom: 1rem;  /* Space below the section title */
-  font-size: 2rem; /* Adjust the title font size */
-  font-weight: bold; /* Make it stand out */
-}
+// _sass/_custom.scss
 
-.entries-grid {
+.ml-posts-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
-  gap: 1.5rem; /* Space between grid items */
-  margin-bottom: 2rem; /* Space after the grid */
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-/* Ensure grid items have a uniform look */
-.entries-grid .archive-item {
+.ml-posts-grid .archive-item {
   padding: 1rem;
   background-color: #f9f9f9;
-  border-radius: 8px; /* Rounded corners */
+  border-radius: 8px;
 }
 
-.entries-grid .archive-item img {
+.ml-posts-grid .archive-item img {
   max-width: 100%;
-  height: auto; /* Make images responsive */
+  height: auto;
 }
