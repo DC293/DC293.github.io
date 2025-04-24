@@ -8,11 +8,12 @@ sort_by: weight
 ---
 
 ## Supervised models
+
 ### Regression
 
 <div class="entries-grid">
-  {% assign supervised = site.machine_learning | where: "type", "regression" %}
-  {% for post in supervised %}
+  {% assign regression = site.machine_learning | where: "type", "regression" %}
+  {% for post in regression %}
     {% include archive-single.html type="grid" %}
   {% endfor %}
 </div>
@@ -20,8 +21,8 @@ sort_by: weight
 ### Classification
 
 <div class="entries-grid">
-  {% assign supervised = site.machine_learning | where: "type", "classification" %}
-  {% for post in supervised %}
+  {% assign classification = site.machine_learning | where: "type", "classification" %}
+  {% for post in classification %}
     {% include archive-single.html type="grid" %}
   {% endfor %}
 </div>
@@ -31,8 +32,8 @@ sort_by: weight
 ### Clustering
 
 <div class="entries-grid">
-  {% assign unsupervised = site.machine_learning | where: "type", "clustering" %}
-  {% for post in unsupervised %}
+  {% assign clustering = site.machine_learning | where: "type", "clustering" %}
+  {% for post in clustering %}
     {% include archive-single.html type="grid" %}
   {% endfor %}
 </div>
@@ -40,8 +41,8 @@ sort_by: weight
 ## Neural networks
 
 <div class="entries-grid">
-  {% assign unsupervised = site.machine_learning | where: "type", "neural-network" %}
-  {% for post in unsupervised %}
+  {% assign neural_network = site.machine_learning | where: "type", "neural-network" %}
+  {% for post in neural_network %}
     {% include archive-single.html type="grid" %}
   {% endfor %}
 </div>
