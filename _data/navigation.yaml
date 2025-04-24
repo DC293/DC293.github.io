@@ -4,7 +4,7 @@ main:
   - title: "About"
     url: /about
   - title: "Machine Learning"
-    url: /machine-learning
+    url: /machine_learning
   - title: "Data Science"
     url: /data-science
   - title: "Coding puzzles"
