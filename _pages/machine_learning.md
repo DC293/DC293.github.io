@@ -1,11 +1,25 @@
 ---
 title: Machine Learning
-layout: collection
+layout: single
 permalink: /machine_learning/
-collection: machine_learning
-entries_layout: grid
+author_profile: true
 classes: wide
-sort_by: weight
-order: reverse
-author_profile: True
 ---
+
+## Supervised
+
+<div class="entries-grid">
+  {% assign supervised = site.machine_learning | where: "type", "Supervised" %}
+  {% for post in supervised %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
+
+## Unsupervised
+
+<div class="entries-grid">
+  {% assign unsupervised = site.machine_learning | where: "type", "Unsupervised" %}
+  {% for post in unsupervised %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
