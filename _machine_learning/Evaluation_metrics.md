@@ -1,6 +1,6 @@
 ---
 layout: single
-weight: 4
+weight: 8
 title: "Classification evaluation metrics"
 excerpt: "Evaluating a model’s predictive power"
 header:
