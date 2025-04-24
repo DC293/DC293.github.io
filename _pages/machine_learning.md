@@ -7,7 +7,9 @@ classes: wide
 sort_by: weight
 ---
 
-## Supervised models
+<div class="section-title">
+  <h2>Supervised models</h2>
+</div>
 
 ### Regression
 
@@ -27,10 +29,9 @@ sort_by: weight
   {% endfor %}
 </div>
 
-
-
-
-## Unsupervised models
+<div class="section-title">
+  <h2>Unsupervised models</h2>
+</div>
 
 ### Clustering
 
@@ -41,7 +42,9 @@ sort_by: weight
   {% endfor %}
 </div>
 
-## Neural networks
+<div class="section-title">
+  <h2>Neural networks</h2>
+</div>
 
 <div class="entries-grid">
   {% assign neural_network = site.machine_learning | where: "type", "neural-network" %}
