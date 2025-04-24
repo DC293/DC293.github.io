@@ -1,6 +1,6 @@
 ---
 layout: single
-weight: 8
+weight: 4
 title: "Classification evaluation metrics"
 excerpt: "Evaluating a model’s predictive power"
 header:
@@ -13,7 +13,7 @@ published: true
 toc_label: "Contents:"
 #classes: wide
 categories: machine_learning
-tags: machine_learning
+type: classification
 author_profile: True
 ---
 
