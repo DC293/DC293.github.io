@@ -13,6 +13,7 @@ published: true
 toc_label: "Contents:"
 #classes: wide
 categories: machine_learning
+type: unsupervised
 tags: machine-learning
 author_profile: True
 ---
