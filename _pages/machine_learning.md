@@ -4,7 +4,7 @@ layout: single
 permalink: /machine_learning/
 author_profile: true
 #classes: wide
-contents: True
+contents: true
 ---
 
 ## Supervised models
