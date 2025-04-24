@@ -160,7 +160,7 @@ collections:
   data-science:
     output: true
     permalink: /:collection/:path/
-  machine-learning:
+  machine_learning:
     output: true
     permalink: /:collection/:path/
   collections:
