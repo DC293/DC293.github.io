@@ -4,6 +4,7 @@ layout: single
 permalink: /machine_learning/
 author_profile: true
 classes: wide
+sort_by: weight
 ---
 
 ## Supervised models
