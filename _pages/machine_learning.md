@@ -28,6 +28,7 @@ classes: wide
 ## Unsupervised models
 
 ### Clustering
+
 <div class="entries-grid">
   {% assign unsupervised = site.machine_learning | where: "type", "clustering" %}
   {% for post in unsupervised %}
@@ -36,6 +37,7 @@ classes: wide
 </div>
 
 ## Neural networks
+
 <div class="entries-grid">
   {% assign unsupervised = site.machine_learning | where: "type", "neural-network" %}
   {% for post in unsupervised %}
