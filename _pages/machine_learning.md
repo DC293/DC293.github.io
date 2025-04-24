@@ -3,8 +3,7 @@ title: Machine Learning
 layout: single
 permalink: /machine_learning/
 author_profile: true
-#classes: wide
-contents: true
+classes: wide
 ---
 
 ## Supervised models
