@@ -1,6 +1,6 @@
 ---
 layout: single
-weight: 5
+weight: 1
 title: "K-Nearest neighbours (KNN)"
 excerpt: "Classifying and predicting unknown data points"
 header:
