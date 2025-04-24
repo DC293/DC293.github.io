@@ -1,6 +1,6 @@
 ---
 layout: single
-weight: 1
+weight: 3
 title: "Multiple linear regression"
 excerpt: "Fundamentals of multiple linear regression"
 header:
