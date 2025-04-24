@@ -1,6 +1,6 @@
 ---
 layout: single
-weight: 2
+weight: 6
 title: "Decision trees"
 excerpt: "Split data recursively to make predictions"
 header:
