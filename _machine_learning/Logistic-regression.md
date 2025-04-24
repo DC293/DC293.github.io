@@ -13,7 +13,7 @@ published: true
 toc_label: "Contents:"
 #classes: wide
 categories: machine_learning
-type: regression
+type: clustering
 author_profile: True
 ---
 
