@@ -1,6 +1,6 @@
 ---
 layout: single
-weight: 7
+weight: 3
 title: "Random forest"
 excerpt: "Combining multiple decision trees to improve accuracy"
 header:
