@@ -7,12 +7,12 @@ classes: wide
 sort_by: weight
 ---
 
+<!-- Supervised Models -->
 <div class="section-title">
   <h2>Supervised models</h2>
 </div>
 
-### Regression
-
+<h3>Regression</h3>
 <div class="entries-grid">
   {% assign regression = site.machine_learning | where: "type", "regression" %}
   {% for post in regression %}
@@ -20,8 +20,7 @@ sort_by: weight
   {% endfor %}
 </div>
 
-### Classification
-
+<h3>Classification</h3>
 <div class="entries-grid">
   {% assign classification = site.machine_learning | where: "type", "classification" %}
   {% for post in classification %}
@@ -29,12 +28,12 @@ sort_by: weight
   {% endfor %}
 </div>
 
+<!-- Unsupervised Models -->
 <div class="section-title">
   <h2>Unsupervised models</h2>
 </div>
 
-### Clustering
-
+<h3>Clustering</h3>
 <div class="entries-grid">
   {% assign clustering = site.machine_learning | where: "type", "clustering" %}
   {% for post in clustering %}
@@ -42,10 +41,10 @@ sort_by: weight
   {% endfor %}
 </div>
 
+<!-- Neural Networks -->
 <div class="section-title">
   <h2>Neural networks</h2>
 </div>
-
 <div class="entries-grid">
   {% assign neural_network = site.machine_learning | where: "type", "neural-network" %}
   {% for post in neural_network %}
