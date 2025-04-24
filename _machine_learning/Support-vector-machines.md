@@ -1,6 +1,6 @@
 ---
 layout: single
-weight: 4
+weight: 5
 title: "Support vector machines (SVM)"
 excerpt: "Utilising kernels for margin-based classification"
 header:
