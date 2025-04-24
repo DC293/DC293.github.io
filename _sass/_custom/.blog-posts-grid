@@ -1,1 +1,19 @@
+// _sass/_custom.scss
+.ml-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 1.5rem; /* Space between posts */
+  margin-bottom: 2rem; /* Extra space after the grid */
+}
+
+.ml-posts-grid .archive-item {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px; /* Rounded corners for grid items */
+}
+
+.ml-posts-grid .archive-item img {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto;
+}
 
