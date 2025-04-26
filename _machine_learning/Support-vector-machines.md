@@ -24,3 +24,7 @@ A Support Vector Machine (SVM) is a machine learning model that allows for class
 
 
 Decision boundaries are easiest to wrap your head around when the data has two features. In this case, the decision boundary is a line. Take a look at the example below.
+
+<p align="center">
+  <img src="/assets/images/SVM_bivariable_plot.png" alt="SVM_bivariable_plot" width="500">
+</p>
