@@ -31,3 +31,18 @@ Below, we have plotted the sepal length versus sepal width for two species — S
 <p align="center">
   <img src="/assets/images/SVM_bivariable_plot.png" alt="SVM_bivariable_plot" width="500">
 </p>
+
+We can model more than two features, however, the more we add, the harder it becomes to visualise. For three features, we'd use a 3D plane, after that, it becomes a lot more complex!
+
+## Support vectors and margins
+To give the model the greatest chance of success, we need to optimise the placement of our decision boundary. There are infinitely many ways we could separate our features, but we want the boundary that gives us the highest chance of correct classification. This means placing the boundary as far away as possible from the nearest data points from each class.
+
+To achieve this, SVM identifies specific data points — called support vectors — that are closest to the decision boundary. These points "support" the boundary: they determine its exact position and orientation. In two dimensions, at least three support vectors are typically needed to define a boundary, although in real-world datasets, there are often more. The key idea is that only these support vectors matter when constructing the SVM decision boundary — not the rest of the data points.
+
+Below, we can see the support vectors from our original example. See how only the closest points to the decision boundary are supported.
+
+<p align="center">
+  <img src="/assets/images/SVM_support_vectors.png" alt="SVM_support_vectors" width="500">
+</p>
+
+The distance between a support vector and the decision boundary is called the margin. We want to make the margin as large as possible. The support vectors are highlighted in the image below:
