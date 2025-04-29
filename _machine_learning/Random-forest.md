@@ -4,7 +4,7 @@ weight: 7
 title: "Random forest"
 excerpt: "Combining multiple decision trees to improve accuracy"
 header:
-    overlay_image: assets/images/Randon forest cover.png
+    overlay_image: assets/images/Random forest cover.png
     overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
     teaser: assets/images/Random forest cover.png
 toc: true
