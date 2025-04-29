@@ -53,3 +53,11 @@ The distance between the decision boundry and the support vectors is known as th
 
 ## scikit-learn
 
+
+
+
+Now that we know the concepts behind SVMs we need to write the code that will find the decision boundary that maximizes the margin. All of the code that we’ve written so far has been guessing and checking — we don’t actually know if we’ve found the best line. Unfortunately, calculating the parameters of the best decision boundary is a fairly complex optimization problem. Luckily, Python’s scikit-learn library has implemented an SVM that will do this for us.
+
+Note that while it is not important to understand how the optimal parameters are found, you should have a strong conceptual understanding of what the model is optimizing.
+
+To use scikit-learn’s SVM we first need to create an SVC object. It is called an SVC because scikit-learn is calling the model a Support Vector Classifier rather than a Support Vector Machin
