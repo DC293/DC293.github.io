@@ -4,9 +4,9 @@ weight: 1
 title: "Measuring distance"
 excerpt: "Measuring distance between points"
 header:
-    overlay_image: assets/images/20 by 20 orthogonal maze.png
+    overlay_image: assets/images/loss.png
     overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
-    teaser: assets/images/20 by 20 orthogonal maze.png
+    teaser: assets/images/loss.png
 toc: true
 published: true
 toc_label: "Contents:"
