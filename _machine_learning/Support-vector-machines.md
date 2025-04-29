@@ -51,4 +51,5 @@ The distance between the decision boundry and the support vectors is known as th
   <img src="/assets/images/SVM_margin.png" alt="SVM_margin" width="500">
 </p>
 
-## scikit
+## scikit-learn
+
