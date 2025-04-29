@@ -45,4 +45,8 @@ Below, we can see the support vectors from our original example. See how only th
   <img src="/assets/images/SVM_support_vectors.png" alt="SVM_support_vectors" width="500">
 </p>
 
-The distance between a support vector and the decision boundary is called the margin. We want to make the margin as large as possible. The support vectors are highlighted in the image below:
+The distance between the decision boundry and the support vectors is known as the margin. In order to have the highest success rate of classification, we want to maximise the size of the margin. 
+
+<p align="center">
+  <img src="/assets/images/SVM_margin.png" alt="SVM_margin" width="500">
+</p>
