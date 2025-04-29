@@ -37,7 +37,7 @@ We can model more than two features, however, the more we add, the harder it bec
 ## Support vectors and margins
 To give the model the greatest chance of success, we need to optimise the placement of our decision boundary. There are infinitely many ways we could separate our features, but we want the boundary that gives us the highest chance of correct classification. This means placing the boundary as far away as possible from the nearest data points from each class.
 
-To achieve this, SVM identifies specific data points — called support vectors — that are closest to the decision boundary. These points "support" the boundary: they determine its exact position and orientation. In two dimensions, at least three support vectors are typically needed to define a boundary, although in real-world datasets, there are often more. The key idea is that only these support vectors matter when constructing the SVM decision boundary — not the rest of the data points.
+To achieve this, SVM identifies specific data points — called support vectors — that are closest to the decision boundary. These points "support" the boundary: they determine its exact position and orientation. In two dimensions, at least three support vectors are typically needed to define a boundary, although in real-world datasets, there are often more. The key idea is that only these support vectors matter when constructing the SVM decision boundary — not the rest of the data points. This makes SVM one of the most efficient machine learning models, as it only needs to use the support vectors to train. 
 
 Below, we can see the support vectors from our original example. See how only the closest points to the decision boundary are supported.
 
@@ -50,3 +50,5 @@ The distance between the decision boundry and the support vectors is known as th
 <p align="center">
   <img src="/assets/images/SVM_margin.png" alt="SVM_margin" width="500">
 </p>
+
+## scikit
