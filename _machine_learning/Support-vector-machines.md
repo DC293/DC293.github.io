@@ -56,7 +56,7 @@ In previous articles, we have created our own functions to demonstate the workin
 
 Similarly to the other machine learning models, we need to create a SVC object. Note the slight change in name, the 'C' standing for Classifier instead of Machine. 
 
-
+```python
 from sklearn import datasets
 from sklearn.svm import SVC
 
@@ -67,8 +67,10 @@ X = iris.data[mask][:, :2]  # Only take sepal length and width
 y = iris.target[mask]
 
 # Train a linear SVM
-model = SVC(kernel='linear', C=1e6)  # Large C for hard margin
+model = SVC(kernel='linear') 
 model.fit(X, y)
+```
+
 
 We’ll soon go into what the kernel parameter is doing, but for now, let’s use a 'linear' kernel.
 
