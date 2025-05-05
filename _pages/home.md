@@ -17,8 +17,8 @@ feature_row:
   - image_path: /assets/images/Golf_ball_classification_thumbnail2.jpg
     title: "Machine Learning"
     excerpt: "Concepts of machine learning with practical examples"
-    url: "/machine-learning/"
-    link: "/machine-learning/"  # Makes image clickable
+    url: "/machine_learning/"
+    link: "/machine_learning/"  # Makes image clickable
     btn_label: "Read More"
     btn_class: "btn--primary"
 
