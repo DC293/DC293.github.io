@@ -71,7 +71,22 @@ model = SVC(kernel='linear')
 model.fit(X, y)
 ```
 
+You may notice we have also defined a kernel whilst creating the SVC model. The linear model selected will attempt to fit a straight line through our datapoints. We'll cover different kernels and when to use them later. We have fitted our model to the datapoints in the Iris dataset but have masked one of the flowers so we only have two classifications: Setosa and Versicolor. Each of these classifications is represented by either a 0 or 1, if we wanted to add in the reaming flower to our dataset it would be represented by the label 2.
 
-We’ll soon go into what the kernel parameter is doing, but for now, let’s use a 'linear' kernel.
+Using our model, we can now predict the flower based upon the sepal length and width:
 
-Next, the model needs to be trained on a list of data points and a list of labels associated with those data points. The labels are analogous to the color of the point — you can think of a 1 as a red point and a 0 as a blue point. The training is done using the .fit() method:
+```python
+print(model.predict([[5.5, 4.0], [6.0, 3.0], [6.5, 3.5]]))
+[0 1 1]
+```
+
+Our model has given us classifications of Setosa, Versicolor, Versicolor. A quick check of these datapoints against the plot above provides confidence these classifications are correct. 
+
+## Outliers
+The example we have explored so far has had two distinct groupings based on the speal length and width, but what happends when our data isn't so clear cut? For example, if we plot the petal width v petal length of the Versicolor and Virginica, we can see the two groupings have some overlap. 
+
+<p align="center">
+  <img src="/assets/images/SVM_outliers.png" alt="SVM_margin" width="500">
+</p>
+
+
