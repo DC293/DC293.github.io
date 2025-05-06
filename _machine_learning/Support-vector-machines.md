@@ -89,11 +89,23 @@ The example we have explored so far has two distinct groupings based on the spea
   <img src="/assets/images/SVM_outliers.png" alt="SVM_outliers" width="500">
 </p>
 
-To allow the SVM model to fit to the data, we can define how strict we would like the margin critera to be. To define this, the SVC model has perameter $\text{C}$ which instructs the model how much error should be allowed during fitting. A large C value will create a hard margin with no or few data points inside. This may cause the margin to be very small and runs the risk of model overfitting to the training data.
+To allow the SVM model to fit to the data, we can define how strict we would like the margin critera to be. To define this, the SVC model has perameter $\text{C}$ which instructs the model how much error should be allowed during fitting. A large C value will create a hard margin with no or few data points inside. This may cause the margin to be very small and runs the risk of model overfitting to the training data. On the flipside, a small $\text{C}$ allows for many points to be inside the margin. This lessens the influence of outliers but runs the risk of underfitting.
 
-On the flipside, a small $\text{C}$
+Lets take our example from above and compare the results using two different $\text{C}$ values. Using a large C value to create a hard margin, the model used 6 support vectors from each flower. With a 
 
+||Hard margin| Soft margin|
+|-------------------------|
+|C value|10,000|0.1|
+|Versicolor support vectors|6|25|
+|Virginica support vectors|6|25|
+|Misclassifications|6|5|
 
-SVMs have a parameter C that determines how much error the SVM will allow for. If C is large, then the SVM has a hard margin — it won’t allow for many misclassifications, and as a result, the margin could be fairly small. If C is too large, the model runs the risk of overfitting. It relies too heavily on the training data, including the outliers.
+High C (Hard Margin):
+  Versicolor: 6 support vectors
+  Virginica: 6 support vectors
+  Misclassifications: 6
 
-On the other hand, if C is small, the SVM has a soft margin. Some points might fall on the wrong side of the line, but the margin will be large. This is resistant to outliers, but if C gets too small, you run the risk of underfitting. The SVM will allow for so much error that the training data won’t be represented.
+Low C (Soft Margin):
+  Versicolor: 25 support vectors
+  Virginica: 25 support vectors
+  Misclassifications: 5
