@@ -91,13 +91,18 @@ The example we have explored so far has two distinct groupings based on the spea
 
 To allow the SVM model to fit to the data, we can define how strict we would like the margin critera to be. To define this, the SVC model has perameter $\text{C}$ which instructs the model how much error should be allowed during fitting. A large $\text{C}$ value will create a hard margin with no or few data points inside. This may cause the margin to be very small and runs the risk of model overfitting to the training data. On the flipside, a small $\text{C}$ allows for many points to be inside the margin. This lessens the influence of outliers but runs the risk of underfitting.
 
-Lets take our example from above and compare the results using two different $\text{C}$ values. Using a large $\text{C}$ value to create a hard margin, the model used 6 support vectors from each flower. With a 
+Lets take our example from above and compare the results using two different $\text{C}$ values. Using a large $\text{C}$ value to create a hard margin, the model used fewer support vectors and misclassified 6 data points. With a small $\text{C}$ value, the moded had a soft margin utilising 25 support vectors from each flower resulting in only 5 misclassifications. 
 
 {:.text-center}
-|                          |Hard margin| Soft margin|
-|:------------------------:|:---------:|:----------:|
-|C value                   |10,000     |0.1         |
-|Versicolor support vectors|6          |25          |
-|Virginica support vectors |6          |25          |
-|Misclassifications        |6          |5           |
+|                          |Hard margin|Soft margin|
+|:------------------------:|:---------:|:---------:|
+|C value                   |10,000     |0.1        |
+|Versicolor support vectors|6          |25         |
+|Virginica support vectors |6          |25         |
+|Misclassifications        |6          |5          |
 
+<p align="center">
+  <img src="/assets/images/SVM_C_comparison.png" alt="SVM_C_value" width="1000">
+</p>
+
+Support vectors are highighted with a black outline. Note, some points are identical and are therefore stacked. 
