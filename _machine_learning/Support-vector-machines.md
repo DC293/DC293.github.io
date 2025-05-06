@@ -102,7 +102,6 @@ Lets take our example from above and compare the results using two different $\t
 |Misclassifications        |6          |5          |
 
 <p align="center">
-  <img src="/assets/images/SVM_C_comparison.png" alt="SVM_C_value" width="1000">
+  <img src="/assets/images/SVM_C_comparison.png" alt="SVM_C_value" width="500">
 </p>
 
-Support vectors are highighted with a black outline. Note, some points are identical and are therefore stacked. 
