@@ -94,36 +94,10 @@ To allow the SVM model to fit to the data, we can define how strict we would lik
 Lets take our example from above and compare the results using two different $\text{C}$ values. Using a large $\text{C}$ value to create a hard margin, the model used 6 support vectors from each flower. With a 
 
 {:.text-center}
-|:------------------------:|Hard margin| Soft margin|
+|                          |Hard margin| Soft margin|
 |:------------------------:|:---------:|:----------:|
 |C value                   |10,000     |0.1         |
 |Versicolor support vectors|6          |25          |
 |Virginica support vectors |6          |25          |
 |Misclassifications        |6          |5           |
 
-{:.text-center}    
-|     Variable    | Original | Encoded | 
-|---------------: |:--------:|:-------:|
-|fuel type        |gas       | 1       |
-|aspriation       |std       | 0       |
-|door number      |four      | 1       |
-|car body         |sedan     | 0       |
-|drive wheel      |fwd       | 2       |
-|engine location  |front     | 0       |
-|cylinder number  |four      | 2       |
-|engine size      |109       | 130     |
-|stroke           |3.40      | 2.68    |
-|compression ratio|10.0      | 9.0     |
-|horse power      |102       | 111     |
-|city mpg         |24        | 21      |
-|highway mpg      |30        | 27      |
-
-High C (Hard Margin):
-  Versicolor: 6 support vectors
-  Virginica: 6 support vectors
-  Misclassifications: 6
-
-Low C (Soft Margin):
-  Versicolor: 25 support vectors
-  Virginica: 25 support vectors
-  Misclassifications: 5
