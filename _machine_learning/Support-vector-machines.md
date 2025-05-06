@@ -83,10 +83,17 @@ print(model.predict([[5.5, 4.0], [6.0, 3.0], [6.5, 3.5]]))
 Our model has given us classifications of Setosa, Versicolor, Versicolor. A quick check of these datapoints against the plot above provides confidence these classifications are correct. 
 
 ## Outliers
-The example we have explored so far has had two distinct groupings based on the speal length and width, but what happends when our data isn't so clear cut? For example, if we plot the petal width v petal length of the Versicolor and Virginica, we can see the two groupings have some overlap. 
+The example we have explored so far has two distinct groupings based on the speal length and width, but what happends when our data isn't so clear cut? For example, if we plot the petal width v petal length of the Versicolor and Virginica, we can see the two groupings have some overlap. 
 
 <p align="center">
-  <img src="/assets/images/SVM_outliers.png" alt="SVM_margin" width="500">
+  <img src="/assets/images/SVM_outliers.png" alt="SVM_outliers" width="500">
 </p>
 
+To allow the SVM model to fit to the data, we can define how strict we would like the margin critera to be. To define this, the SVC model has perameter $\text{C}$ which instructs the model how much error should be allowed during fitting. A large C value will create a hard margin with no or few data points inside. This may cause the margin to be very small and runs the risk of model overfitting to the training data.
 
+On the flipside, a small $\text{C}$
+
+
+SVMs have a parameter C that determines how much error the SVM will allow for. If C is large, then the SVM has a hard margin — it won’t allow for many misclassifications, and as a result, the margin could be fairly small. If C is too large, the model runs the risk of overfitting. It relies too heavily on the training data, including the outliers.
+
+On the other hand, if C is small, the SVM has a soft margin. Some points might fall on the wrong side of the line, but the margin will be large. This is resistant to outliers, but if C gets too small, you run the risk of underfitting. The SVM will allow for so much error that the training data won’t be represented.
