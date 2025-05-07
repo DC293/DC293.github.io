@@ -102,6 +102,9 @@ Lets take our example from above and compare the results using two different $\t
 |Misclassifications        |6          |5          |
 
 <p align="center">
-  <img src="/assets/images/SVM_C_comparison.png" alt="SVM_C_value" width="500">
+  <img src="/assets/images/SVM_highC.png" alt="SVM_hard_margin" width="500">
 </p>
 
+<p align="center">
+  <img src="/assets/images/SVM_lowC.png" alt="SVM_soft_margin" width="500">
+</p>
