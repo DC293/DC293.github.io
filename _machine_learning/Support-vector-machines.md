@@ -108,3 +108,26 @@ Lets take our example from above and compare the results using two different $\t
 <p align="center">
   <img src="/assets/images/SVM_lowC.png" alt="SVM_soft_margin" width="500">
 </p>
+
+## Kernels
+We have so far focused only on splitting our data linearly. But what happens if there is no clear seperation of our datapoints no matter how soft the margin?
+
+We can still use the SVM to create a decision boundry, however we need to utilise a different kernel. Kernels transform the datapoints in order to create distinguishable groups that can be seperated linearly. There is some clever maths behind this that we wont get into in this article, however having an understanding of what the kernels are doing and the differences in their behavious will help us select the most appropriate kernel for our datasets. 
+
+### Polynomial
+Below is an example of a polynomial kernel splitting the Versicolor and Virginica flowers as we did above with a linear kernal. In this instance, the kernel does not produce fewer misclassifications but it does use significantly fewer support vectors. Whilst we could increase the polynomal degree or the models $\text{C}$ value, we would run the risk of overfitting to our training data. 
+
+{:.text-center}
+|                          |Hard margin|
+|:------------------------:|:---------:|
+|Degree                    |3
+|C value                   |1          |
+|Versicolor support vectors|7          |
+|Virginica support vectors |8          |
+|Misclassifications        |5          |
+
+<p align="center">
+  <img src="/assets/images/SVM_polynomial_margin.png" alt="SVM_polynomial" width="500">
+</p>
+
+### RBK
