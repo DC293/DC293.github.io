@@ -130,4 +130,11 @@ Below is an example of a polynomial kernel splitting the Versicolor and Virginic
   <img src="/assets/images/SVM_polynomial_margin.png" alt="SVM_polynomial" width="500">
 </p>
 
-### RBK
+### RBF
+
+
+
+
+<p align="center">
+  <img src="/assets/images/SVM_rbf.png" alt="SVM_rbf" width="500">
+</p>
