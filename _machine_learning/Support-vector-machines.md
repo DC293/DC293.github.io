@@ -4,9 +4,9 @@ weight: 9
 title: "Support vector machines (SVM)"
 excerpt: "Utilising kernels for margin-based classification"
 header:
-    overlay_image: assets/images/SVM_cover.png
+    overlay_image: assets/images/SVM_rbf_cover.png
     overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
-    teaser: assets/images/SVM_cover.png
+    teaser: assets/images/SVM_rbf_cover.png
 toc: true
 toc_sticky: true 
 published: true
