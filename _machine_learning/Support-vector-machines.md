@@ -115,12 +115,18 @@ We have so far focused only on splitting our data linearly. But what happens if 
 We can still use the SVM to create a decision boundry, however we need to utilise a different kernel. Kernels transform the datapoints in order to create distinguishable groups that can be seperated linearly. There is some clever maths behind this that we wont get into in this article, however having an understanding of what the kernels are doing and the differences in their behavious will help us select the most appropriate kernel for our datasets. 
 
 ### Polynomial
-Below is an example of a polynomial kernel splitting the Versicolor and Virginica flowers as we did above with a linear kernal. In this instance, the kernel does not produce fewer misclassifications but it does use significantly fewer support vectors. Whilst we could increase the polynomal degree or the models $\text{C}$ value, we would run the risk of overfitting to our training data. 
+The polynomial kernel enables the model to create non-linear decision boundaries. Instead of drawing a straight line like the linear kernel, the polynomial kernel maps the data into a higher-dimensional space, where the classes may become linearly separable. This transformation allows the SVM to fit more complex boundaries.
+
+In simple terms, you can visualise the kernel as "lifting" the data into a curved space where a flat plane (decision boundary) can now cleanly divide the data points that were mixed in 2D.
+
+Below is an example of a polynomial kernel splitting the Versicolor and Virginica flowers as we did above with a linear kernal. Compared to a linear kernel, this model doesn't necessarily reduce the number of misclassifications, but it achieves the decision boundary using fewer support vectors.
+
+This can suggest a more efficient margin, but it's important to be cautious: increasing the polynomial degree or the regularisation parameter $\text{C}$ too much can lead the model to overfit.
 
 {:.text-center}
-|                          |Hard margin|
+|                          |Polynomial |
 |:------------------------:|:---------:|
-|Degree                    |3
+|Degree                    |3          |
 |C value                   |1          |
 |Versicolor support vectors|7          |
 |Virginica support vectors |8          |
@@ -130,11 +136,28 @@ Below is an example of a polynomial kernel splitting the Versicolor and Virginic
   <img src="/assets/images/SVM_polynomial_margin.png" alt="SVM_polynomial" width="500">
 </p>
 
-### RBF
+### Radial basis function (RBK)
+For more complex or non-linearly separable data, we can use the Radial Basis Function (RBF) kernel. This is one of the most popular kernels used in SVM's, and it's also the default kernel in the SVC classifier.
 
+Unlike the polynomial kernel, which transforms data into 3D, the RBF kernel maps the input features into an infinite-dimensional space. This transformation allows the model to draw highly flexible and curved decision boundaries.
 
+It can be difficult to visualise how the RBF kernel transforms the data, but its power lies in its ability to create boundaries that closely wrap around complex clusters of data.
 
+#### Gamma Parameter
+A key hyperparameter for the RBF kernel is gamma ($\gamma$). Gamma determines how far the influence of a single training example reaches:
+
+  - A high gamma value makes the model very sensitive to individual data points, which can lead to overfitting.
+
+  - A low gamma value causes the model to consider points further away, resulting in a smoother, more generalised boundary.
+
+While $\text{C}$, the regularization parameter, controls the trade-off between achieving a low training error and maintaining a smooth decision boundary, gamma specifically controls the curvature of the decision boundary itself.
+
+In the plot below, we use an SVM with an RBF kernel to separate Versicolor and Virginica flowers using only the sepal length and width. These two species overlap significantly in this feature space, making linear or even polynomial decision boundaries less effective.
+
+By using a $\text{C}$ value of 14 and a gamma of 8, the RBF kernel is able to fit a flexible boundary that better distinguishes between the two classes.
 
 <p align="center">
   <img src="/assets/images/SVM_rbf.png" alt="SVM_rbf" width="500">
 </p>
+
+Whilst we could tune the model further to fit the data more strictly, we would risk overfitting to the training data. The current model fit captures the main groupings of data without focusing too heavily on individual data points. 
