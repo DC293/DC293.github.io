@@ -1,6 +1,6 @@
 ---
 layout: single
-weight: 9
+weight: 10
 title: "Naive Bayes Classifier"
 excerpt: "Classifier using Bayes' theorem and probabilities."
 header:
