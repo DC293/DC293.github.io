@@ -1,0 +1,20 @@
+---
+layout: single
+weight: 9
+title: "Naive Bayes Classifier"
+excerpt: "Classifier using Bayes' theorem and probabilities."
+header:
+    overlay_image: assets/images/SVM_rbf_cover.png
+    overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
+    teaser: assets/images/SVM_rbf_cover.png
+toc: true
+toc_sticky: true 
+published: true
+toc_label: "Contents:"
+#classes: wide
+categories: machine_learning
+type: classification
+author_profile: True
+---
+
+{% include mathjax.html %}
