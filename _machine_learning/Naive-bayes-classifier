@@ -25,3 +25,15 @@ Bayesian statistics are a branch of statistics that use the probability of prior
 ## Event dependancy
 Events are a particular task by which we attribute a probability. For example, flipping a coin or rolling a dice. Series of events can either be classed as dependant or independant. For an event to be independant, its occurance does not affect the probability of another event. For example, Andy Murray wins Wimbledon; Liverpool win the Premier League. If two events are dependant, the probability of one event occuring changes in a predictable way depending on the outcome of the prior event. For example, I hit the fairway; I make par. 
 
+## Conditional probability
+Conditional probability is the probability that two events occur. The simplest calculation of conditional probability is when we have two independent events. In this instance, the probability of both events occuring is the product:
+
+$$
+P(A \cap B) = P(A) \cdot P(B)
+$$
+
+For example, if Andy Murray has a 1/10 chance of winning Wimbledon and Liverpool have a 1/7 chance of winning the premier league, the probability of both occuring is:
+
+$$
+\frac{1}{10} \cdot \frac{1}{7} = \frac{1}{70}
+$$
