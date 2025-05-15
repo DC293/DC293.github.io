@@ -19,7 +19,7 @@ author_profile: True
 
 {% include mathjax.html %}
 
-# Bayes Theorem
+# Naive Bayes Classifier
 Bayesian statistics are a branch of statistics that use the probability of prior events to calculate new probabilities. Of particular importance is Bayes Theorem. Before we get into how we can use Bayes Theorem to classify, we'll briefly run through some simple statistical principles. 
 
 ## Event dependancy
@@ -59,4 +59,15 @@ Therefore the overall chance of hitting par is:
 $$
 P(par) = \frac{1}{6} + \frac{1}{10} = \frac{4}{15}
 $$
+
+## Bayes' Theorem
+Above, we determined how we can sum all the
+
+
+
+
+
+
+
+
 
