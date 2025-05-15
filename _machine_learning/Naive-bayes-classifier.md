@@ -47,6 +47,8 @@ To find the overall probability of making par, you would sum:
   - The probability of hitting the fairway and making par. $P(par|fairway) = \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6}$
   - The probability of missing the fairway and making par. $P(par|rough) = \frac{1}{2} \cdot \frac{1}{5} = \frac{1}{10}$
 
+Therefore:
+
 $$
 P(par) = \frac{1}{6} + \frac{1}{10} = \frac{4}{15}
 $$
