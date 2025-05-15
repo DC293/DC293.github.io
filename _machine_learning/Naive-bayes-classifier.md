@@ -26,7 +26,7 @@ Bayesian statistics are a branch of statistics that use the probability of prior
 Events are a particular task by which we attribute a probability. For example, flipping a coin or rolling a dice. Series of events can either be classed as dependant or independant. For an event to be independant, its occurance does not affect the probability of another event. For example, Andy Murray wins Wimbledon; Liverpool win the Premier League. If two events are dependant, the probability of one event occuring changes in a predictable way depending on the outcome of the prior event. For example, I hit the fairway; I make par. 
 
 ## Conditional probability
-Conditional probability is the probability that two events occur. The simplest calculation of conditional probability is when we have two independent events. In this instance, the probability of both events occuring is the product:
+Conditional probability is the probability of one event occurring given that another has already occurred. When two events are independent, the probability of both occurring is the product of their individual probabilities:
 
 $$
 P(A \cap B) = P(A) \cdot P(B)
@@ -38,19 +38,25 @@ $$
 \frac{1}{10} \cdot \frac{1}{7} = \frac{1}{70}
 $$
 
-However, when events are dependent, the outcome of one event affects the probability of the other. For instance, imagine there's a:
+However, when events are dependent, the outcome of one affects the likelihood of the other. For instance, consider the following example:
+
   - 1 in 2 chance of hitting the fairway.
   - 1 in 3 chance of making par if you hit the fairway.
   - 1 in 5 chance of making par if you land in the rough.
 
-To find the overall probability of making par, you would sum:
-  - The probability of hitting the fairway and making par. $P(par|fairway) = \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6}$
-  - The probability of missing the fairway and making par. $P(par|rough) = \frac{1}{2} \cdot \frac{1}{5} = \frac{1}{10}$
+To calculate the overall probability of making par, we add the probabilities of the two scenarios:
 
-Therefore:
+Hitting the fairway and making par:
+
+$$P(par|fairway) = \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6}$$
+
+Landing in the rough and making par:
+
+$$P(par|rough) = \frac{1}{2} \cdot \frac{1}{5} = \frac{1}{10}$$
+
+Therefore the overall chance of hitting par is:
 
 $$
 P(par) = \frac{1}{6} + \frac{1}{10} = \frac{4}{15}
 $$
 
-This reflects how conditional probability adapts based on the situation or prior outcome.
