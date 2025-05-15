@@ -8,6 +8,7 @@
     - Recognise symbols
     - Highlight matching pairs
   - Players on a tennis court
+  - Cars/bikes waiting at traffic lights (traffic light timing)
 
 # Classification
   - Handwritten numbers
