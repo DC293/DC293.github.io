@@ -44,7 +44,7 @@ However, when events are dependent, the outcome of one event affects the probabi
   - 1 in 5 chance of making par if you land in the rough.
 
 To find the overall probability of making par, you would sum:
-The probability of hitting the fairway and making par. $ P(par|fairway) = \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6} $
-The probability of missing the fairway and making par. $ P(par|rough) = \frac{1}{2} \cdot \frac{1}{5} = \frac{1}{6} $
+The probability of hitting the fairway and making par. $P(par|fairway) = \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6}$
+The probability of missing the fairway and making par. $P(par|rough) = \frac{1}{2} \cdot \frac{1}{5} = \frac{1}{6}$
 
 This reflects how conditional probability adapts based on the situation or prior outcome.
