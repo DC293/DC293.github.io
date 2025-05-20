@@ -61,12 +61,17 @@ P(par) = \frac{1}{6} + \frac{1}{10} = \frac{4}{15}
 $$
 
 ## Bayes' Theorem
-Above, we determined the overall probability of hitting par. We could also see that there is a much higher chance of hitting par if we first land on the fairway. But what if we wanted to know the odds that we hit the fairway given we made par? For this, we can use Bayes' Theorem. 
+Above, we determined the overall probability of hitting par. We could also see that there is a much higher chance of hitting par if we first land on the fairway. But what if we wanted to know the odds that we hit the fairway given we made par? For this, we can use Bayes' Theorem: 
 
 $$
 P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
 $$
 
+In our golf example this would mean:
+
+$$
+P(fairway|par) = \frac{P(par|fairway) \cdot P(fairway)}{P(par)}
+$$
 
 
 
