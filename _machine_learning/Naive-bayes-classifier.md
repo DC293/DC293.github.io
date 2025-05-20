@@ -40,7 +40,7 @@ $$
 
 However, when events are dependent, the outcome of one affects the likelihood of the other. For instance, consider the following example:
 
-  - 1 in 2 chance of hitting the fairway.
+  - 2 in 3 chance of hitting the fairway.
   - 1 in 3 chance of making par if you hit the fairway.
   - 1 in 5 chance of making par if you land in the rough.
 
@@ -48,16 +48,16 @@ To calculate the overall probability of making par, we add the probabilities of 
 
 Hitting the fairway and making par:
 
-$$P(par|fairway) = \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6}$$
+$$P(par \cap fairway) = \frac{2}{3} \cdot \frac{1}{3} = \frac{2}{9}$$
 
 Landing in the rough and making par:
 
-$$P(par|rough) = \frac{1}{2} \cdot \frac{1}{5} = \frac{1}{10}$$
+$$P(par \cap rough) = \frac{1}{3} \cdot \frac{1}{5} = \frac{1}{15}$$
 
 Therefore the overall chance of hitting par is:
 
 $$
-P(par) = \frac{1}{6} + \frac{1}{10} = \frac{4}{15}
+P(par) = \frac{2}{9} + \frac{1}{15} = \frac{13}{45}
 $$
 
 ## Bayes' Theorem
@@ -70,7 +70,7 @@ $$
 In our golf example this would mean:
 
 $$
-P(fairway|par) = \frac{P(par|fairway) \cdot P(fairway)}{P(par)}
+P(fairway|par) = \frac{P(par|fairway) \cdot P(fairway)}{P(par)} = \frac{\frac{1}{6} \cdot \frac{1}{}}{}
 $$
 
 
