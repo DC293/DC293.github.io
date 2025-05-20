@@ -64,7 +64,7 @@ $$
 Above, we determined the overall probability of hitting par. We could also see that there is a much higher chance of hitting par if we first land on the fairway. But what if we wanted to know the odds that we hit the fairway given we made par? For this, we can use Bayes' Theorem. 
 
 $$
-P(A|B) = \frac{\text{P(B|A)} \cdot \text{P(A)}}{\text{P(B)}}
+P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
 $$
 
 
