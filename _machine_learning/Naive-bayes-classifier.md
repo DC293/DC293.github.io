@@ -70,7 +70,7 @@ $$
 In our golf example this would mean:
 
 $$
-P(fairway|par) = \frac{P(par|fairway) \cdot P(fairway)}{P(par)} = \frac{\frac{1}{6} \cdot \frac{1}{}}{}
+P(fairway|par) = \frac{P(par|fairway) \cdot P(fairway)}{P(par)} = \frac{\frac{2}{9} \cdot \frac{2}{3}}{\frac{1}{3}}
 $$
 
 
