@@ -22,3 +22,8 @@
 
 # Semantic segmentation
   - Tennis court lines
+
+## Data Science 
+ - Web scraping
+   - Beautiful Soup
+   - Selenium
