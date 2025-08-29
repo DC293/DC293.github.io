@@ -181,3 +181,9 @@ If we plot this line, we can see it provides a further improvement on our gradie
 <p align="center">
   <img src="/assets/images/engine_vs_hp_scipy_optimised.png" alt="optimised line of best fit" width="500">
 </p>
+
+---
+
+## Navigation Test
+
+{% include post-navigation.html %}
