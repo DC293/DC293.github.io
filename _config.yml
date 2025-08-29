@@ -180,7 +180,6 @@ collections:
   machine_learning:
     output: true
     permalink: /:collection/:path/
-  collections:
 
 
 # Outputting

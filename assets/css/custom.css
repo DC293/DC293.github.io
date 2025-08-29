@@ -1,0 +1,118 @@
+/* Custom CSS for enhanced hover effects and navigation */
+
+/* Grid layout improvements */
+.ml-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.ml-posts-grid .archive-item {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent;
+}
+
+.ml-posts-grid .archive-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-color: #007acc;
+  background-color: #f0f8ff;
+}
+
+.ml-posts-grid .archive-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Archive item improvements */
+.archive__item {
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.archive__item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  border-color: #007acc;
+  background-color: #f8fbff;
+}
+
+/* Navigation improvements */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.pagination .pagination--pager {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #007acc;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  color: #007acc;
+  background-color: white;
+  max-width: 45%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pagination .pagination--pager:hover:not(.disabled) {
+  background-color: #007acc;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,122,204,0.3);
+}
+
+.pagination .pagination--pager.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: #ccc;
+  color: #999;
+}
+
+.pagination .pagination--pager.disabled:hover {
+  transform: none;
+  box-shadow: none;
+  background-color: white;
+  color: #999;
+}
+
+/* Image optimization */
+.archive__item-teaser img {
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.archive__item-teaser img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Code block improvements */
+.highlight {
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .ml-posts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pagination {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

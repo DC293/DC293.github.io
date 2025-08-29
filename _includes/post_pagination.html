@@ -1,9 +1,15 @@
+{% comment %}
+  Custom post pagination that respects weight ordering
+{% endcomment %}
+
 {% if page.collection %}
   {% assign posts = site[page.collection] | sort: "weight" %}
 {% else %}
   {% assign posts = site.posts | sort: "weight" %}
 {% endif %}
 
+{% comment %} Find current post index {% endcomment %}
+{% assign post_index = -1 %}
 {% for post in posts %}
   {% if post.url == page.url %}
     {% assign post_index = forloop.index0 %}
@@ -11,6 +17,7 @@
   {% endif %}
 {% endfor %}
 
+{% comment %} Get previous and next posts {% endcomment %}
 {% if post_index > 0 %}
   {% assign prev_post = posts[post_index | minus: 1] %}
 {% endif %}
@@ -19,22 +26,25 @@
   {% assign next_post = posts[post_index | plus: 1] %}
 {% endif %}
 
+{% comment %} Debug info (remove in production) {% endcomment %}
+<!-- Debug: Collection={{ page.collection }}, Index={{ post_index }}, Total={{ posts.size }} -->
+
 {% if prev_post or next_post %}
   <nav class="pagination">
     {% if prev_post %}
       <a href="{{ prev_post.url | relative_url }}" class="pagination--pager" title="{{ prev_post.title | markdownify | strip_html }}">
-        ← {{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}: {{ prev_post.title }}
+        ← Previous: {{ prev_post.title }}
       </a>
     {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+      <a href="#" class="pagination--pager disabled">Previous</a>
     {% endif %}
     
     {% if next_post %}
       <a href="{{ next_post.url | relative_url }}" class="pagination--pager" title="{{ next_post.title | markdownify | strip_html }}">
-        {{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}: {{ next_post.title }} →
+        Next: {{ next_post.title }} →
       </a>
     {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     {% endif %}
   </nav>
 {% endif %}
