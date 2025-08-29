@@ -12,7 +12,7 @@ toc_sticky: true
 published: true
 toc_label: "Contents:"
 #classes: wide
-categories: machine_learning
+collection: machine_learning
 type: regression
 author_profile: True
 ---

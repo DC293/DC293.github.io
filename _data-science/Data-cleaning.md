@@ -12,7 +12,7 @@ toc_sticky: true
 published: true
 toc_label: "Contents:"
 #classes: wide
-categories: data-science
+collection: data-science
 tags: data-science
 author_profile: True
 ---

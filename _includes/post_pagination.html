@@ -22,13 +22,17 @@
 {% if prev_post or next_post %}
   <nav class="pagination">
     {% if prev_post %}
-      <a href="{{ prev_post.url | relative_url }}" class="pagination--pager" title="{{ prev_post.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+      <a href="{{ prev_post.url | relative_url }}" class="pagination--pager" title="{{ prev_post.title | markdownify | strip_html }}">
+        ← {{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}: {{ prev_post.title }}
+      </a>
     {% else %}
       <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
     {% endif %}
     
     {% if next_post %}
-      <a href="{{ next_post.url | relative_url }}" class="pagination--pager" title="{{ next_post.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+      <a href="{{ next_post.url | relative_url }}" class="pagination--pager" title="{{ next_post.title | markdownify | strip_html }}">
+        {{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}: {{ next_post.title }} →
+      </a>
     {% else %}
       <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
     {% endif %}
