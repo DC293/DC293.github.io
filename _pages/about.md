@@ -13,5 +13,22 @@ programmes to protect the integrity of the game. Previously, I worked with FIFA 
 I obtained a BSc in Sports Technology (2015) prior to completing my PhD in Mechanical Engineering (2020) at Loughborough University's [Sports Technology Institute](https://www.lboro.ac.uk/research/sti). My [thesis](https://repository.lboro.ac.uk/articles/thesis/Numerical_modelling_of_3G_artificial_turf_under_vertical_loading/11892084?file=21811026) focused on using numerical modelling of sports surfaces to optimise specific performance parameters.  
 
 I utilise data science methods to process, analyse and present data. 
-I use this blog to portfolio projects and demonstrate the power of data science in sport. 
+I use this blog to portfolio projects and demonstrate the power of data science in sport.
+
+## What I Do
+
+My work focuses on:
+- **Sports Technology Research**: Developing and testing equipment and surfaces for various sports
+- **Data Science**: Applying machine learning and statistical analysis to sports data
+- **Performance Optimisation**: Using data-driven approaches to improve athletic performance
+- **Standards Development**: Creating testing protocols and standards for sports equipment
+
+## This Blog
+
+This website serves as both a portfolio of my work and a learning resource. I share:
+- **Machine Learning Tutorials**: Practical guides to ML concepts with real-world examples
+- **Data Science Projects**: Analysis of sports data and insights
+- **Coding Challenges**: Solutions to programming puzzles and problems
+
+Feel free to explore the different sections and reach out if you have any questions!
 {: .text-justify}

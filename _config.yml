@@ -16,9 +16,9 @@ minimal_mistakes_skin    : "dirt" # "default", "air", "aqua", "contrast", "dark"
 locale                   : "en-GB" 
 title                    : "David Cole"
 title_separator          : "|"
-subtitle                 : # site tagline that appears below site title in masthead
+subtitle                 : "Sports Technology & Data Science"
 name                     : "David Cole"
-description              : "Project portfolio and blog"
+description              : "Research and insights in sports technology, machine learning, and data science. Portfolio and blog showcasing practical applications in sports analytics."
 url                      : "https://DC293.github.io"
 repository               : "DC293/DC293.github.io"
 logo                     : ""# "/assets/images/Headshot.png"
@@ -28,7 +28,7 @@ masthead_title           : # if you want to overwrite website title with a diffe
 author:
   name     : "David Cole"
   avatar   : "/assets/images/Headshot_large.png"
-  bio      : "Project portfolio and blog"
+  bio      : "Research and Insights Manager at ITF, specializing in sports technology and data science"
   location : "London, UK"
   links:
     - label: "GitHub"
@@ -54,6 +54,23 @@ footer:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/dcole123/"
+
+# ============================= SEO & Social Media =============================
+# SEO
+seo:
+  title: "David Cole - Sports Technology & Data Science"
+  description: "Research and insights in sports technology, machine learning, and data science. Portfolio and blog showcasing practical applications in sports analytics."
+  author: "David Cole"
+  image: "/assets/images/Headshot_large.png"
+  type: "website"
+
+# Social Media
+social:
+  type: "website"
+  name: "David Cole"
+  links:
+    - "https://github.com/dc293"
+    - "https://www.linkedin.com/in/dcole123/"
 
 # ============================= Defaults =============================
 words_per_minute         : 200
