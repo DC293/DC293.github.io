@@ -10,32 +10,50 @@
 {% if page.collection %}
   {% assign posts = site[page.collection] | sort: "weight" %}
   <!-- Found {{ posts.size }} posts in collection {{ page.collection }} -->
+  <!-- Posts: {% for post in posts %}{{ post.title }} ({{ post.weight }}), {% endfor %} -->
 {% else %}
   {% assign posts = site.posts | sort: "weight" %}
   <!-- Using site.posts, found {{ posts.size }} posts -->
 {% endif %}
 
-{% comment %} Find current post index {% endcomment %}
+{% comment %} Find current post index and previous/next posts {% endcomment %}
 {% assign post_index = -1 %}
+{% assign prev_post = nil %}
+{% assign next_post = nil %}
+
 {% for post in posts %}
   <!-- Checking post: {{ post.title }} ({{ post.url }}) -->
   {% if post.url == page.url %}
     {% assign post_index = forloop.index0 %}
     <!-- Found current post at index {{ post_index }} -->
+    
+    {% comment %} Get previous post {% endcomment %}
+    {% if forloop.index0 > 0 %}
+      {% assign prev_index = forloop.index0 | minus: 1 %}
+      {% for prev_check in posts %}
+        {% if forloop.index0 == prev_index %}
+          {% assign prev_post = prev_check %}
+          <!-- Previous post: {{ prev_post.title }} (index {{ prev_index }}) -->
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    
+    {% comment %} Get next post {% endcomment %}
+    {% assign next_index = forloop.index0 | plus: 1 %}
+    {% if next_index < posts.size %}
+      {% for next_check in posts %}
+        {% if forloop.index0 == next_index %}
+          {% assign next_post = next_check %}
+          <!-- Next post: {{ next_post.title }} (index {{ next_index }}) -->
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    
     {% break %}
   {% endif %}
 {% endfor %}
-
-{% comment %} Get previous and next posts {% endcomment %}
-{% if post_index > 0 %}
-  {% assign prev_post = posts[post_index | minus: 1] %}
-  <!-- Previous post: {{ prev_post.title }} -->
-{% endif %}
-
-{% if post_index < posts.size | minus: 1 %}
-  {% assign next_post = posts[post_index | plus: 1] %}
-  <!-- Next post: {{ next_post.title }} -->
-{% endif %}
 
 <!-- NAVIGATION DEBUG END -->
 
