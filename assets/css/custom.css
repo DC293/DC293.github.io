@@ -1,7 +1,9 @@
 /* Custom CSS for enhanced hover effects and navigation */
 
-/* Grid layout improvements */
+/* Grid layout improvements - show 3 columns */
 .archive__item {
+  width: calc(33.333% - 1rem) !important;
+  margin-bottom: 1rem !important;
   transition: all 0.3s ease-in-out;
   border: 2px solid transparent;
   border-radius: 8px;
@@ -11,14 +13,8 @@
 .archive__item:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  border-color: #007acc;
-  background-color: #f8fbff;
-}
-
-/* Override theme's default grid to show 3 columns */
-.archive__item {
-  width: calc(33.333% - 1rem) !important;
-  margin-bottom: 1rem !important;
+  border-color: #8b4513; /* Brown color for dirt theme */
+  background-color: #f5f5dc; /* Beige background */
 }
 
 /* Ensure proper grid layout */
@@ -42,28 +38,6 @@
   }
 }
 
-.ml-posts-grid .archive-item {
-  padding: 1rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  transition: all 0.3s ease-in-out;
-  border: 2px solid transparent;
-}
-
-.ml-posts-grid .archive-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  border-color: #007acc;
-  background-color: #f0f8ff;
-}
-
-.ml-posts-grid .archive-item img {
-  max-width: 100%;
-  height: auto;
-}
-
-
-
 /* Navigation improvements */
 .pagination {
   display: flex;
@@ -74,12 +48,12 @@
 
 .pagination .pagination--pager {
   padding: 0.75rem 1.5rem;
-  border: 2px solid #007acc;
+  border: 2px solid #8b4513; /* Brown color for dirt theme */
   border-radius: 6px;
   text-decoration: none;
   transition: all 0.3s ease;
   font-weight: 600;
-  color: #007acc;
+  color: #8b4513;
   background-color: white;
   max-width: 45%;
   text-align: center;
@@ -89,10 +63,10 @@
 }
 
 .pagination .pagination--pager:hover:not(.disabled) {
-  background-color: #007acc;
+  background-color: #8b4513;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,122,204,0.3);
+  box-shadow: 0 4px 8px rgba(139,69,19,0.3);
 }
 
 .pagination .pagination--pager.disabled {
@@ -127,17 +101,7 @@
 }
 
 /* Responsive improvements */
-@media (max-width: 768px) {
-  .ml-posts-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 480px) {
-  .ml-posts-grid {
-    grid-template-columns: 1fr;
-  }
-  
   .pagination {
     flex-direction: column;
     gap: 1rem;

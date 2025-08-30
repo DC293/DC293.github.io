@@ -2,18 +2,10 @@
   Custom post navigation that respects weight ordering
 {% endcomment %}
 
-<!-- NAVIGATION DEBUG START -->
-<!-- Current page: {{ page.title }} -->
-<!-- Current URL: {{ page.url }} -->
-<!-- Collection: {{ page.collection }} -->
-
 {% if page.collection %}
   {% assign posts = site[page.collection] | sort: "weight" %}
-  <!-- Found {{ posts.size }} posts in collection {{ page.collection }} -->
-  <!-- Posts: {% for post in posts %}{{ post.title }} ({{ post.weight }}), {% endfor %} -->
 {% else %}
   {% assign posts = site.posts | sort: "weight" %}
-  <!-- Using site.posts, found {{ posts.size }} posts -->
 {% endif %}
 
 {% comment %} Find current post index and previous/next posts {% endcomment %}
@@ -22,10 +14,8 @@
 {% assign next_post = nil %}
 
 {% for post in posts %}
-  <!-- Checking post: {{ post.title }} ({{ post.url }}) -->
   {% if post.url == page.url %}
     {% assign post_index = forloop.index0 %}
-    <!-- Found current post at index {{ post_index }} -->
     
     {% comment %} Get previous post {% endcomment %}
     {% if forloop.index0 > 0 %}
@@ -33,7 +23,6 @@
       {% for prev_check in posts %}
         {% if forloop.index0 == prev_index %}
           {% assign prev_post = prev_check %}
-          <!-- Previous post: {{ prev_post.title }} (index {{ prev_index }}) -->
           {% break %}
         {% endif %}
       {% endfor %}
@@ -45,7 +34,6 @@
       {% for next_check in posts %}
         {% if forloop.index0 == next_index %}
           {% assign next_post = next_check %}
-          <!-- Next post: {{ next_post.title }} (index {{ next_index }}) -->
           {% break %}
         {% endif %}
       {% endfor %}
@@ -54,8 +42,6 @@
     {% break %}
   {% endif %}
 {% endfor %}
-
-<!-- NAVIGATION DEBUG END -->
 
 {% if prev_post or next_post %}
   <nav class="pagination">
@@ -75,6 +61,4 @@
       <a href="#" class="pagination--pager disabled">Next</a>
     {% endif %}
   </nav>
-{% else %}
-  <!-- No navigation generated - no prev or next posts found -->
 {% endif %}
