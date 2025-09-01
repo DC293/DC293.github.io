@@ -2,8 +2,7 @@
 
 /* Grid layout improvements - show 3 columns */
 .archive__item {
-  width: calc(33.333% - 1rem) !important;
-  margin-bottom: 1rem !important;
+  /* Default settings restored, only hover effect remains */
   transition: all 0.3s ease-in-out;
   border: 2px solid transparent;
   border-radius: 8px;
@@ -28,15 +27,11 @@
 
 /* Responsive grid adjustments */
 @media (max-width: 768px) {
-  .archive__item {
-    width: calc(50% - 0.5rem) !important;
-  }
+  /* Default responsive settings restored */
 }
 
 @media (max-width: 480px) {
-  .archive__item {
-    width: 100% !important;
-  }
+  /* Default responsive settings restored */
 }
 
 /* Navigation improvements */
