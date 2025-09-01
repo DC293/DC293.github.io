@@ -11,10 +11,11 @@
 }
 
 .archive__item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.18);
   border-color: #8b4513; /* Brown color for dirt theme */
   background-color: #f5f5dc; /* Beige background */
+  cursor: pointer;
 }
 
 /* Ensure proper grid layout */
