@@ -28,7 +28,7 @@ masthead_title           : # if you want to overwrite website title with a diffe
 author:
   name     : "David Cole"
   avatar   : "/assets/images/Headshot_large.png"
-  bio      : "Research and Insights Manager at ITF, specialising in sports technology and data science"
+  bio      : "Sports Technology, Engineering and Data Science"
   location : "London, UK"
   links:
     - label: "GitHub"
