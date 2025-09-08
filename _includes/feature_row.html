@@ -1,0 +1,42 @@
+{% assign features = page.feature_row %}
+<div class="feature-row">
+  {% for feature in features %}
+    <div class="feature-row__item">
+      <div class="feature-row__image">
+        <a href="{{ feature.url | default: feature.link }}">
+          <img src="{{ feature.image_path }}" alt="{{ feature.title }}">
+        </a>
+      </div>
+      <h3>{{ feature.title }}</h3>
+      <p>{{ feature.excerpt }}</p>
+      {% if feature.btn_label and feature.url %}
+        <a href="{{ feature.url }}" class="btn {{ feature.btn_class | default: 'btn--primary' }}">{{ feature.btn_label }}</a>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+.feature-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.feature-row__item {
+  flex: 1 1 250px;
+  max-width: 320px;
+  text-align: center;
+}
+.feature-row__image img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 12px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.feature-row__image a:hover img {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  transform: scale(1.04);
+}
+</style>

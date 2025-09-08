@@ -9,12 +9,24 @@
   padding: 1rem;
 }
 
-.archive__item:hover {
+/* Only apply hover effect to archive grid/list, not homepage features */
+.archive:not(.feature-row) .archive__item:hover,
+.archive__item.blog-hover:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 12px 24px rgba(0,0,0,0.18);
   border-color: #8b4513; /* Brown color for dirt theme */
   background-color: #f5f5dc; /* Beige background */
   cursor: pointer;
+}
+
+/* Utility class to disable hover effect */
+.no-hover:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: inherit !important;
+  background-color: inherit !important;
+  cursor: default !important;
+}
 }
 
 /* Ensure proper grid layout */
