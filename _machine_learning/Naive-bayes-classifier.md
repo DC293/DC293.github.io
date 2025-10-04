@@ -174,7 +174,7 @@ Given a player missed the fairway, the (smoothed) probability that they still ma
 
 ## Naive Bayes in Python (scikit-learn)
 
-Below is a simple example of how you could perform this classification using Python and scikit-learn:
+Below is a simple example of how you could perform this classification using Python and scikit-learn. The code below sets up the data, fits a Naive Bayes classifier, and predicts the probability of making par if the fairway is missed.
 
 ```python
 from sklearn.naive_bayes import CategoricalNB
@@ -202,9 +202,13 @@ model.fit(X, y)
 # Predict probability of making par (1) if missed fairway (0)
 proba = model.predict_proba([[0]])
 print(f"Probability of making par if missed fairway: {proba[0][1]:.3f}")
-```
 
-This code sets up the data, fits a Naive Bayes classifier, and predicts the probability of making par if the fairway is missed. The result will closely match the smoothed calculation above.
+Probability of making par if missed fairway: 0.105
+```
+Note the probability is slightly different due to the way scikit-learn applies the smoothing.
+
+
+
 
 
 
