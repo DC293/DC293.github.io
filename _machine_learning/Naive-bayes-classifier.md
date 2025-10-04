@@ -174,6 +174,40 @@ $$
 **Interpretation:**  
 Given a player missed the fairway, the (smoothed) probability that they still made par is $\frac{5}{42}$.
 
+## Naive Bayes in Python (scikit-learn)
+
+Below is a simple example of how you could perform this classification using Python and scikit-learn:
+
+```python
+from sklearn.naive_bayes import CategoricalNB
+import numpy as np
+
+# Data: [Fairway, Par] where 1=Yes, 0=No
+# Each row is a hole played
+X = [
+  [1], [1], [1], [1], [1], [1], [1], [1], [1], [1], [1], [1], # 12 times hit fairway
+  [0], [0], [0], [0], [0], [0]  # 6 times missed fairway
+]
+y = [
+  1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,  # 5 par, 7 not par when hit fairway
+  0, 0, 0, 0, 0, 0  # 0 par, 6 not par when missed fairway
+]
+
+# Convert to numpy arrays
+X = np.array(X)
+y = np.array(y)
+
+# Create and fit the model (Laplace smoothing is default for CategoricalNB)
+model = CategoricalNB(alpha=1.0)
+model.fit(X, y)
+
+# Predict probability of making par (1) if missed fairway (0)
+proba = model.predict_proba([[0]])
+print(f"Probability of making par if missed fairway: {proba[0][1]:.3f}")
+```
+
+This code sets up the data, fits a Naive Bayes classifier, and predicts the probability of making par if the fairway is missed. The result will closely match the smoothed calculation above.
+
 
 
 
