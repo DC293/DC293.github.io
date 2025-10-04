@@ -70,8 +70,8 @@ $$
 In our golf example this would mean:
 
 $$
-P(fairway \mid par) = \frac{P(par \mid fairway) \cdot P(fairway)}{P(par)} = \frac{\frac{1}{3} \cdot \frac{2}{3}}{\frac{13}{45}} 
-\frac{2}{9} \cdot \frac{45}{13} = \frac{10}{13}
+P(fairway \mid par) = \frac{P(par \mid fairway) \cdot P(fairway)}{P(par)} \\
+\frac{\frac{1}{3} \cdot \frac{2}{3}}{\frac{13}{45}} = \frac{2}{9} \cdot \frac{45}{13} = \frac{10}{13}
 $$
 
 So, if a player makes par, there's a 10 in 13 chance they hit the fairway.
