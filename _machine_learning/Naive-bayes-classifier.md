@@ -114,14 +114,7 @@ Here, we add 1 to the numerator and add the number of possible outcomes (2: 'Yes
 Smoothing is especially important in real-world datasets where some combinations of features and outcomes may be rare or missing entirely.
 
 ## Classifing
-Suppose you want to predict the probability that a player makes par, given that they missed the fairway on a hole. Using the smoothed probabilities from the table above:
-
-| Fairway | Par | Count |
-|---------|-----|-------|
-| Yes     | Yes |   5   |
-| Yes     | No  |   7   |
-| No      | Yes |   0   |
-| No      | No  |   6   |
+Suppose you want to predict the probability that a player makes par, given that they missed the fairway on a hole, using the smoothed probabilities from the table above.
 
 ### Step 1: Calculate Prior Probabilities
 
