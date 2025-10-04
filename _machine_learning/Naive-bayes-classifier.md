@@ -126,11 +126,13 @@ Suppose you want to predict the probability that a player makes par, given that 
 ### Step 1: Calculate Prior Probabilities
 
 Probability of missing the fairway:
+
 $$
 P(\text{no fairway}) = \frac{0 + 6}{18} = \frac{6}{18} = \frac{1}{3}
 $$
   
 Probability of making par overall:
+
 $$
 P(\text{par}) = \frac{5 + 0}{18} = \frac{5}{18}
 $$
@@ -138,11 +140,13 @@ $$
 ### Step 2: Calculate Likelihood with Smoothing
 
 Probability of making par given missed fairway (with smoothing):
+
 $$
 P(\text{par} \mid \text{no fairway}) = \frac{0+1}{(0+6)+2} = \frac{1}{8}
 $$
 
 Probability of not making par given missed fairway (with smoothing):
+
 $$
 P(\text{not par} \mid \text{no fairway}) = \frac{6+1}{(0+6)+2} = \frac{7}{8}
 $$
@@ -156,9 +160,11 @@ P(\text{par} \mid \text{no fairway}) = \frac{P(\text{no fairway} \mid \text{par}
 $$
 
 $P(\text{no fairway} \mid \text{par})$ is the probability of missing the fairway given a par was made:
+
 $$
 P(\text{no fairway} \mid \text{par}) = \frac{0+1}{(5+0)+2} = \frac{1}{7}
 $$
+
 (Here, numerator is the smoothed count for [No, Yes], denominator is total smoothed par count.)
 
 $P(\text{par}) = \frac{5}{18}$ (from above)
