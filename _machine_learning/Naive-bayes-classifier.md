@@ -83,7 +83,7 @@ In probability calculations, especially with small datasets, it is possible to e
 
 ### Example: Golf Scenario
 
-Suppose in our golf example, we have observed the following outcomes over several rounds:
+Suppose in our golf example, we have observed the following outcomes over a round:
 
 
 | Fairway | Par | Count |
@@ -93,8 +93,7 @@ Suppose in our golf example, we have observed the following outcomes over severa
 | No      | Yes |   0   | <!-- This is where smoothing is needed -->
 | No      | No  |   6   |
 
-This table now represents 18 holes of golf. Notice that there were no instances where a player missed the fairway but still made par ("No" Fairway, "Yes" Par = 0). This is a perfect scenario to demonstrate why smoothing is important.
-
+Notice that there were no instances where a player missed the fairway but still made par ("No" Fairway, "Yes" Par = 0).
 
 If we want to calculate the probability of making par given that the player missed the fairway ("No"), without smoothing, it would be:
 
