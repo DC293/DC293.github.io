@@ -129,9 +129,11 @@ Suppose you want to predict the probability that a player makes par, given that 
 **Step 1: Calculate Prior Probabilities**
 
 - Probability of missing the fairway:
+
   $$
   P(\text{no fairway}) = \frac{0 + 6}{18} = \frac{6}{18} = \frac{1}{3}
   $$
+  
 - Probability of making par overall:
   $$
   P(\text{par}) = \frac{5 + 0}{18} = \frac{5}{18}
