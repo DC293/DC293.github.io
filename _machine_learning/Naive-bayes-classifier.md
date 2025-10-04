@@ -79,6 +79,39 @@ So, if a player makes par, there's a 10 in 13 chance they hit the fairway.
 
 ## 
 
+## Smoothing
+
+In probability calculations, especially with small datasets, it is possible to encounter situations where a particular event has never occurred in the data. This leads to a probability of zero, which can cause problems when multiplying probabilities in the Naive Bayes classifier (since multiplying by zero will always result in zero). To address this, we use a technique called <strong>smoothing</strong> (or Laplace smoothing), where we add 1 to each count to ensure no probability is ever exactly zero.
+
+### Example: Golf Scenario
+
+Suppose in our golf example, we have observed the following outcomes over several rounds:
+
+| Fairway | Par | Count |
+|---------|-----|-------|
+| Yes     | Yes |   2   |
+| Yes     | No  |   4   |
+| No      | Yes |   1   |
+| No      | No  |   3   |
+
+If we want to calculate the probability of making par given that we hit the fairway, without smoothing, it would be:
+
+$$
+P(par \mid fairway) = \frac{2}{2+4} = \frac{2}{6} = \frac{1}{3}
+$$
+
+But imagine if we had never observed a 'Yes' for Par when hitting the fairway (i.e., the count was 0). The probability would be zero, which is problematic.
+
+With smoothing, we add 1 to each count:
+
+$$
+P(par \mid fairway) = \frac{2+1}{(2+4)+2} = \frac{3}{8}
+$$
+
+Here, we add 1 to the numerator and add the number of possible outcomes (2: 'Yes' and 'No') to the denominator. This ensures that even if an event was not observed, it still has a small, non-zero probability.
+
+Smoothing is especially important in real-world datasets where some combinations of features and outcomes may be rare or missing entirely.
+
 
 
 
