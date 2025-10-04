@@ -114,9 +114,6 @@ Here, we add 1 to the numerator and add the number of possible outcomes (2: 'Yes
 Smoothing is especially important in real-world datasets where some combinations of features and outcomes may be rare or missing entirely.
 
 ## Classifing
-
-### Worked Example: Classifying with Bayes’ Theorem (Golf Scenario)
-
 Suppose you want to predict the probability that a player makes par, given that they missed the fairway on a hole. Using the smoothed probabilities from the table above:
 
 | Fairway | Par | Count |
@@ -126,31 +123,31 @@ Suppose you want to predict the probability that a player makes par, given that 
 | No      | Yes |   0   |
 | No      | No  |   6   |
 
-**Step 1: Calculate Prior Probabilities**
+### Step 1: Calculate Prior Probabilities
 
-- Probability of missing the fairway:
-
-  $$
-  P(\text{no fairway}) = \frac{0 + 6}{18} = \frac{6}{18} = \frac{1}{3}
-  $$
+Probability of missing the fairway:
+$$
+P(\text{no fairway}) = \frac{0 + 6}{18} = \frac{6}{18} = \frac{1}{3}
+$$
   
-- Probability of making par overall:
-  $$
-  P(\text{par}) = \frac{5 + 0}{18} = \frac{5}{18}
-  $$
+Probability of making par overall:
+$$
+P(\text{par}) = \frac{5 + 0}{18} = \frac{5}{18}
+$$
 
-**Step 2: Calculate Likelihood with Smoothing**
+### Step 2: Calculate Likelihood with Smoothing
 
-- Probability of making par given missed fairway (with smoothing):
-  $$
-  P(\text{par} \mid \text{no fairway}) = \frac{0+1}{(0+6)+2} = \frac{1}{8}
-  $$
-- Probability of not making par given missed fairway (with smoothing):
-  $$
-  P(\text{not par} \mid \text{no fairway}) = \frac{6+1}{(0+6)+2} = \frac{7}{8}
-  $$
+Probability of making par given missed fairway (with smoothing):
+$$
+P(\text{par} \mid \text{no fairway}) = \frac{0+1}{(0+6)+2} = \frac{1}{8}
+$$
 
-**Step 3: Apply Bayes’ Theorem**
+Probability of not making par given missed fairway (with smoothing):
+$$
+P(\text{not par} \mid \text{no fairway}) = \frac{6+1}{(0+6)+2} = \frac{7}{8}
+$$
+
+### Step 3: Apply Bayes’ Theorem
 
 To find the probability that a player made par given they missed the fairway:
 
@@ -158,14 +155,14 @@ $$
 P(\text{par} \mid \text{no fairway}) = \frac{P(\text{no fairway} \mid \text{par}) \cdot P(\text{par})}{P(\text{no fairway})}
 $$
 
-- $P(\text{no fairway} \mid \text{par})$ is the probability of missing the fairway given a par was made:
-  $$
-  P(\text{no fairway} \mid \text{par}) = \frac{0+1}{(5+0)+2} = \frac{1}{7}
-  $$
-  (Here, numerator is the smoothed count for [No, Yes], denominator is total smoothed par count.)
+$P(\text{no fairway} \mid \text{par})$ is the probability of missing the fairway given a par was made:
+$$
+P(\text{no fairway} \mid \text{par}) = \frac{0+1}{(5+0)+2} = \frac{1}{7}
+$$
+(Here, numerator is the smoothed count for [No, Yes], denominator is total smoothed par count.)
 
-- $P(\text{par}) = \frac{5}{18}$ (from above)
-- $P(\text{no fairway}) = \frac{6}{18} = \frac{1}{3}$
+$P(\text{par}) = \frac{5}{18}$ (from above)
+$P(\text{no fairway}) = \frac{6}{18} = \frac{1}{3}$
 
 Plug in the values:
 
@@ -173,7 +170,6 @@ $$
 P(\text{par} \mid \text{no fairway}) = \frac{\frac{1}{7} \cdot \frac{5}{18}}{\frac{1}{3}} = \frac{1}{7} \cdot \frac{5}{18} \cdot \frac{3}{1} = \frac{15}{126} = \frac{5}{42}
 $$
 
-**Interpretation:**  
 Given a player missed the fairway, the (smoothed) probability that they still made par is $\frac{5}{42}$.
 
 
