@@ -166,7 +166,7 @@ $P(\text{missed fairway}) = \frac{6}{18} = \frac{1}{3}$
 Plug in the values:
 
 $$
-P(\text{par} \mid \text{missed fairway}) = \frac{\frac{1}{7} \cdot \frac{5}{18}}{\frac{1}{3}}//
+P(\text{par} \mid \text{missed fairway}) = \frac{\frac{1}{7} \cdot \frac{5}{18}}{\frac{1}{3}} \\
 =\frac{1}{7} \cdot \frac{5}{18} \cdot \frac{3}{1} = \frac{15}{126} = \frac{5}{42}
 $$
 
