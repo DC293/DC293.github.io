@@ -1,0 +1,30 @@
+---
+layout: single
+weight: 10
+title: "K-Means Clustering"
+excerpt: "Unsupervised models - Identifying patterns in untagged data"
+header:
+    overlay_image: assets/images/Naive_bayes_cover.png
+    overlay_filter: 0.5 # Optional: Adds a dark filter to improve readability
+    teaser: assets/images/Naive_bayes_cover.png
+toc: true
+toc_sticky: true 
+published: true
+toc_label: "Contents:"
+#classes: wide
+collection: machine_learning
+type: classification
+author_profile: True
+---
+
+{% include mathjax.html %}
+
+# K-Means Clusternig
+We cant always rely on having training data sets to train our models. Sometimes we want to identify patterns in the data naturally. This is where K-Means Clustering comes in.
+Its a type of model that looks for patterns or clusters in the data to find meaning. Given it does not use a training dataset to do this, it is known as an unsupervised model. 
+
+# Background
+The objective of clustering is to separate data into groups that are similar. To do this, we must define two things:
+
+ - How many groups do we want to sort the data into?
+ - How do we define how they are similar?
