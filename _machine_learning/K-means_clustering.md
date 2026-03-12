@@ -187,7 +187,7 @@ centroids = model.cluster_centers_
 
 Using the model, we get slightly different centroid positions, however, the clusters remain the same. 
 <p align="center">
-  <img src="/assets/images/K-means_sklearn_modelK-means_optimised.png" alt="K-means_sklearn_model" width="500">
+  <img src="/assets/images/K-means_sklearn_model.png" alt="K-means_sklearn_model" width="500">
 </p>
 
 Using the model, we can also feed in new data samples and predict the cluster they would fall under. 
