@@ -207,6 +207,16 @@ What if we didn't have any intuition as to how many clusters there was in the da
 
 To do this, we need to understand what a _good_ cluster is. A good cluster keeps the data in tight clusters where the datapoints are close togehter. To determine how tight together the data in each cluster is we measure the inertia. Inertia is the distance from each datapoint in the cluster to its centroid. The lower the inertia, the better the model has found groups. 
 
+```python
+num_clusters = list(range(1,9))
+inertias= []
+
+for k in num_clusters:
+  model = KMeans(n_clusters=k)
+  model.fit(random_array)
+  inertias.append(model.inertia_)
+```
+
 For our dataset, the inertia looks like this. 
 <p align="center">
   <img src="/assets/images/K-means_model_inertia.png" alt="K-means_model_inertia" width="500">
