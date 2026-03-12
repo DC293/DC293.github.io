@@ -28,7 +28,7 @@ The objective of clustering is to separate data into groups that are similar. To
 - How many groups should the data be separated into?
 - How do we measure similarity between data points?
 
-In K-Means, similarity is usually measured using Euclidean distance, which is simply the straight-line distance between two points. More information on how this distance is calculated can be found in the [measuring distance page](../.
+In K-Means, similarity is usually measured using Euclidean distance, which is simply the straight-line distance between two points. More information on how this distance is calculated can be found in the [measuring distance page](../Distance).
 
 
 # How K-Means Works
