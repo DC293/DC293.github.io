@@ -63,9 +63,9 @@ Our dataset might look like this:
 
 If we plot these players on a graph, we might notice three natural groups:
 
-- **Strikers** (high goals)
-- **Playmakers** (high assists)
-- **Balanced attackers**
+- Strikers (high goals)
+- Playmakers (high assists)
+- Balanced attackers (equal goals and assists)
 
 K-Means can discover these groups automatically.
 
