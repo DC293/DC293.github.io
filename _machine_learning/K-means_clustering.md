@@ -62,42 +62,22 @@ Rather than doing this ourselves, K-Means can discover these groups automaticall
 
 # Implementing K-Means in Python
 
-Let's implement a simple version of the algorithm.
+Let's implement a simple version of the algorithm. For this example, a dataset has been generated at random. 
+
+Step 1 is to choose the number of clusters $K$ we would like to use. We will use 3 clusters to try and identify the 3 types of players. 
 
 ```python
-import numpy as np
-
-data = np.array([
-    [25,4],
-    [22,6],
-    [5,18],
-    [6,20],
-    [14,10],
-    [13,9]
-])
-
 k = 3
+```
 
-# Randomly choose centroids
-centroids = data[np.random.choice(len(data), k, replace=False)]
+```python
+centroids_x = np.random.uniform(np.min(random_array[:, 0]), np.max(random_array[:, 0]), k)
+centroids_y = np.random.uniform(np.min(random_array[:, 1]), np.max(random_array[:, 1]), k)
 
-for _ in range(10):
-
-    clusters = []
-
-    for point in data:
-        distances = np.linalg.norm(point - centroids, axis=1)
-        cluster = np.argmin(distances)
-        clusters.append(cluster)
-
-    clusters = np.array(clusters)
-
-    new_centroids = []
-
-    for i in range(k):
-        new_centroids.append(data[clusters == i].mean(axis=0))
-
-    centroids = np.array(new_centroids)
-
-print("Centroids:")
-print(centroids)
+# Create y coordinates of k random centroids
+centroids = np.array(list(zip(centroids_x, centroids_y)))
+```
+Plotting this on the graph, we can see it selects three random positions within the dataset. 
+<p align="center">
+  <img src="/assets/images/K-means_goals_vs_assists.png" alt="Player Performance - Goals v Assists" width="500">
+</p>
