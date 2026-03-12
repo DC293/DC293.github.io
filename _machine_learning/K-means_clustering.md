@@ -47,9 +47,6 @@ Imagine we want to group football players based on their playing style. We recor
 - Goals scored
 - Assists made
 
-Some players score many goals but make fewer assists (Goalscorers).  
-Others create chances for teammates (Playmakers).
-
 Our dataset might look like this:
 <p align="center">
   <img src="/assets/images/K-means_goals_vs_assists.png" alt="Player Performance - Goals v Assists" width="500">
