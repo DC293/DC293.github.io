@@ -4,9 +4,9 @@ weight: 11
 title: "K-Means Clustering"
 excerpt: "Finding natural groupings in data using unsupervised learning."
 header:
-    overlay_image: assets/images/kmeans_cover.png
+    overlay_image: assets/images/K-means_cover.png
     overlay_filter: 0.5
-    teaser: assets/images/kmeans_cover.png
+    teaser: assets/images/K-means_cover.png
 toc: true
 toc_sticky: true 
 published: true
