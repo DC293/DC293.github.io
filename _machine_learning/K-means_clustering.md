@@ -1,6 +1,6 @@
 ---
 layout: single
-weight: 10
+weight: 11
 title: "K-Means Clustering"
 excerpt: "Finding natural groupings in data using unsupervised learning."
 header:
