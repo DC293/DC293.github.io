@@ -223,3 +223,23 @@ For our dataset, the inertia looks like this.
 </p>
 
 The graph shows how as we increase clusters, the inertia drops. Ultimately, it is up to the user to decide where the optimal number occurs. One popular way use is the "elbow" method, selecting where the drop off in inertia begins to decrease more slowly. For our dataset, 3 clusters appears to be a sensible number to assign. 
+
+# K-Means++
+There is a further step we can use to further improve the K-Means model. The model optimises centroid placement after they have been randomly placed. Whilst this generally converges to a good solution, we can sometimes improve the solve further by initialising the original centroids less randomly. 
+
+The K-Means++ algorithm replaces Step 1 of the K-Means algorithm and instead does the following:
+
+- 1.1 The first centroid is randomly picked from the data points.
+- 1.2 For the remaining data points, the distance from the point to its nearest centroid is calculated.
+- 1.3 The next centroid is picked according to a probability proportional to the distance of each point to its nearest centroid. This makes it more likely the next centroid will be far away from the already initialised centroids.
+- Repeat 1.2 - 1.3 until k centroids are chosen.
+
+In scikit we can simply initialise the model and tell it to use K++ rather than the default random. 
+```python
+model = KMeans(n_clusters = 3, init='k-means++')
+```
+
+Using this method, our centroids have moved closer to the centre of their clusters. 
+<p align="center">
+  <img src="/assets/images/K-means++_sklearn_model.png" alt="K-means++_sklearn_model" width="500">
+</p>
