@@ -51,23 +51,17 @@ Some players score many goals but make fewer assists (Goalscorers).
 Others create chances for teammates (Playmakers).
 
 Our dataset might look like this:
+<p align="center">
+  <img src="/assets/images/K-means_goals_vs_assists.png" alt="Player Performance - Goals v Assists" width="500">
+</p>
 
-| Player | Goals | Assists |
-|------|------|------|
-| A | 25 | 4 |
-| B | 22 | 6 |
-| C | 5 | 18 |
-| D | 6 | 20 |
-| E | 14 | 10 |
-| F | 13 | 9 |
-
-If we plot these players on a graph, we might notice three natural groups:
+We can see there is a general negative correlation in the data, from which we may categorise plyers as:
 
 - Strikers (high goals)
 - Playmakers (high assists)
 - Balanced attackers (equal goals and assists)
 
-K-Means can discover these groups automatically.
+Rather than doing this ourselves, K-Means can discover these groups automatically.
 
 # Implementing K-Means in Python
 
