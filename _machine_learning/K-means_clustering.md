@@ -30,9 +30,7 @@ The objective of clustering is to separate data into groups that are similar. To
 
 In K-Means, similarity is usually measured using Euclidean distance, which is simply the straight-line distance between two points. More information on how this distance is calculated can be found in the [measuring distance page](../Distance).
 
-
-# How K-Means Works
-
+## Process overview
 The algorithm follows a simple iterative process:
 
 1. Choose the number of clusters $K$
