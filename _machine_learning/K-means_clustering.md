@@ -19,43 +19,17 @@ author_profile: True
 {% include mathjax.html %}
 
 # K-Means Clustering
-
 We can't always rely on having labelled training data. In many situations, we simply have a dataset and want to understand the patterns within it.
-
-This is where **clustering** algorithms become useful.
-
-Clustering is a type of **unsupervised learning**, where the goal is to group similar data points together without knowing the correct labels beforehand.
-
-One of the most widely used clustering algorithms is **K-Means**.
-
-Rather than predicting labels, K-Means tries to identify **natural groupings within the data**.
+This is where **clustering** algorithms become useful. Clustering is a type of **unsupervised learning**, where the goal is to group similar data points together without knowing the correct labels beforehand. One of the most widely used clustering algorithms is **K-Means**. Rather than predicting labels, K-Means tries to identify natural groupings within the data.
 
 # Background
-
 The objective of clustering is to separate data into groups that are similar. To do this, we must define two things:
 
 - How many groups should the data be separated into?
 - How do we measure similarity between data points?
 
-In K-Means, similarity is usually measured using **Euclidean distance**, which is simply the straight-line distance between two points.
+In K-Means, similarity is usually measured using Euclidean distance, which is simply the straight-line distance between two points. More information on how this distance is calculated can be found in the [measuring distance page](../.
 
-For two points $x$ and $y$ with features:
-
-$$
-x = (x_1, x_2, ..., x_n)
-$$
-
-$$
-y = (y_1, y_2, ..., y_n)
-$$
-
-The Euclidean distance between them is:
-
-$$
-d(x,y) = \sqrt{(x_1-y_1)^2 + (x_2-y_2)^2 + ... + (x_n-y_n)^2}
-$$
-
-Points that are closer together are considered more similar.
 
 # How K-Means Works
 
