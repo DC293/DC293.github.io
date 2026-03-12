@@ -64,21 +64,63 @@ Rather than doing this ourselves, K-Means can discover these groups automaticall
 
 Let's implement a simple version of the algorithm. For this example, a dataset has been generated at random. 
 
+## Choose number of clusters
 Step 1 is to choose the number of clusters $K$ we would like to use. We will use 3 clusters to try and identify the 3 types of players. 
 
 ```python
 k = 3
 ```
+## Select initial centroids
+In step 2 we randomly assign $K$ number of centroids within our dataset. 
 
 ```python
 centroids_x = np.random.uniform(np.min(random_array[:, 0]), np.max(random_array[:, 0]), k)
 centroids_y = np.random.uniform(np.min(random_array[:, 1]), np.max(random_array[:, 1]), k)
 
-# Create y coordinates of k random centroids
 centroids = np.array(list(zip(centroids_x, centroids_y)))
 ```
 Plotting this on the graph, we can see it selects three random positions within the dataset. 
 
 <p align="center">
   <img src="/assets/images/K-means_goals_vs_assists_with_centroids.png" alt="K-means_goals_vs_assists_with_centroids" width="500">
+</p>
+
+## Assign each datapoint to the nearest centroid
+Now we need to calculate which centroid each data point is closest to. To do this, we define an Euclidean distance function and then use it to calculate the distance between the centroids and data points. We then assign a label to each datapoint corresponding to the nearerst centroid.
+
+```python
+def distance(a, b):
+  return ((a[0]-b[0])**2 + (a[1]-b[1])**2)**0.5
+
+# Cluster labels for each point (either 0, 1, or 2)
+labels = np.zeros(len(random_array))
+distances= np.zeros(k)
+# Distances to each centroid
+for i in range(len(random_array)):
+  for j in range(k):
+    distances[j] = distance(random_array[i], centroids[j])
+  
+  cluster = np.argmin(distances)
+  labels[i] = cluster
+
+# Print labels
+print(labels)
+```
+```python
+[0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+ 1. 1. 2. 2. 1. 1. 2. 1. 1. 1. 2. 2. 1. 2. 1. 1. 1. 2. 1. 1. 2. 1. 2. 1.
+ 1. 1.]
+```
+
+## Recalculate centroids 
+Next, we start to optimise our centroid placement by calculating the average position of all the data points for each centroid. These averages become the coordinates for the new centroids. 
+```python
+for i in range(k):
+  points = [random_array[j] for j in range(len(random_array)) if labels[j] == i]
+  centroids[i] = np.mean(points, axis=0)
+```
+
+We can see by averaging these positions our centroids move 
+<p align="center">
+  <img src="/assets/images/K-means_goals_vs_assists_after_update.png" alt="K-means_goals_vs_assists_after_update" width="500">
 </p>
