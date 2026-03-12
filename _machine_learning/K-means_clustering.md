@@ -60,17 +60,17 @@ We can see there is a general negative correlation in the data, from which we ma
 
 Rather than doing this ourselves, K-Means can discover these groups automatically.
 
-# Implementing K-Means in Python
+# Implementing K-Means
 
 Let's implement a simple version of the algorithm. For this example, a dataset has been generated at random. 
 
-## Choose number of clusters
+## Step 1 - Choose number of clusters
 Step 1 is to choose the number of clusters $K$ we would like to use. We will use 3 clusters to try and identify the 3 types of players. 
 
 ```python
 k = 3
 ```
-## Select initial centroids
+## Step 2 - Select initial centroids
 In step 2 we randomly assign $K$ number of centroids within our dataset. 
 
 ```python
@@ -85,7 +85,7 @@ Plotting this on the graph, we can see it selects three random positions within 
   <img src="/assets/images/K-means_goals_vs_assists_with_centroids.png" alt="K-means_goals_vs_assists_with_centroids" width="500">
 </p>
 
-## Assign each datapoint to the nearest centroid
+## Step 3 - Assign datapoints to centroids
 Now we need to calculate which centroid each data point is closest to. To do this, we define an Euclidean distance function and then use it to calculate the distance between the centroids and data points. We then assign a label to each datapoint corresponding to the nearerst centroid.
 
 ```python
@@ -112,7 +112,7 @@ print(labels)
  1. 1.]
 ```
 
-## Recalculate centroids 
+## Step 4 - Recalculate centroid position
 Next, we start to optimise our centroid placement by calculating the average position of all the data points for each centroid. These averages become the coordinates for the new centroids. 
 ```python
 for i in range(k):
@@ -125,7 +125,7 @@ We can see by averaging these positions our centroids move closer to where we wo
   <img src="/assets/images/K-means_goals_vs_assists_after_update.png" alt="K-means_goals_vs_assists_after_update" width="500">
 </p>
 
-## Optimisation
+## Step 5 - Optimise centroid position
 We've now set out the process of placing our centroids. We can now repeat steps 3 and 4 until the centroids stop changing any further. 
 
 ```python
