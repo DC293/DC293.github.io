@@ -201,3 +201,15 @@ print(labels)
 ```python
 [1 0 1]
 ```
+
+# Optimising cluster number 
+What if we didn't have any intuition as to how many clusters there was in the dataset. How do we know how many clusters to set the model to find?
+
+To do this, we need to understand what a _good_ cluster is. A good cluster keeps the data in tight clusters where the datapoints are close togehter. To determine how tight together the data in each cluster is we measure the inertia. Inertia is the distance from each datapoint in the cluster to its centroid. The lower the inertia, the better the model has found groups. 
+
+For our dataset, the inertia looks like this. 
+<p align="center">
+  <img src="/assets/images/K-means_model_inertia.png" alt="K-means_model_inertia" width="500">
+</p>
+
+The graph shows how as we increase clusters, the inertia drops. Ultimately, it is up to the user to decide where the optimal number occurs. One popular way use is the "elbow" method, selecting where the drop off in inertia begins to decrease more slowly. For our dataset, 3 clusters appears to be a sensible number to assign. 
