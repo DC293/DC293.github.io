@@ -78,6 +78,7 @@ centroids_y = np.random.uniform(np.min(random_array[:, 1]), np.max(random_array[
 centroids = np.array(list(zip(centroids_x, centroids_y)))
 ```
 Plotting this on the graph, we can see it selects three random positions within the dataset. 
+
 <p align="center">
   <img src="/assets/images/K-means_goals_vs_assists_with_centroids.png" alt="K-means_goals_vs_assists_with_centroids" width="500">
 </p>
