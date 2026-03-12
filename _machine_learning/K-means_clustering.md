@@ -120,7 +120,49 @@ for i in range(k):
   centroids[i] = np.mean(points, axis=0)
 ```
 
-We can see by averaging these positions our centroids move 
+We can see by averaging these positions our centroids move closer to where we would expect the centre of the groups to be. 
 <p align="center">
   <img src="/assets/images/K-means_goals_vs_assists_after_update.png" alt="K-means_goals_vs_assists_after_update" width="500">
 </p>
+
+## Optimisation
+We've now set out the process of placing our centroids. We can now repeat steps 3 and 4 until the centroids stop changing any further. 
+
+```python
+error = np.zeros(k)
+for i in range(k):
+  error[i] = distance(centroids[i], centroids_old[i])
+
+while np.any(error != 0):
+  labels = np.zeros(len(random_array))
+  distances = np.zeros(k)
+
+  # Distances to each centroid
+  for i in range(len(random_array)):
+    for j in range(k):
+      distances[j] = distance(random_array[i], centroids[j])
+  
+    cluster = np.argmin(distances)
+    labels[i] = cluster
+
+  centroids_old = centroids.copy()
+
+  for i in range(k):
+    points = [random_array[j] for j in range(len(random_array)) if labels[j] == i]
+    if len(points) > 0:
+      centroids[i] = np.mean(points, axis=0)
+
+  error = np.zeros(k)
+  for i in range(k):
+    error[i] = distance(centroids[i], centroids_old[i])
+```
+
+Running this on our dataset gives us 3 clusters.
+<p align="center">
+  <img src="/assets/images/K-means_optimised.png" alt="K-means_goals_vs_assists_after_update" width="500">
+</p>
+
+Based on this categorisation, we could say:
+Cluster 1 - Playmakers
+Cluster 2 - Balanced attackers
+Cluster 3 - Strikers
