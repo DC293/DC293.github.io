@@ -20,7 +20,7 @@ author_profile: True
 
 # K-Means Clustering
 We can't always rely on having labelled training data. In many situations, we simply have a dataset and want to understand the patterns within it.
-This is where **clustering** algorithms become useful. Clustering is a type of **unsupervised learning**, where the goal is to group similar data points together without knowing the correct labels beforehand. One of the most widely used clustering algorithms is **K-Means**. Rather than predicting labels, K-Means tries to identify natural groupings within the data.
+This is where clustering algorithms become useful. Clustering is a type of unsupervised learning, where the goal is to group similar data points together without knowing the correct labels beforehand. One of the most widely used clustering algorithms is K-Means. Rather than predicting labels, K-Means tries to identify natural groupings within the data.
 
 # Background
 The objective of clustering is to separate data into groups that are similar. To do this, we must define two things:
@@ -28,7 +28,7 @@ The objective of clustering is to separate data into groups that are similar. To
 - How many groups should the data be separated into?
 - How do we measure similarity between data points?
 
-In K-Means, similarity is usually measured using Euclidean distance, which is simply the straight-line distance between two points. More information on how this distance is calculated can be found in the [measuring distance page](../Distance).
+In K-Means, similarity is usually measured using Euclidean distance, which is simply the straight-line distance between two points. More information on how this distance is calculated can be found on the [measuring distance page](../Distance).
 
 ## Process overview
 The algorithm follows a simple iterative process:
@@ -39,7 +39,7 @@ The algorithm follows a simple iterative process:
 4. Recalculate each centroid as the average of the assigned points
 5. Repeat steps 3–4 until the centroids stop changing
 
-The goal is to minimise the within-cluster variance, meaning points within each cluster are as close together as possible.
+The goal is to minimise the within-cluster variance, meaning points within each cluster are as close together as possible. The algorithm aims to position centroids so that each point is assigned to the nearest cluster centre, minimising the total distance between points and their cluster centroid.
 
 # Sporting Example: Football Player Styles
 Imagine we want to group football players based on their playing style. We record two simple statistics:
@@ -52,7 +52,7 @@ Our dataset might look like this:
   <img src="/assets/images/K-means_goals_vs_assists.png" alt="Player Performance - Goals v Assists" width="500">
 </p>
 
-We can see there is a general negative correlation in the data, from which we may categorise plyers as:
+We can see there is a general negative relationship in the data, from which we may categorise players as:
 
 - Strikers (high goals)
 - Playmakers (high assists)
@@ -62,7 +62,7 @@ Rather than doing this ourselves, K-Means can discover these groups automaticall
 
 # Implementing K-Means
 
-Let's implement a simple version of the algorithm. For this example, a dataset has been generated at random. 
+Let's implement a simple version of the algorithm. FFor this example, a dataset has been generated randomly.
 
 ## Step 1 - Choose number of clusters
 Step 1 is to choose the number of clusters $K$ we would like to use. We will use 3 clusters to try and identify the 3 types of players. 
@@ -71,7 +71,7 @@ Step 1 is to choose the number of clusters $K$ we would like to use. We will use
 k = 3
 ```
 ## Step 2 - Select initial centroids
-In step 2 we randomly assign $K$ number of centroids within our dataset. 
+In Step 2 we randomly initialise $K$ centroids within the dataset.
 
 ```python
 centroids_x = np.random.uniform(np.min(random_array[:, 0]), np.max(random_array[:, 0]), k)
@@ -79,14 +79,14 @@ centroids_y = np.random.uniform(np.min(random_array[:, 1]), np.max(random_array[
 
 centroids = np.array(list(zip(centroids_x, centroids_y)))
 ```
-Plotting this on the graph, we can see it selects three random positions within the dataset. 
+Plotting this on the graph shows three random positions within the dataset.
 
 <p align="center">
   <img src="/assets/images/K-means_goals_vs_assists_with_centroids.png" alt="K-means_goals_vs_assists_with_centroids" width="500">
 </p>
 
 ## Step 3 - Assign datapoints to centroids
-Now we need to calculate which centroid each data point is closest to. To do this, we define an Euclidean distance function and then use it to calculate the distance between the centroids and data points. We then assign a label to each datapoint corresponding to the nearerst centroid.
+Now we need to calculate which centroid each data point is closest to. To do this, we define a Euclidean distance function and then use it to calculate the distance between the centroids and data points. We then assign a label to each datapoint corresponding to the nearest centroid.
 
 ```python
 def distance(a, b):
@@ -227,12 +227,12 @@ The graph shows how as we increase clusters, the inertia drops. Ultimately, it i
 # K-Means++
 There is a further step we can use to further improve the K-Means model. The model optimises centroid placement after they have been randomly placed. Whilst this generally converges to a good solution, we can sometimes improve the solve further by initialising the original centroids less randomly. 
 
-The K-Means++ algorithm replaces Step 1 of the K-Means algorithm and instead does the following:
+The K-Means++ algorithm replaces Step 2 of the K-Means algorithm and instead does the following:
 
-- 1.1 The first centroid is randomly picked from the data points.
-- 1.2 For the remaining data points, the distance from the point to its nearest centroid is calculated.
-- 1.3 The next centroid is picked according to a probability proportional to the distance of each point to its nearest centroid. This makes it more likely the next centroid will be far away from the already initialised centroids.
-- Repeat 1.2 - 1.3 until k centroids are chosen.
+- 2.1 The first centroid is randomly picked from the data points.
+- 2.2 For the remaining data points, the distance from the point to its nearest centroid is calculated.
+- 2.3 The next centroid is picked according to a probability proportional to the distance of each point to its nearest centroid. This makes it more likely the next centroid will be far away from the already initialised centroids.
+- Repeat 2.2 - 2.3 until k centroids are chosen.
 
 In scikit we can simply initialise the model and tell it to use K++ rather than the default random. 
 ```python
