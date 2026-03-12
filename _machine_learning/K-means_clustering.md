@@ -163,6 +163,6 @@ Running this on our dataset gives us 3 clusters.
 </p>
 
 Based on this categorisation, we could say:
-Cluster 1 - Playmakers
-Cluster 2 - Balanced attackers
-Cluster 3 - Strikers
+ - Cluster 1 - Playmakers
+ - Cluster 2 - Balanced attackers
+ - Cluster 3 - Strikers
