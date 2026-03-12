@@ -39,31 +39,16 @@ The algorithm follows a simple iterative process:
 4. Recalculate each centroid as the average of the assigned points
 5. Repeat steps 3–4 until the centroids stop changing
 
-The goal is to minimise the **within-cluster variance**, meaning points within each cluster are as close together as possible.
-
-Mathematically, the objective is to minimise:
-
-$$
-\sum_{i=1}^{K} \sum_{x \in C_i} ||x - \mu_i||^2
-$$
-
-Where:
-
-- $K$ = number of clusters  
-- $C_i$ = points in cluster $i$  
-- $\mu_i$ = centroid of cluster $i$
+The goal is to minimise the within-cluster variance, meaning points within each cluster are as close together as possible.
 
 # Sporting Example: Football Player Styles
-
-Imagine we want to group football players based on their playing style.
-
-We record two simple statistics:
+Imagine we want to group football players based on their playing style. We record two simple statistics:
 
 - Goals scored
 - Assists made
 
-Some players score many goals but make fewer assists (typical strikers).  
-Others create chances for teammates (playmakers).
+Some players score many goals but make fewer assists (Goalscorers).  
+Others create chances for teammates (Playmakers).
 
 Our dataset might look like this:
 
