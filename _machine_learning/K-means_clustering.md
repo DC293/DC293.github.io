@@ -159,10 +159,45 @@ while np.any(error != 0):
 
 Running this on our dataset gives us 3 clusters.
 <p align="center">
-  <img src="/assets/images/K-means_optimised.png" alt="K-means_goals_vs_assists_after_update" width="500">
+  <img src="/assets/images/K-means_optimised.png" alt="K-means_optimised" width="500">
 </p>
 
 Based on this categorisation, we could say:
  - Cluster 1 - Playmakers
  - Cluster 2 - Balanced attackers
  - Cluster 3 - Strikers
+
+# Utilising scikit
+Now we have an understanding of the K-Means algorithm, rather than create the functions ourselves, we can utilise the KMeans module as part of the scikit library. 
+
+```python
+# Use KMeans() to create a model that finds 3 clusters
+model = KMeans(n_clusters = 3)
+
+# Use .fit() to fit the model to samples
+model.fit(random_array)
+
+# Use .predict() to determine the labels of samples 
+labels = model.predict(random_array)
+# Print the labels
+print(labels)
+
+centroids = model.cluster_centers_
+```
+
+Using the model, we get slightly different centroid positions, however, the clusters remain the same. 
+<p align="center">
+  <img src="/assets/images/K-means_sklearn_modelK-means_optimised.png" alt="K-means_sklearn_model" width="500">
+</p>
+
+Using the model, we can also feed in new data samples and predict the cluster they would fall under. 
+```python
+new_samples = np.array([[26, 4], [10, 16], [20, 5]])
+
+# Predict labels for the new_samples
+labels = model.predict(new_samples)
+print(labels)
+```
+```python
+[1 0 1]
+```
